@@ -25,6 +25,7 @@
   "types": "./dist/create-canvas-context.d.ts",
   "scripts": {
     "build": "microbundle",
+    "clean": "jest --clearCache && rimraf node_modules",
     "deduplicate": "yarn-deduplicate yarn.lock",
     "lint": "eslint '{src,tests}/**/*.{ts,tsx}' --fix",
     "prepare": "rimraf dist && yarn build",
