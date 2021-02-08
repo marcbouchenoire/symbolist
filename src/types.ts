@@ -15,6 +15,13 @@ interface ContextsRenderingContext {
   webgl2: WebGL2RenderingContext
 }
 
+interface OffscreenContextsRenderingContext {
+  "2d": OffscreenCanvasRenderingContext2D
+  bitmaprenderer: ImageBitmapRenderingContext
+  webgl: WebGLRenderingContext
+  webgl2: WebGL2RenderingContext
+}
+
 interface ContextsAttributes {
   "2d": CanvasRenderingContext2DSettings
   bitmaprenderer: ImageBitmapRenderingContextSettings
@@ -25,5 +32,9 @@ interface ContextsAttributes {
 export type ContextRenderingContext<
   T extends ContextType
 > = ContextsRenderingContext[T]
+
+export type OffscreenContextRenderingContext<
+  T extends ContextType
+> = OffscreenContextsRenderingContext[T]
 
 export type ContextAttributes<T extends ContextType> = ContextsAttributes[T]

@@ -2,7 +2,8 @@ import { isCanvas, isHTMLCanvasElement, isNumber } from "./guards"
 import {
   ContextAttributes,
   ContextRenderingContext,
-  ContextType
+  ContextType,
+  OffscreenContextRenderingContext
 } from "./types"
 import { isBrowser, returnIf, supportsOffscreenCanvas } from "./utils"
 
@@ -43,7 +44,7 @@ export function createCanvasContext<T extends ContextType>(
     | ContextAttributes<T>
 ): [
   HTMLCanvasElement | OffscreenCanvas | null,
-  ContextRenderingContext<T> | null
+  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null
 ]
 export function createCanvasContext<T extends ContextType>(
   type: T,
@@ -56,13 +57,16 @@ export function createCanvasContext<T extends ContextType>(
   options?:
     | (Options & { canvas: HTMLCanvasElement; offscreen: true })
     | ContextAttributes<T>
-): [HTMLCanvasElement | OffscreenCanvas, ContextRenderingContext<T> | null]
+): [
+  HTMLCanvasElement | OffscreenCanvas,
+  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null
+]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | (Options & { canvas: OffscreenCanvas; offscreen?: true })
     | ContextAttributes<T>
-): [OffscreenCanvas, ContextRenderingContext<T> | null]
+): [OffscreenCanvas, OffscreenContextRenderingContext<T> | null]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options: Options | ContextAttributes<T> = defaultOptions
