@@ -29,6 +29,7 @@
     "deduplicate": "yarn-deduplicate yarn.lock",
     "lint": "eslint '{src,tests}/**/*.{ts,tsx}' --fix",
     "prepare": "rimraf dist && yarn build",
+    "release": "yarn login && np",
     "test": "jest"
   },
   "husky": {
@@ -50,6 +51,7 @@
     "jest-electron": "^0.1.11",
     "lint-staged": "^10.5.3",
     "microbundle": "^0.13.0",
+    "np": "^7.4.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.0",
