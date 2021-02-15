@@ -36,37 +36,37 @@ export function createCanvasContext<T extends ContextType>(
   options?:
     | (Options & { canvas?: undefined; offscreen?: false })
     | ContextAttributes<T>
-): [HTMLCanvasElement | null, ContextRenderingContext<T> | null]
+): [ContextRenderingContext<T> | null, HTMLCanvasElement | null]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | (Options & { canvas?: undefined; offscreen: true })
     | ContextAttributes<T>
 ): [
-  HTMLCanvasElement | OffscreenCanvas | null,
-  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null
+  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null,
+  HTMLCanvasElement | OffscreenCanvas | null
 ]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | (Options & { canvas: HTMLCanvasElement; offscreen?: false })
     | ContextAttributes<T>
-): [HTMLCanvasElement, ContextRenderingContext<T> | null]
+): [ContextRenderingContext<T> | null, HTMLCanvasElement]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | (Options & { canvas: HTMLCanvasElement; offscreen: true })
     | ContextAttributes<T>
 ): [
-  HTMLCanvasElement | OffscreenCanvas,
-  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null
+  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null,
+  HTMLCanvasElement | OffscreenCanvas
 ]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | (Options & { canvas: OffscreenCanvas; offscreen?: true })
     | ContextAttributes<T>
-): [OffscreenCanvas, OffscreenContextRenderingContext<T> | null]
+): [OffscreenContextRenderingContext<T> | null, OffscreenCanvas]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options: Options | ContextAttributes<T> = defaultOptions
@@ -96,5 +96,5 @@ export function createCanvasContext<T extends ContextType>(
 
   const context = isCanvas(canvas) ? canvas.getContext(type, attributes) : null
 
-  return [canvas, context]
+  return [context, canvas]
 }
