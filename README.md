@@ -6,13 +6,21 @@
 
 ## Installation
 
-#### With yarn
+#### Skypack
+
+```html
+<script type="module">
+  import { createCanvasContext } from "https://cdn.skypack.dev/create-canvas-context"
+</script>
+```
+
+#### Yarn
 
 ```sh
 yarn add create-canvas-context
 ```
 
-#### With npm
+#### npm
 
 ```sh
 npm install create-canvas-context
