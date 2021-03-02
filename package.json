@@ -24,7 +24,7 @@
   "esnext": "./dist/create-canvas-context.modern.js",
   "types": "./dist/create-canvas-context.d.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
     "lint": "eslint '{src,tests}/**/*.{ts,tsx}' --fix",
     "prepare": "rimraf dist && yarn build",
