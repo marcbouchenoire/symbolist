@@ -26,7 +26,6 @@
   "scripts": {
     "build": "microbundle",
     "clean": "jest --clearCache && rimraf node_modules",
-    "deduplicate": "yarn-deduplicate yarn.lock",
     "lint": "eslint '{src,tests}/**/*.{ts,tsx}' --fix",
     "prepare": "rimraf dist && yarn build",
     "release": "yarn login && np",
