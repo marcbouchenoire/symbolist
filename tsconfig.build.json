@@ -1,21 +1,7 @@
 {
+  "extends": "./tsconfig",
   "include": ["src"],
-  "exclude": ["node_modules"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true,
-    "downlevelIteration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true
+    "rootDir": "src"
   }
 }
