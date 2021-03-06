@@ -1,5 +1,5 @@
 import { isFunction, isNumber } from "../../src/guards"
-import { returnIf } from "../../src/utils"
+import { returnIf } from "../../src/utils/return-if"
 import { boolean, fun, number, string } from "../constants"
 
 describe("returnIf", () => {

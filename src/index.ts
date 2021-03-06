@@ -5,7 +5,9 @@ import {
   ContextType,
   OffscreenContextRenderingContext
 } from "./types"
-import { isBrowser, returnIf, supportsOffscreenCanvas } from "./utils"
+import { isBrowser } from "./utils/is-browser"
+import { returnIf } from "./utils/return-if"
+import { supportsOffscreenCanvas } from "./utils/supports-offscreen-canvas"
 
 const DEFAULT_WIDTH = 300
 const DEFAULT_HEIGHT = 150
