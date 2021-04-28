@@ -34,26 +34,26 @@ Import `createCanvasContext`.
 import { createCanvasContext } from "create-canvas-context"
 ```
 
-Invoke it while specifying a context type (`"2d"`, `"bitmaprenderer"`, `"webgl"` or `"webgl2"`).
-
-```tsx
-createCanvasContext("2d")
-```
-
-Access in return the specified rendering context and its canvas as a pair.
+Invoke it while specifying a context type (`"2d"`, `"bitmaprenderer"`, `"webgl"` or `"webgl2"`) and access in return the specified rendering context and its canvas as a pair.
 
 ```tsx
 const [context, canvas] = createCanvasContext("2d")
+
+// context: CanvasRenderingContext2D
+// canvas: HTMLCanvasElement
 ```
 
 Optionally override defaults using [options](#options).
 
 ```tsx
-const [context, canvas] = createCanvasContext("2d", {
+const [context, canvas] = createCanvasContext("webgl", {
   canvas: document.createElement("canvas"),
   offscreen: true,
   alpha: false
 })
+
+// context: WebGLRenderingContext
+// canvas: OffscreenCanvas
 ```
 
 ## Options
