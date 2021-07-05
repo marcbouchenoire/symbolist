@@ -1,3 +1,4 @@
+import withApp from "app-exists"
 import Listr from "listr"
 import writeJSON from "write-json-file"
 import { Symbols } from "../src/types"
@@ -23,6 +24,10 @@ const tasks = new Listr([
     task: () => {
       if (!isMacOS()) {
         throw new SilentError("SF Symbols is only available on macOS.")
+      } else if (!withApp("SF Symbols")) {
+        throw new SilentError(
+          `SF Symbols is required. (https://developer.apple.com/sf-symbols/)")}`
+        )
       }
     }
   },

@@ -1403,6 +1403,11 @@ any-observable@^0.5.1:
   resolved "https://registry.yarnpkg.com/any-observable/-/any-observable-0.5.1.tgz#ab7d49ff64ebe6dd3ae26760a3f5a881e8db791e"
   integrity sha512-8zv01bgDOp9PTmRTNCAHTw64TFP2rvlX4LvtNJLachaXY+AjmIvLT47fABNPCiIe89hKiSCo2n5zmPqI9CElPA==
 
+app-exists@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/app-exists/-/app-exists-2.1.1.tgz#9fe312d6be81f0f12b42465ff0f7a7a26a25b3a5"
+  integrity sha512-CKnIl6DvW/JwNj13wBgvf+G+29aYhIR1uIHur7essWTMJSdHH6/2oiaNepd1QdyrsD5AGS2lDuKT5NcocLCcPQ==
+
 arch@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/arch/-/arch-2.2.0.tgz#1bc47818f305764f23ab3306b0bfc086c5a29d11"

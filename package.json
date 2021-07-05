@@ -36,6 +36,7 @@
     "@types/rimraf": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
+    "app-exists": "^2.1.1",
     "chalk": "^4.1.1",
     "clipboardy": "^2.3.0",
     "esbuild-register": "^2.6.0",
