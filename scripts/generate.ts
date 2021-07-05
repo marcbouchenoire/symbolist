@@ -1,5 +1,7 @@
 import withApp from "app-exists"
 import Listr from "listr"
+import * as prettier from "prettier"
+import writeFile from "write-file-atomic"
 import writeJSON from "write-json-file"
 import { Symbols } from "../src/types"
 import { isMacOS } from "./utils/is-macOS"
@@ -10,6 +12,7 @@ import { isSilentError, SilentError } from "./utils/silent-error"
 
 const SYMBOLS = "./src/data/symbols.json"
 const LOGS = "./src/data/logs.json"
+const TYPES = "./src/data/types.ts"
 
 interface Context {
   characters: string[]
@@ -89,7 +92,7 @@ const tasks = new Listr([
             sortedSymbols[name] = symbols[name]
 
             return sortedSymbols
-          }, {})
+          }, {} as Symbols)
       }
     }
   },
@@ -101,6 +104,21 @@ const tasks = new Listr([
           title: "Generating symbols",
           task: async (context: Context) => {
             await writeJSON(SYMBOLS, context.symbols)
+          }
+        },
+        {
+          title: "Generating types",
+          task: async (context: Context) => {
+            const options = await prettier.resolveConfig(".prettierrc")
+            const types = context.names.map((name) => `"${name}"`).join(" | ")
+
+            await writeFile(
+              TYPES,
+              prettier.format(`export type SymbolName = ${types}`, {
+                ...options,
+                parser: "typescript"
+              })
+            )
           }
         },
         {
