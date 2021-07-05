@@ -15,8 +15,10 @@ interface Context {
   characters: string[]
   names: string[]
   symbols: Symbols
-  version: number
+  version: string
 }
+
+const versionRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.(0|[1-9]\d*))?$/
 
 const tasks = new Listr([
   {
@@ -113,7 +115,13 @@ const tasks = new Listr([
                       "Specify SF Symbols' version",
                       "Version:",
                       (value, context) => {
-                        context.version = Number(value)
+                        if (versionRegex.test(value)) {
+                          context.version = value
+                        } else {
+                          throw new SilentError(
+                            "The version number is incorrect."
+                          )
+                        }
                       },
                       "SF Symbols › About SF Symbols"
                     )
