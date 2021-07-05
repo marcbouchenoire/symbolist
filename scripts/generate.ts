@@ -43,7 +43,7 @@ const tasks = new Listr([
         ListrMessage("Select all symbols in SF Symbols", "⌘A"),
         ListrMessage("Copy them", "⌘C"),
         ListrClipboard<Context>("Validate", (value, context) => {
-          const characters = Array.from(value)
+          const characters = [...value]
 
           if (characters.length <= 1) {
             throw new SilentError("Your clipboard doesn't contain symbols.")
@@ -80,11 +80,13 @@ const tasks = new Listr([
       if (context.characters.length !== context.names.length) {
         throw new SilentError("The symbols and their names don't match.")
       } else {
-        context.symbols = context.names.reduce((symbols, name, index) => {
-          symbols[name] = context.characters[index]
+        const symbols = {} as Symbols
 
-          return symbols
-        }, {} as Symbols)
+        for (const [index, name] of context.names.entries()) {
+          symbols[name] = context.characters[index]
+        }
+
+        context.symbols = symbols
       }
     }
   },
