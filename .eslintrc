@@ -7,14 +7,18 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "unicorn", "prettier"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/no-explicit-any": 0,
+    "unicorn/no-null": 0,
+    "unicorn/no-useless-undefined": 0,
+    "unicorn/prevent-abbreviations": 0,
     "import/newline-after-import": 2,
     "import/no-absolute-path": 2,
     "import/order": [
