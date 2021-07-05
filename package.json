@@ -1,0 +1,56 @@
+{
+  "name": "ios-symbols",
+  "version": "0.0.0",
+  "description": "A list of every symbol from SF Symbols.",
+  "author": "Marc Bouchenoire",
+  "license": "MIT",
+  "repository": "https://github.com/bouchenoiremarc/ios-symbols",
+  "keywords": [
+    "ios",
+    "symbols",
+    "icons",
+    "font"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/ios-symbols.js",
+  "umd:main": "./dist/ios-symbols.umd.js",
+  "module": "./dist/ios-symbols.module.js",
+  "exports": "./dist/ios-symbols.modern.js",
+  "esmodule": "./dist/ios-symbols.modern.js",
+  "esnext": "./dist/ios-symbols.modern.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "lint": "eslint '**/*.{ts,tsx}' --fix",
+    "generate": "node -r esbuild-register scripts/generate.ts",
+    "prepare": "rimraf dist && yarn build",
+    "release": "yarn login && np"
+  },
+  "devDependencies": {
+    "@types/listr": "^0.14.3",
+    "@types/rimraf": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "chalk": "^4.1.1",
+    "clipboardy": "^2.3.0",
+    "esbuild-register": "^2.6.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "listr": "^0.14.3",
+    "listr-input": "^0.2.1",
+    "microbundle": "^0.13.3",
+    "np": "^7.5.0",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "write-json-file": "^4.3.0"
+  }
+}

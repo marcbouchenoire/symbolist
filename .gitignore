@@ -1,0 +1,7 @@
+.cache
+.DS_Store
+*.log
+xcuserdata
+node_modules
+dist
+build
