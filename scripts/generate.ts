@@ -61,7 +61,7 @@ const tasks = new Listr([
         ListrMessage("Select all symbols in SF Symbols", "⌘A"),
         ListrMessage("Copy their names", "⇧⌘C"),
         ListrClipboard<Context>("Validate", (value, context) => {
-          const names = value.split(/\r?\n/)
+          const names = value.split(/\n/)
 
           if (names.length <= 1) {
             throw new SilentError(
@@ -80,19 +80,11 @@ const tasks = new Listr([
       if (context.characters.length !== context.names.length) {
         throw new SilentError("The symbols and their names don't match.")
       } else {
-        const symbols = context.names.reduce((symbols, name, index) => {
+        context.symbols = context.names.reduce((symbols, name, index) => {
           symbols[name] = context.characters[index]
 
           return symbols
-        }, {})
-
-        context.symbols = Object.keys(symbols)
-          .sort()
-          .reduce((sortedSymbols, name) => {
-            sortedSymbols[name] = symbols[name]
-
-            return sortedSymbols
-          }, {} as Symbols)
+        }, {} as Symbols)
       }
     }
   },
@@ -103,7 +95,7 @@ const tasks = new Listr([
         {
           title: "Generating symbols",
           task: async (context: Context) => {
-            await writeJSON(SYMBOLS, context.symbols)
+            await writeJSON(SYMBOLS, context.symbols, { sortKeys: true })
           }
         },
         {
