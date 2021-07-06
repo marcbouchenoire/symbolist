@@ -12,11 +12,6 @@ export function ListrInput<C>(
   autoSubmit: (value: string) => boolean = () => false
 ): ListrTask<C> {
   return {
-    title: join(
-      title,
-      message ? chalk.dim(`(${message})`) : null,
-      warning ? chalk.yellow(`(${warning})`) : null
-    ),
     task: (context: C) => {
       return ListrDefaultInput(placeholder, {
         autoSubmit,
@@ -24,6 +19,11 @@ export function ListrInput<C>(
           callback(value, context)
         }
       })
-    }
+    },
+    title: join(
+      title,
+      message ? chalk.dim(`(${message})`) : null,
+      warning ? chalk.yellow(`(${warning})`) : null
+    )
   }
 }

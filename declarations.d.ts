@@ -1,11 +1,11 @@
 type ListrInputCallback<T = void> = (value: string) => T
 
 interface ListrInputOptions {
-  default: string
-  validate: ListrInputCallback<boolean>
-  secret: boolean
-  done: ListrInputCallback
   autoSubmit: ListrInputCallback<boolean>
+  default: string
+  done: ListrInputCallback
+  secret: boolean
+  validate: ListrInputCallback<boolean>
 }
 
 declare module "listr-input" {

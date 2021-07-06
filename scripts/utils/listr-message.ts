@@ -4,7 +4,7 @@ import { join } from "./join"
 
 export function ListrMessage(title: string, detail?: string): ListrTask {
   return {
-    title: join(title, detail ? chalk.dim(`(${detail})`) : null),
-    task: () => {}
+    task: () => {},
+    title: join(title, detail ? chalk.dim(`(${detail})`) : null)
   }
 }

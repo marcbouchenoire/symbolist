@@ -25,7 +25,6 @@ const versionRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.(0|[1-9]\d*))?$/
 
 const tasks = new Listr([
   {
-    title: "Verifying requirements",
     task: () => {
       if (!isMacOS()) {
         throw new SilentError("SF Symbols is only available on macOS.")
@@ -34,10 +33,10 @@ const tasks = new Listr([
           `SF Symbols is required. (https://developer.apple.com/sf-symbols/)")}`
         )
       }
-    }
+    },
+    title: "Verifying requirements"
   },
   {
-    title: "Gathering symbols",
     task: () => {
       return new Listr([
         ListrMessage("Select all symbols in SF Symbols", "⌘A"),
@@ -52,10 +51,10 @@ const tasks = new Listr([
           }
         })
       ])
-    }
+    },
+    title: "Gathering symbols"
   },
   {
-    title: "Gathering symbol names",
     task: () => {
       return new Listr([
         ListrMessage("Select all symbols in SF Symbols", "⌘A"),
@@ -72,10 +71,10 @@ const tasks = new Listr([
           }
         })
       ])
-    }
+    },
+    title: "Gathering symbol names"
   },
   {
-    title: "Formatting symbols",
     task: async (context: Context) => {
       if (context.characters.length !== context.names.length) {
         throw new SilentError("The symbols and their names don't match.")
@@ -88,20 +87,19 @@ const tasks = new Listr([
 
         context.symbols = symbols
       }
-    }
+    },
+    title: "Formatting symbols"
   },
   {
-    title: "Generating files",
     task: () => {
       return new Listr([
         {
-          title: "Generating symbols",
           task: async (context: Context) => {
             await writeJSON(SYMBOLS, context.symbols, { sortKeys: true })
-          }
+          },
+          title: "Generating symbols"
         },
         {
-          title: "Generating types",
           task: async (context: Context) => {
             const options = await prettier.resolveConfig(".prettierrc")
             const types = context.names.map((name) => `"${name}"`).join(" | ")
@@ -113,14 +111,13 @@ const tasks = new Listr([
                 parser: "typescript"
               })
             )
-          }
+          },
+          title: "Generating types"
         },
         {
-          title: "Generating logs",
           task: () => {
             return new Listr([
               {
-                title: "Gathering SF Symbols' version",
                 task: () => {
                   return new Listr([
                     ListrInput<Context>(
@@ -138,22 +135,25 @@ const tasks = new Listr([
                       "SF Symbols › About SF Symbols"
                     )
                   ])
-                }
+                },
+                title: "Gathering SF Symbols' version"
               },
               {
-                title: "Generating logs",
                 task: async (context: Context) => {
                   await writeJSON(LOGS, {
                     length: context.names.length,
                     version: context.version
                   })
-                }
+                },
+                title: "Generating logs"
               }
             ])
-          }
+          },
+          title: "Generating logs"
         }
       ])
-    }
+    },
+    title: "Generating files"
   }
 ])
 
