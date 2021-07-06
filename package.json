@@ -24,6 +24,17 @@
   "esmodule": "./dist/ios-symbols.modern.js",
   "esnext": "./dist/ios-symbols.modern.js",
   "types": "./dist/index.d.ts",
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
     "build": "microbundle",
     "lint": "eslint '**/*.{ts,tsx}' --fix",
@@ -42,6 +53,8 @@
     "clipboardy": "^2.3.0",
     "esbuild-register": "^2.6.0",
     "eslint": "^7.30.0",
+    "husky": "4.3.8",
+    "lint-staged": "^11.0.0",
     "listr": "^0.14.3",
     "listr-input": "^0.2.1",
     "microbundle": "^0.13.3",
