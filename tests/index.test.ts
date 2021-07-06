@@ -56,18 +56,18 @@ describe("createCanvasContext", () => {
     const PROVIDED_HEIGHT = 100
 
     const [, canvas] = createCanvasContext("2d", {
-      width: PROVIDED_WIDTH,
-      height: PROVIDED_HEIGHT
+      height: PROVIDED_HEIGHT,
+      width: PROVIDED_WIDTH
     })
     const [, providedCanvas] = createCanvasContext("2d", {
       canvas: document.createElement("canvas"),
-      width: PROVIDED_WIDTH,
-      height: PROVIDED_HEIGHT
+      height: PROVIDED_HEIGHT,
+      width: PROVIDED_WIDTH
     })
     const [, offscreenCanvas] = createCanvasContext("2d", {
+      height: PROVIDED_HEIGHT,
       offscreen: true,
-      width: PROVIDED_WIDTH,
-      height: PROVIDED_HEIGHT
+      width: PROVIDED_WIDTH
     })
 
     expect(canvas?.width).toBe(PROVIDED_WIDTH)

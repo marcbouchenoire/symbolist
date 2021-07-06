@@ -14,9 +14,9 @@ const DEFAULT_HEIGHT = 150
 
 interface Options {
   canvas?: HTMLCanvasElement | OffscreenCanvas
+  height?: number
   offscreen?: boolean
   width?: number
-  height?: number
 }
 
 const defaultOptions: Options = {
