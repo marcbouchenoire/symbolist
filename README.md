@@ -2,7 +2,7 @@
 
 🔣 ️A collection of every symbol from SF Symbols.
 
-[![npm](https://img.shields.io/npm/v/ios-symbols?color=%230cf)](https://www.npmjs.com/package/ios-symbols) [![gzipped](https://img.shields.io/bundlephobia/minzip/ios-symbols?label=gzipped&color=%2385f)](https://www.npmjs.com/package/ios-symbols) [![license](https://img.shields.io/github/license/bouchenoiremarc/ios-symbols?color=%23e4b)](https://github.com/bouchenoiremarc/ios-symbols/blob/main/LICENSE)
+[![build](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/ios-symbols?color=%230cf)](https://www.npmjs.com/package/ios-symbols) [![gzipped](https://img.shields.io/bundlephobia/minzip/ios-symbols?label=gzipped&color=%2385f)](https://www.npmjs.com/package/ios-symbols) [![license](https://img.shields.io/github/license/bouchenoiremarc/ios-symbols?color=%23e4b)](https://github.com/bouchenoiremarc/ios-symbols/blob/main/LICENSE)
 
 ## Introduction
 
