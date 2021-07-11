@@ -2,7 +2,7 @@
 
 🎨 Create a canvas and get a rendering context from it.
 
-[![npm](https://img.shields.io/npm/v/create-canvas-context?color=%2385f)](https://www.npmjs.com/package/create-canvas-context) [![gzipped](https://img.shields.io/bundlephobia/minzip/create-canvas-context?label=gzipped&color=%23d5e)](https://www.npmjs.com/package/create-canvas-context) [![license](https://img.shields.io/github/license/bouchenoiremarc/create-canvas-context?color=%23e48)](https://github.com/bouchenoiremarc/create-canvas-context/blob/main/LICENSE)
+[![build](https://github.com/bouchenoiremarc/ios-dimensions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/create-canvas-context/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/create-canvas-context?color=%230cf)](https://www.npmjs.com/package/create-canvas-context) [![gzipped](https://img.shields.io/bundlephobia/minzip/create-canvas-context?label=gzipped&color=%2385f)](https://www.npmjs.com/package/create-canvas-context) [![license](https://img.shields.io/github/license/bouchenoiremarc/create-canvas-context?color=%23e4b)](https://github.com/bouchenoiremarc/create-canvas-context/blob/main/LICENSE)
 
 ## Installation
 
