@@ -8,10 +8,10 @@ export function getSymbol(name: SymbolName): string | undefined {
   return (data as Symbols)[name]
 }
 
-export function getSymbolName(symbol: string): string | undefined {
+export function getSymbolName(symbol: string): SymbolName | undefined {
   return Object.keys(data as Symbols).find(
     (name) => (data as Symbols)[name as SymbolName] === symbol
-  )
+  ) as SymbolName | undefined
 }
 
 export { Symbols } from "./types"
