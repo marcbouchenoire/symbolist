@@ -1085,22 +1085,24 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bouchenoiremarc/eslint-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/eslint-config/-/eslint-config-1.0.0.tgz#72c22dbbe3c766d980a164aaad01e6f1b66b3670"
-  integrity sha512-5sMk1AHS2slat7Rveao0tJeHorUgN2A/uJFLOlfd2DWBfulaESRcLf5kdEnV98EhzI5hTRCmGa8e8i/tXyP1VA==
+"@bouchenoiremarc/eslint-config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/eslint-config/-/eslint-config-1.1.0.tgz#3a81b77aa4be5e4d5c0fb7de85645f58ee56e22f"
+  integrity sha512-XUjtMvU2HO0Fv1RdpwkWwYA95Wx34MyHgZULRWCPzgbo3dMpHRifj8V3e2hMHMgZGVAGW9qKHbpAJZCubWiO1g==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.28.2"
     "@typescript-eslint/parser" "^4.28.2"
     eslint-config-prettier "^8.3.0"
     eslint-import-resolver-typescript "^2.4.0"
     eslint-plugin-import "^2.23.4"
+    eslint-plugin-jest "^24.3.6"
     eslint-plugin-prettier "^3.4.0"
     eslint-plugin-react "^7.24.0"
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-sort-keys-fix "^1.1.1"
     eslint-plugin-typescript-sort-keys "^1.7.0"
     eslint-plugin-unicorn "^34.0.1"
+    husky "4.3.8"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -1855,7 +1857,7 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/experimental-utils@4.28.2":
+"@typescript-eslint/experimental-utils@4.28.2", "@typescript-eslint/experimental-utils@^4.0.1":
   version "4.28.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.28.2.tgz#4ebdec06a10888e9326e1d51d81ad52a361bd0b0"
   integrity sha512-MwHPsL6qo98RC55IoWWP8/opTykjTp4JzfPu1VfO2Z0MshNP0UZ1GEV5rYSSnZSUI8VD7iHvtIPVGW5Nfh7klQ==
@@ -3735,6 +3737,13 @@ eslint-plugin-import@^2.23.4:
     read-pkg-up "^3.0.0"
     resolve "^1.20.0"
     tsconfig-paths "^3.9.0"
+
+eslint-plugin-jest@^24.3.6:
+  version "24.3.6"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.3.6.tgz#5f0ca019183c3188c5ad3af8e80b41de6c8e9173"
+  integrity sha512-WOVH4TIaBLIeCX576rLcOgjNXqP+jNlCiEmRgFTfQtJ52DpwnIQKAVGlGPAN7CZ33bW6eNfHD6s8ZbEUTQubJg==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^4.0.1"
 
 eslint-plugin-prettier@^3.4.0:
   version "3.4.0"

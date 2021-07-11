@@ -29,12 +29,10 @@ interface ContextsAttributes {
   webgl2: WebGLContextAttributes
 }
 
-export type ContextRenderingContext<
-  T extends ContextType
-> = ContextsRenderingContext[T]
+export type ContextRenderingContext<T extends ContextType> =
+  ContextsRenderingContext[T]
 
-export type OffscreenContextRenderingContext<
-  T extends ContextType
-> = OffscreenContextsRenderingContext[T]
+export type OffscreenContextRenderingContext<T extends ContextType> =
+  OffscreenContextsRenderingContext[T]
 
 export type ContextAttributes<T extends ContextType> = ContextsAttributes[T]

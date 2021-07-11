@@ -1,3 +1,6 @@
 {
-  "extends": "@bouchenoiremarc/eslint-config"
+  "extends": [
+    "@bouchenoiremarc/eslint-config",
+    "@bouchenoiremarc/eslint-config/jest"
+  ]
 }

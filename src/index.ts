@@ -73,7 +73,13 @@ export function createCanvasContext<T extends ContextType>(
   type: T,
   options: Options | ContextAttributes<T> = defaultOptions
 ) {
-  const { canvas: optionsCanvas, offscreen, width, height, ...attributes } = {
+  const {
+    canvas: optionsCanvas,
+    offscreen,
+    width,
+    height,
+    ...attributes
+  } = {
     ...defaultOptions,
     ...options
   }
