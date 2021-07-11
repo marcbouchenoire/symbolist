@@ -6,7 +6,7 @@ describe("getSymbol", () => {
   })
 
   test("should return undefined for unknown symbols", () => {
-    expect(getSymbol("scribble.variable.fill" as any)).toBe(undefined)
+    expect(getSymbol("scribble.variable.fill" as any)).toBeUndefined()
   })
 })
 
@@ -16,6 +16,6 @@ describe("getSymbolName", () => {
   })
 
   test("should return undefined for unknown symbols", () => {
-    expect(getSymbolName("🥳")).toBe(undefined)
+    expect(getSymbolName("🥳")).toBeUndefined()
   })
 })
