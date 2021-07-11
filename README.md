@@ -85,3 +85,7 @@ Symbols are extracted with the `generate` command—using the [SF Symbols](https
 `generate` prepares types along its symbols which means `getSymbol` and `getSymbolName` will validate symbol names when using TypeScript.
 
 <img src=".github/types@2x.png" width="620" height="296">
+
+## Related
+
+[📏 ios-dimensions](https://github.com/bouchenoiremarc/ios-dimensions): A collection of dimensions from iOS.
