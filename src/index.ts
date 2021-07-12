@@ -14,4 +14,5 @@ export function getSymbolName(symbol: string): SymbolName | undefined {
   ) as SymbolName | undefined
 }
 
+export { SymbolName } from "./data/types"
 export { Symbols } from "./types"
