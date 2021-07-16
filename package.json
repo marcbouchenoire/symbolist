@@ -37,13 +37,13 @@
   "scripts": {
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
-    "lint": "eslint '**/*.{ts,tsx}' --fix",
+    "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",
     "prepare": "rimraf dist && yarn build",
     "release": "yarn login && np",
     "test": "jest"
   },
   "devDependencies": {
-    "@bouchenoiremarc/eslint-config": "^1.1.0",
+    "@bouchenoiremarc/eslint-config": "^1.3.0",
     "@swc-node/jest": "^1.3.1",
     "@types/jest": "^26.0.20",
     "eslint": "^7.30.0",
