@@ -994,10 +994,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bouchenoiremarc/eslint-config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/eslint-config/-/eslint-config-1.1.0.tgz#3a81b77aa4be5e4d5c0fb7de85645f58ee56e22f"
-  integrity sha512-XUjtMvU2HO0Fv1RdpwkWwYA95Wx34MyHgZULRWCPzgbo3dMpHRifj8V3e2hMHMgZGVAGW9qKHbpAJZCubWiO1g==
+"@bouchenoiremarc/eslint-config@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/eslint-config/-/eslint-config-1.3.0.tgz#926f31c237af6a0dd837217d6bf5e999e9da60d8"
+  integrity sha512-zIxOdod6Yer9mAGdR6N51cctcdvk+TeQSymAAN/ME7IJtEcaWaRQffii9ylecC/NHZaG530eOOMy5h6N7l/GUg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.28.2"
     "@typescript-eslint/parser" "^4.28.2"
@@ -1011,6 +1011,7 @@
     eslint-plugin-sort-keys-fix "^1.1.1"
     eslint-plugin-typescript-sort-keys "^1.7.0"
     eslint-plugin-unicorn "^34.0.1"
+    eslint-plugin-unused-imports "^1.1.2"
     husky "4.3.8"
 
 "@eslint/eslintrc@^0.4.2":
@@ -3190,6 +3191,18 @@ eslint-plugin-unicorn@^34.0.1:
     reserved-words "^0.1.2"
     safe-regex "^2.1.1"
     semver "^7.3.5"
+
+eslint-plugin-unused-imports@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-1.1.2.tgz#de94bbf744183c0deb4a20aa5a358cd85ce28832"
+  integrity sha512-dfiCZiv/lSkOp6/JIjP+ASIs1vxLgiN1NISM+oxcO799+FEZQXy0Se1CaAHQt4BCInBOJ9LK0ILCe1lMMI+YGA==
+  dependencies:
+    eslint-rule-composer "^0.3.0"
+
+eslint-rule-composer@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-rule-composer/-/eslint-rule-composer-0.3.0.tgz#79320c927b0c5c0d3d3d2b76c8b4a488f25bbaf9"
+  integrity sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==
 
 eslint-scope@^5.0.0, eslint-scope@^5.1.1:
   version "5.1.1"
