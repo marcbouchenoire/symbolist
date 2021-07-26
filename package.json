@@ -17,11 +17,15 @@
   "sideEffects": false,
   "source": "./src/index.ts",
   "main": "./dist/create-canvas-context.js",
-  "umd:main": "./dist/create-canvas-context.umd.js",
+  "unpkg": "./dist/create-canvas-context.umd.js",
   "module": "./dist/create-canvas-context.module.js",
-  "exports": "./dist/create-canvas-context.modern.js",
-  "esmodule": "./dist/create-canvas-context.modern.js",
-  "esnext": "./dist/create-canvas-context.modern.js",
+  "exports": {
+    ".": {
+      "require": "./dist/create-canvas-context.js",
+      "import": "./dist/create-canvas-context.modern.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "types": "./dist/index.d.ts",
   "lint-staged": {
     "**/*.{ts,tsx}": [
