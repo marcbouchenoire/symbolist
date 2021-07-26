@@ -18,11 +18,15 @@
   "sideEffects": false,
   "source": "./src/index.ts",
   "main": "./dist/ios-symbols.js",
-  "umd:main": "./dist/ios-symbols.umd.js",
+  "unpkg": "./dist/ios-symbols.umd.js",
   "module": "./dist/ios-symbols.module.js",
-  "exports": "./dist/ios-symbols.modern.js",
-  "esmodule": "./dist/ios-symbols.modern.js",
-  "esnext": "./dist/ios-symbols.modern.js",
+  "exports": {
+    ".": {
+      "require": "./dist/ios-symbols.js",
+      "import": "./dist/ios-symbols.modern.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "types": "./dist/index.d.ts",
   "lint-staged": {
     "**/*.{ts,tsx}": [
