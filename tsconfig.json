@@ -1,5 +1,5 @@
 {
-  "include": ["scripts", "src", "tests"],
+  "include": ["declarations.d.ts", "scripts", "src", "tests"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
