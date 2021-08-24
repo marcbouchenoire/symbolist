@@ -1,0 +1,120 @@
+.page {
+  position: absolute;
+  display: grid;
+  margin-right: calc(var(--leva-width) + var(--leva-margin));
+  grid-template-rows: var(--header-height) 1fr;
+  inset: 0;
+
+  @media (max-width: 820px) {
+    margin-right: 0px;
+
+    & > div[class^="leva"] {
+      display: none !important;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  padding: 0 20px;
+  place-items: center;
+
+  &:after {
+    position: absolute;
+    right: 20px;
+    bottom: -2px;
+    left: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.04);
+    content: "";
+  }
+}
+
+.headings {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  margin-right: 20px;
+  gap: 6px;
+
+  h1,
+  p {
+    overflow: hidden;
+    padding: 0.2em 0;
+    margin: 0;
+    line-height: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  h1 {
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p {
+    color: #555;
+    font-size: 14px;
+  }
+}
+
+.links {
+  flex: none;
+  margin-left: auto;
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+    list-style: none;
+  }
+}
+
+.link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 50%;
+  transition: opacity 0.2s ease-in-out;
+
+  &:before {
+    position: absolute;
+    background: currentColor;
+    content: "";
+    inset: 0;
+    opacity: 0.08;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.github {
+  color: #222;
+}
+
+.npm {
+  color: #c00;
+}
+
+.main {
+  position: relative;
+  display: grid;
+  padding: 20px;
+  contain: style;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  place-content: start;
+}

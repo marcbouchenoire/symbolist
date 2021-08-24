@@ -1,0 +1,67 @@
+{
+  "name": "ios-symbols",
+  "version": "1.0.1",
+  "description": "A collection of every symbol from SF Symbols.",
+  "author": "Marc Bouchenoire",
+  "license": "MIT",
+  "repository": "https://github.com/bouchenoiremarc/ios-symbols",
+  "keywords": [
+    "ios",
+    "symbols",
+    "icons",
+    "font"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/ios-symbols.js",
+  "unpkg": "./dist/ios-symbols.umd.js",
+  "module": "./dist/ios-symbols.module.js",
+  "exports": {
+    ".": {
+      "require": "./dist/ios-symbols.js",
+      "import": "./dist/ios-symbols.modern.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "build": "microbundle --tsconfig tsconfig.build.json",
+    "clean": "jest --clearCache && rimraf node_modules",
+    "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",
+    "generate": "node -r esbuild-register scripts/generate.ts",
+    "prepare": "rimraf dist && yarn build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/listr": "^0.14.3",
+    "@types/prettier": "^2.3.1",
+    "@types/write-file-atomic": "^3.0.2",
+    "app-exists": "^2.1.1",
+    "chalk": "^4.1.1",
+    "clipboardy": "^2.3.0",
+    "esbuild-register": "^2.6.0",
+    "jest": "^27.0.6",
+    "listr": "^0.14.3",
+    "listr-input": "^0.2.1",
+    "microbundle": "^0.13.3",
+    "ts-jest": "^27.0.3",
+    "write-file-atomic": "^3.0.3",
+    "write-json-file": "^4.3.0"
+  }
+}

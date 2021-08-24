@@ -1,0 +1,50 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  word-break: break-word;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  max-width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}

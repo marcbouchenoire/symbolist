@@ -1,12 +1,16 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "eslint.validate": ["typescript", "typescriptreact"],
+  "eslint.workingDirectories": ["packages/site", "packages/ios-symbols"],
   "files.exclude": {
     "node_modules": true,
     "yarn.lock": true
-  }
+  },
+  "stylelint.enable": true,
+  "stylelint.validate": ["scss"]
 }

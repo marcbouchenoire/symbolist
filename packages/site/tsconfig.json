@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig",
+  "include": ["next-env.d.ts", "src"],
+  "compilerOptions": {
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  }
+}

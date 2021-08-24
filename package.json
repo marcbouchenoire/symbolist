@@ -1,78 +1,34 @@
 {
-  "name": "ios-symbols",
-  "version": "1.0.1",
-  "description": "A collection of every symbol from SF Symbols.",
-  "author": "Marc Bouchenoire",
-  "license": "MIT",
-  "repository": "https://github.com/bouchenoiremarc/ios-symbols",
-  "keywords": [
-    "ios",
-    "symbols",
-    "icons",
-    "font"
-  ],
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": false,
-  "source": "./src/index.ts",
-  "main": "./dist/ios-symbols.js",
-  "unpkg": "./dist/ios-symbols.umd.js",
-  "module": "./dist/ios-symbols.module.js",
-  "exports": {
-    ".": {
-      "require": "./dist/ios-symbols.js",
-      "import": "./dist/ios-symbols.modern.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "types": "./dist/index.d.ts",
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
+  "name": "root",
+  "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lerna run --concurrency 1 --stream precommit --since HEAD --exclude-dependents"
     }
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "microbundle --tsconfig tsconfig.build.json",
-    "clean": "jest --clearCache && rimraf node_modules",
-    "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",
-    "generate": "node -r esbuild-register scripts/generate.ts",
-    "prepare": "rimraf dist && yarn build",
-    "release": "yarn login && np",
-    "test": "jest"
+    "site:dev": "yarn workspace site dev",
+    "site:build": "yarn workspace site build",
+    "generate": "yarn workspace ios-symbols generate",
+    "build": "yarn workspace ios-symbols build",
+    "lint": "lerna run lint --stream",
+    "test": "lerna run test --stream",
+    "prepare": "lerna run prepare --stream",
+    "clean": "lerna run clean"
   },
   "devDependencies": {
-    "@bouchenoiremarc/eslint-config": "^1.3.0",
-    "@types/jest": "^26.0.24",
-    "@types/listr": "^0.14.3",
-    "@types/node": "^16.4.3",
-    "@types/prettier": "^2.3.1",
+    "@bouchenoiremarc/eslint-config": "^1.5.4",
+    "@types/node": "^16.4.2",
     "@types/rimraf": "^3.0.0",
-    "@types/write-file-atomic": "^3.0.2",
-    "app-exists": "^2.1.1",
-    "chalk": "^4.1.1",
-    "clipboardy": "^2.3.0",
-    "esbuild-register": "^2.6.0",
     "eslint": "^7.30.0",
     "husky": "4.3.8",
-    "jest": "^27.0.6",
+    "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
-    "listr": "^0.14.3",
-    "listr-input": "^0.2.1",
-    "microbundle": "^0.13.3",
-    "np": "^7.5.0",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^27.0.3",
-    "typescript": "^4.3.5",
-    "write-file-atomic": "^3.0.3",
-    "write-json-file": "^4.3.0"
+    "typescript": "^4.3.5"
   }
 }
