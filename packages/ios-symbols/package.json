@@ -31,6 +31,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
+      "tsc-mixed --project tsconfig.json",
       "prettier --write"
     ]
   },
@@ -40,6 +41,7 @@
     }
   },
   "scripts": {
+    "precommit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
     "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",

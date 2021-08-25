@@ -5,6 +5,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
+      "tsc-mixed --project tsconfig.json",
       "prettier --write"
     ],
     "**/*.scss": [
