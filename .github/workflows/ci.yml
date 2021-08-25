@@ -10,82 +10,20 @@ concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  cache:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout commit
-        uses: actions/checkout@v2
-      - name: Prepare Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
-      - name: Install dependencies
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-        run: yarn install --force --non-interactive --ignore-scripts
-  lint:
-    runs-on: ubuntu-latest
-    needs: cache
-    steps:
-      - name: Checkout commit
-        uses: actions/checkout@v2
-      - name: Prepare Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - name: Restore dependencies
-        uses: actions/cache@v2
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
-      - name: Lint files
-        run: yarn lint
-  test:
+  main:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: cache
     steps:
       - name: Checkout commit
         uses: actions/checkout@v2
       - name: Prepare Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Restore dependencies
-        uses: actions/cache@v2
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
+          cache: "yarn"
+      - name: Install dependencies and build
+        run: yarn install
+      - name: Lint files
+        run: yarn lint
       - name: Run tests
         run: yarn test
-  build:
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - test
-    steps:
-      - name: Checkout commit
-        uses: actions/checkout@v2
-      - name: Prepare Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - name: Restore dependencies
-        uses: actions/cache@v2
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
-      - name: Run build
-        run: yarn build
