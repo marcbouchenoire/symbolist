@@ -30,6 +30,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
+      "tsc-mixed --project tsconfig.json",
       "prettier --write"
     ]
   },
@@ -41,7 +42,10 @@
   "scripts": {
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
-    "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",
+    "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
+    "lint:eslint": "eslint '**/*.{ts,tsx}' --fix",
+    "lint:prettier": "prettier --write '**/*.{ts,tsx}' --loglevel silent",
+    "lint:tsc": "tsc --project tsconfig.json",
     "prepare": "rimraf dist && yarn build",
     "release": "yarn login && np",
     "test": "jest"
@@ -59,6 +63,7 @@
     "np": "^7.4.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "tsc-mixed": "^1.0.0",
     "typescript": "^4.1.3"
   }
 }

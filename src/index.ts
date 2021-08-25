@@ -36,42 +36,42 @@ function createCanvas(offscreen: boolean) {
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
-    | (Options & { canvas?: undefined; offscreen?: false })
     | ContextAttributes<T>
+    | (Options & { canvas?: undefined; offscreen?: false })
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement | null]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
-    | (Options & { canvas?: undefined; offscreen: true })
     | ContextAttributes<T>
+    | (Options & { canvas?: undefined; offscreen: true })
 ): [
-  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null,
+  ContextRenderingContext<T> | OffscreenContextRenderingContext<T> | null,
   HTMLCanvasElement | OffscreenCanvas | null
 ]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
-    | (Options & { canvas: HTMLCanvasElement; offscreen?: false })
     | ContextAttributes<T>
+    | (Options & { canvas: HTMLCanvasElement; offscreen?: false })
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
-    | (Options & { canvas: HTMLCanvasElement; offscreen: true })
     | ContextAttributes<T>
+    | (Options & { canvas: HTMLCanvasElement; offscreen: true })
 ): [
-  OffscreenContextRenderingContext<T> | ContextRenderingContext<T> | null,
+  ContextRenderingContext<T> | OffscreenContextRenderingContext<T> | null,
   HTMLCanvasElement | OffscreenCanvas
 ]
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
-    | (Options & { canvas: OffscreenCanvas; offscreen?: true })
     | ContextAttributes<T>
+    | (Options & { canvas: OffscreenCanvas; offscreen?: true })
 ): [OffscreenContextRenderingContext<T> | null, OffscreenCanvas]
 export function createCanvasContext<T extends ContextType>(
   type: T,
-  options: Options | ContextAttributes<T> = defaultOptions
+  options: ContextAttributes<T> | Options = defaultOptions
 ) {
   const {
     canvas: optionsCanvas,
