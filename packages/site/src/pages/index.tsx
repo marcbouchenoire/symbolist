@@ -121,7 +121,7 @@ function Page({ version }: Props) {
   const withSFPro = useSupportedFont(fonts["SF Pro"])
   const withToast = useMemo(() => {
     return isBoolean(withSFCompact) && isBoolean(withSFPro)
-      ? !withSFCompact || withSFPro // TODO
+      ? !withSFCompact || !withSFPro
       : false
   }, [withSFCompact, withSFPro])
 
