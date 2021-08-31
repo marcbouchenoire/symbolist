@@ -34,8 +34,8 @@ const symbols = getSymbols()
 
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 const fonts = {
-  "SF Pro": `"SF Pro", "SF Pro Display", "SF Pro Text", "SF Pro Rounded", sans-serif`,
-  "SF Compact": `"SF Compact", "SF Compact Display", "SF Compact Text", "SF Compact Rounded", sans-serif`
+  "SF Pro": `"SF Pro", "SF Pro Display", "SF Pro Text", "SF Pro Rounded"`,
+  "SF Compact": `"SF Compact", "SF Compact Display", "SF Compact Text", "SF Compact Rounded"`
 }
 /* eslint-enable sort-keys-fix/sort-keys-fix */
 
