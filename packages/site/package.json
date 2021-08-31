@@ -5,7 +5,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
-      "tsc-mixed --project tsconfig.json",
+      "tsc-mixed --project tsconfig.json next-env.d.ts",
       "prettier --write"
     ],
     "**/*.scss": [
@@ -18,7 +18,11 @@
     "dev": "next dev",
     "build": "next build",
     "clean": "rimraf node_modules",
-    "lint": "eslint '**/*.{ts,tsx}' --fix && stylelint '**/*.scss' --fix --syntax scss && prettier --write '**/*.{ts,tsx,scss}'"
+    "lint": "yarn lint:eslint & yarn lint:stylelint && yarn lint:tsc && yarn lint:prettier",
+    "lint:eslint": "eslint '**/*.{ts,tsx}' --fix",
+    "lint:prettier": "prettier --write '**/*.{ts,tsx}' --loglevel silent",
+    "lint:stylelint": "stylelint '**/*.scss' --fix --syntax scss",
+    "lint:tsc": "tsc --project tsconfig.json"
   },
   "dependencies": {
     "clsx": "^1.1.1",
@@ -32,13 +36,15 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/css-font-loading-module": "^0.0.6",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "sass": "^1.36.0",
     "stylelint": "^13.13.1",
+    "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-scss": "^3.20.1"
   }
 }

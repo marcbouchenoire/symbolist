@@ -29,6 +29,7 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
+    "tsc-mixed": "^1.0.0",
     "typescript": "^4.3.5"
   }
 }

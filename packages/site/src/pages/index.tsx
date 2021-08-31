@@ -1,13 +1,21 @@
 import clsx from "clsx"
-import { motion, useMotionValue } from "framer-motion"
+import { AnimatePresence, motion, useMotionValue } from "framer-motion"
 import debounce from "just-debounce-it"
 import { button, Leva, LevaInputs, useControls } from "leva"
+import { GetStaticProps } from "next"
 import { useEffect, CSSProperties, useMemo, memo, useCallback } from "react"
-import { Preview } from "../components/Preview"
-import { HEADER_HEIGHT, LEVA_MARGIN, LEVA_WIDTH } from "../constants"
+import pkg from "../../../ios-symbols/package.json"
+import { Cell } from "../components/Cell"
+import { LEVA_MARGIN, LEVA_WIDTH } from "../constants"
+import { isBoolean } from "../guards"
+import { useSupportedFont } from "../hooks/use-supported-font"
 import { theme } from "../leva/theme"
 import { getSymbols } from "../utils/get-symbols"
 import styles from "./index.module.scss"
+
+interface Props {
+  version: string
+}
 
 const APPEARANCE_FOLDER = "Appearance"
 const DEBOUNCE_DELAY = 280
@@ -97,7 +105,7 @@ const AppearanceControls = memo(({ onChange }: AppearanceControlsProps) => {
   return null
 })
 
-function Page() {
+function Page({ version }: Props) {
   const color = useMotionValue(DEFAULT_COLOR)
   const font = useMotionValue(DEFAULT_FONT)
   const weight = useMotionValue(DEFAULT_WEIGHT)
@@ -108,6 +116,14 @@ function Page() {
       value: ""
     }
   })
+
+  const withSFCompact = useSupportedFont(fonts["SF Compact"])
+  const withSFPro = useSupportedFont(fonts["SF Pro"])
+  const withToast = useMemo(() => {
+    return isBoolean(withSFCompact) && isBoolean(withSFPro)
+      ? !withSFCompact || withSFPro // TODO
+      : false
+  }, [withSFCompact, withSFPro])
 
   const filteredSymbols = useMemo(() => {
     if (!search) return symbols
@@ -133,7 +149,6 @@ function Page() {
       className={styles.page}
       style={
         {
-          "--header-height": `${HEADER_HEIGHT}px`,
           "--leva-margin": `${LEVA_MARGIN}px`,
           "--leva-width": `${LEVA_WIDTH}px`
         } as CSSProperties
@@ -143,7 +158,17 @@ function Page() {
       <AppearanceControls onChange={handleAppearanceChange} />
       <header className={styles.header}>
         <div className={styles.headings}>
-          <h1>ios-symbols</h1>
+          <h1>
+            ios-symbols{" "}
+            <a
+              className={styles.version}
+              href={`https://github.com/bouchenoiremarc/ios-symbols/releases/tag/v${version}`}
+              rel="noreferrer"
+              target="_blank"
+            >
+              v{version}
+            </a>
+          </h1>
           <p>🔣 ️A collection of every symbol from SF Symbols.</p>
         </div>
         <nav className={styles.links}>
@@ -175,7 +200,24 @@ function Page() {
               >
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M24 12c0 10.7-1.3 12-12 12C1.4 24 .03 22.73 0 12.33V12C0 1.4 1.27.03 11.67 0H12c10.7 0 12 1.3 12 12zM5.02 5L5 19h7V8.5h3.5V19H19V5.02L5.02 5z"
+                    d="M24 12c0 10.7-1.3 12-12 12C1.4 24 .03 22.73 0 12.33V12C0 1.4 1.27.03 11.67 0H12c10.7 0 12 1.3 12 12zM6.02 6L6 18h6V9h3v9h3V6.02L6.02 6z"
+                    fill="currentColor"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="twitter"
+                className={clsx(styles.link, styles.twitter)}
+                href="https://twitter.com/bouchenoiremarc"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M24 12c0 10.7-1.3 12-12 12C1.4 24 .03 22.73 0 12.33V12C0 1.4 1.27.03 11.67 0H12c10.7 0 12 1.3 12 12zm-6.22-5.33a3.29 3.29 0 00-4.03-.8 3.14 3.14 0 00-1.57 3.73 9.5 9.5 0 01-6.82-3.4 3.26 3.26 0 00.87 4.25c-.46.01-.92-.07-1.35-.24a3.33 3.33 0 002.75 3.13c-.48.14-1 .17-1.5.09a3.37 3.37 0 002.8 2.22 6.97 6.97 0 01-4.68 1.42 9.6 9.6 0 009.8.17A9.17 9.17 0 0018.7 8.8a3.1 3.1 0 001.55-1.66c-.6.28-1.23.46-1.89.52a3.09 3.09 0 001.5-1.8c-.63.4-1.33.68-2.08.8z"
                     fill="currentColor"
                     fillRule="evenodd"
                   />
@@ -196,11 +238,56 @@ function Page() {
         }
       >
         {filteredSymbols.map((symbol, index) => (
-          <Preview key={index} {...symbol} />
+          <Cell key={index} {...symbol} />
         ))}
       </motion.main>
+      <AnimatePresence>
+        {withToast && (
+          <motion.div
+            animate="visible"
+            className={styles.toasts}
+            exit="hidden"
+            initial="hidden"
+          >
+            <motion.div
+              className={styles.toast}
+              transition={{ bounce: 0.2, duration: 0.6, type: "spring" }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  translateY: 20
+                },
+                visible: {
+                  opacity: 1,
+                  translateY: 0
+                }
+              }}
+            >
+              <p className={styles.label}>
+                SF Symbols aren’t available<span> on your device</span>.
+              </p>{" "}
+              <a
+                className={styles.button}
+                href="https://developer.apple.com/fonts/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Learn more
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
 
 export default Page
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      version: pkg.version ?? ""
+    }
+  }
+}
