@@ -3,7 +3,8 @@ import {
   ContextAttributes,
   ContextRenderingContext,
   ContextType,
-  OffscreenContextRenderingContext
+  OffscreenContextRenderingContext,
+  OffscreenContextType
 } from "./types"
 import { isBrowser } from "./utils/is-browser"
 import { returnIf } from "./utils/return-if"
@@ -39,7 +40,7 @@ export function createCanvasContext<T extends ContextType>(
     | ContextAttributes<T>
     | (Options & { canvas?: undefined; offscreen?: false })
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement | null]
-export function createCanvasContext<T extends ContextType>(
+export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
@@ -54,7 +55,7 @@ export function createCanvasContext<T extends ContextType>(
     | ContextAttributes<T>
     | (Options & { canvas: HTMLCanvasElement; offscreen?: false })
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement]
-export function createCanvasContext<T extends ContextType>(
+export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
@@ -63,16 +64,15 @@ export function createCanvasContext<T extends ContextType>(
   ContextRenderingContext<T> | OffscreenContextRenderingContext<T> | null,
   HTMLCanvasElement | OffscreenCanvas
 ]
-export function createCanvasContext<T extends ContextType>(
+export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
     | (Options & { canvas: OffscreenCanvas; offscreen?: true })
 ): [OffscreenContextRenderingContext<T> | null, OffscreenCanvas]
-export function createCanvasContext<T extends ContextType>(
-  type: T,
-  options: ContextAttributes<T> | Options = defaultOptions
-) {
+export function createCanvasContext<
+  T extends ContextType | OffscreenContextType
+>(type: T, options: ContextAttributes<T> | Options = defaultOptions) {
   const {
     canvas: optionsCanvas,
     offscreen,
@@ -102,7 +102,9 @@ export function createCanvasContext<T extends ContextType>(
     }
   }
 
-  const context = isCanvas(canvas) ? canvas.getContext(type, attributes) : null
+  const context = isCanvas(canvas)
+    ? canvas.getContext(type as OffscreenContextType, attributes)
+    : null
 
   return [context, canvas]
 }

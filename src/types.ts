@@ -8,6 +8,8 @@ export type PlainFunction<P = any, R = any> = (...args: P[]) => R
 
 export type ContextType = "2d" | "bitmaprenderer" | "webgl" | "webgl2"
 
+export type OffscreenContextType = "2d"
+
 interface ContextsRenderingContext {
   "2d": CanvasRenderingContext2D
   bitmaprenderer: ImageBitmapRenderingContext
