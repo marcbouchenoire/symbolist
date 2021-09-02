@@ -57,7 +57,7 @@
     "app-exists": "^2.1.1",
     "chalk": "^4.1.1",
     "clipboardy": "^2.3.0",
-    "esbuild-register": "^2.6.0",
+    "esbuild-register": "^3.0.0",
     "jest": "^27.0.6",
     "listr": "^0.14.3",
     "listr-input": "^0.2.1",
