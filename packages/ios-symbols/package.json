@@ -64,6 +64,6 @@
     "microbundle": "^0.13.3",
     "ts-jest": "^27.0.3",
     "write-file-atomic": "^3.0.3",
-    "write-json-file": "^4.3.0"
+    "write-json-file": "^5.0.0"
   }
 }
