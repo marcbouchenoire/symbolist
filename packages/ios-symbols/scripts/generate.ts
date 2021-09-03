@@ -2,7 +2,8 @@ import withApp from "app-exists"
 import Listr from "listr"
 import * as prettier from "prettier"
 import writeFile from "write-file-atomic"
-import writeJSON from "write-json-file"
+import { writeJsonFile } from "write-json-file"
+import { SymbolName } from "../src"
 import { Symbols } from "../src/types"
 import { isMacOS } from "./utils/is-macOS"
 import { ListrClipboard } from "./utils/listr-clipboard"
@@ -82,7 +83,7 @@ const tasks = new Listr([
         const symbols = {} as Symbols
 
         for (const [index, name] of context.names.entries()) {
-          symbols[name] = context.characters[index]
+          symbols[name as SymbolName] = context.characters[index]
         }
 
         context.symbols = symbols
@@ -95,7 +96,7 @@ const tasks = new Listr([
       return new Listr([
         {
           task: async (context: Context) => {
-            await writeJSON(SYMBOLS, context.symbols, { sortKeys: true })
+            await writeJsonFile(SYMBOLS, context.symbols, { sortKeys: true })
           },
           title: "Generating symbols"
         },
@@ -140,7 +141,7 @@ const tasks = new Listr([
               },
               {
                 task: async (context: Context) => {
-                  await writeJSON(LOGS, {
+                  await writeJsonFile(LOGS, {
                     length: context.names.length,
                     version: context.version
                   })
