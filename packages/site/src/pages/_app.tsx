@@ -9,6 +9,13 @@ function App({ Component, pageProps }: AppProps) {
       <NextSeo
         description="A collection of every symbol from SF Symbols."
         openGraph={{
+          images: [
+            {
+              height: 620,
+              url: "https://www.marcbouchenoire.com/api/screenshot/capture/https%3A%2F%2Fwww.marcbouchenoire.com%2Fios-symbols?width=1200&height=620",
+              width: 1200
+            }
+          ],
           profile: {
             firstName: "Marc",
             lastName: "Bouchenoire",

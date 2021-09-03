@@ -4,6 +4,8 @@
 
 [![build](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/ios-symbols?color=%230cf)](https://www.npmjs.com/package/ios-symbols) [![gzipped](https://img.shields.io/bundlephobia/minzip/ios-symbols?label=gzipped&color=%2385f)](https://www.npmjs.com/package/ios-symbols) [![license](https://img.shields.io/github/license/bouchenoiremarc/ios-symbols?color=%23e4b)](https://github.com/bouchenoiremarc/ios-symbols/blob/main/LICENSE)
 
+<img src="https://www.marcbouchenoire.com/api/screenshot/https%3A%2F%2Fwww.marcbouchenoire.com%2Fios-symbols?viewport.width=1240&viewport.height=800&radius=16" width="620" height="400" />
+
 🔗 Explore and preview symbols in the [playground](https://www.marcbouchenoire.com/ios-symbols).
 
 ## Introduction
