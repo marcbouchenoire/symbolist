@@ -45,7 +45,10 @@
     "precommit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
-    "lint": "eslint '**/*.{ts,tsx}' --fix && prettier --write '**/*.{ts,tsx}'",
+    "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
+    "lint:eslint": "eslint '**/*.{ts,tsx}' --fix",
+    "lint:prettier": "prettier --write '**/*.{ts,tsx}' --loglevel silent",
+    "lint:tsc": "tsc --project tsconfig.json",
     "generate": "node -r esbuild-register scripts/generate.ts",
     "prepare": "rimraf dist && yarn build",
     "test": "jest"
