@@ -2,6 +2,9 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: "/"
-    open-pull-requests-limit: 10
     schedule:
-      interval: "monthly"
+      interval: "daily"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "husky"
