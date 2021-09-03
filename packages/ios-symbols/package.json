@@ -50,7 +50,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/listr": "^0.14.3",
     "@types/prettier": "^2.3.1",
     "@types/write-file-atomic": "^3.0.2",
