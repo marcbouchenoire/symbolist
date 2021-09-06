@@ -42,7 +42,7 @@
     }
   },
   "scripts": {
-    "precommit": "lint-staged",
+    "pre-commit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",

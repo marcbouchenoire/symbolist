@@ -14,7 +14,7 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
+    "pre-commit": "lint-staged",
     "dev": "next dev",
     "build": "next build",
     "clean": "rimraf node_modules",
