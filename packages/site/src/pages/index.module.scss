@@ -5,6 +5,11 @@
   padding-top: var(--header-height);
   padding-right: var(--leva-offset);
 
+  div[class^="leva"][class*="isRoot"] > div:last-of-type,
+  div[class^="leva"][class*="toggled"] > div:last-of-type {
+    margin: 0 !important;
+  }
+
   @media (max-width: 820px) {
     padding-right: 0;
 
