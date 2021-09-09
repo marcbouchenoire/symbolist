@@ -6,7 +6,7 @@
 
 <img src=".github/site@2x.png" width="620" height="336">
 
-🔗 Explore and preview symbols in the [playground](https://www.marcbouchenoire.com/ios-symbols).
+🔗 Explore and preview symbols in the [playground](https://marcbouchenoire.com/projects/ios-symbols).
 
 ## Introduction
 
