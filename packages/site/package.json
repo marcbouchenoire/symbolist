@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "private": true,
   "lint-staged": {
     "**/*.{ts,tsx}": [
@@ -14,7 +14,7 @@
     ]
   },
   "scripts": {
-    "pre-commit": "lint-staged",
+    "precommit": "lint-staged",
     "dev": "next dev",
     "build": "next build",
     "clean": "rimraf node_modules",

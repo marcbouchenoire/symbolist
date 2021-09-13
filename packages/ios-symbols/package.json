@@ -36,13 +36,8 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "scripts": {
-    "pre-commit": "lint-staged",
+    "precommit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
     "clean": "jest --clearCache && rimraf node_modules",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
@@ -51,6 +46,7 @@
     "lint:tsc": "tsc --project tsconfig.json",
     "generate": "node -r esbuild-register scripts/generate.ts",
     "prepare": "rimraf dist && yarn build",
+    "prepublishOnly": "yarn test",
     "test": "jest"
   },
   "devDependencies": {

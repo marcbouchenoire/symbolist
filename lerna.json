@@ -1,6 +1,17 @@
 {
   "npmClient": "yarn",
+  "registry": "https://registry.npmjs.org/",
+  "publishConfig": {
+    "access": "public"
+  },
   "packages": ["packages/*"],
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "1.0.1",
+  "command": {
+    "publish": {
+      "allowBranch": "main",
+      "message": "%s",
+      "noChangelog": true
+    }
+  }
 }
