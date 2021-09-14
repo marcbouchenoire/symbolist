@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "microbundle --tsconfig tsconfig.build.json",
-    "clean": "jest --clearCache && rimraf node_modules",
+    "clean": "jest --clearCache && rimraf dist node_modules",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{ts,tsx}' --fix",
     "lint:prettier": "prettier --write '**/*.{ts,tsx}' --loglevel silent",
