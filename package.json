@@ -21,7 +21,7 @@
     "clean": "lerna run clean"
   },
   "devDependencies": {
-    "@bouchenoiremarc/eslint-config": "^1.5.4",
+    "@bouchenoiremarc/eslint-config": "^1.6.0",
     "@types/node": "^16.4.2",
     "@types/rimraf": "^3.0.0",
     "eslint": "^7.30.0",
