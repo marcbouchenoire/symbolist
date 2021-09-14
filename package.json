@@ -18,7 +18,7 @@
     "test": "lerna run test --stream",
     "prepare": "lerna run prepare --stream",
     "release": "lerna publish",
-    "clean": "lerna run clean"
+    "clean": "lerna run clean && rimraf node_modules"
   },
   "devDependencies": {
     "@bouchenoiremarc/eslint-config": "^1.6.0",
