@@ -28,7 +28,7 @@
     "clsx": "^1.1.1",
     "framer-motion": "^4.1.17",
     "ios-symbols": "^1.0.2",
-    "just-debounce-it": "^1.5.0",
+    "just-debounce-it": "^2.0.0",
     "leva": "^0.9.13",
     "next": "^11.1.0",
     "next-seo": "^4.26.0",
