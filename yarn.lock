@@ -3121,10 +3121,10 @@ anymatch@^3.0.3, anymatch@~3.1.1, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-app-exists@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/app-exists/-/app-exists-1.1.0.tgz#231204a42e9bfb5c99182e54865c9d9f56538b69"
-  integrity sha512-fwxkbtnVJeSPcOt1xBDHzmCkwiexGldy6KRxC9QXPbFT1CVlszyaPiccpSXRZKi4q5sQC4SR4t8dtrJcpiaGzg==
+app-exists@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/app-exists/-/app-exists-2.1.1.tgz#9fe312d6be81f0f12b42465ff0f7a7a26a25b3a5"
+  integrity sha512-CKnIl6DvW/JwNj13wBgvf+G+29aYhIR1uIHur7essWTMJSdHH6/2oiaNepd1QdyrsD5AGS2lDuKT5NcocLCcPQ==
 
 aproba@^1.0.3:
   version "1.2.0"
