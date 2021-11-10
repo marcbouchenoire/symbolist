@@ -1,8 +1,8 @@
 import {
-  isFunction,
-  isNumber,
   isCanvas,
-  isHTMLCanvasElement
+  isFunction,
+  isHTMLCanvasElement,
+  isNumber
 } from "../src/guards"
 import {
   array,
