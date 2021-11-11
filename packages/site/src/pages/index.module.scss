@@ -31,13 +31,13 @@
   background: #f5f5f5;
   place-items: center;
 
-  &:after {
+  &::after {
     position: absolute;
     right: 20px;
     bottom: -2px;
     left: 20px;
     height: 2px;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgb(0 0 0 / 4%);
     content: "";
   }
 
@@ -85,17 +85,17 @@
   transform: translateY(-1px);
   transition: opacity 0.2s ease-in-out;
 
-  &:before {
+  &::before {
     position: absolute;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgb(0 0 0 / 5%);
     border-radius: 5px;
     content: "";
     inset: -6px -6px -4px;
   }
 
   &:hover {
-    opacity: 0.5;
+    opacity: 50%;
   }
 }
 
@@ -119,7 +119,7 @@
   transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    opacity: 0.5;
+    opacity: 50%;
   }
 
   svg {
@@ -169,9 +169,9 @@
   max-width: calc(100vw - 2 * 20px);
   padding: 8px 8px 8px 22px;
   backdrop-filter: saturate(180%) blur(20px);
-  background: rgba(60, 60, 60, 0.8);
+  background: rgb(60 60 60 / 80%);
   border-radius: 100px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08), 0px 8px 32px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%), 0 8px 32px rgb(0 0 0 / 6%);
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -196,7 +196,7 @@
     flex: none;
     padding: 6px 14px;
     margin-left: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border-radius: 100px;
     color: inherit;
     font-size: 13px;
@@ -205,7 +205,7 @@
     transition: background 0.2s ease-in-out;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgb(255 255 255 / 20%);
     }
   }
 }
