@@ -1,7 +1,6 @@
 {
   "extends": [
     "@bouchenoiremarc/eslint-config",
-    "@bouchenoiremarc/eslint-config/react",
-    "@bouchenoiremarc/eslint-config/next"
+    "@bouchenoiremarc/eslint-config/react"
   ]
 }

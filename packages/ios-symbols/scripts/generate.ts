@@ -9,7 +9,7 @@ import { isMacOS } from "./utils/is-macOS"
 import { ListrClipboard } from "./utils/listr-clipboard"
 import { ListrInput } from "./utils/listr-input"
 import { ListrMessage } from "./utils/listr-message"
-import { isSilentError, SilentError } from "./utils/silent-error"
+import { SilentError, isSilentError } from "./utils/silent-error"
 
 const SYMBOLS = "./src/data/symbols.json"
 const LOGS = "./src/data/logs.json"

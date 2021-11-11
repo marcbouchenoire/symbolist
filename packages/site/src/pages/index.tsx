@@ -1,9 +1,9 @@
 import clsx from "clsx"
 import { AnimatePresence, motion, useMotionValue } from "framer-motion"
 import debounce from "just-debounce-it"
-import { button, Leva, LevaInputs, useControls } from "leva"
+import { Leva, LevaInputs, button, useControls } from "leva"
 import { GetStaticProps } from "next"
-import { useEffect, CSSProperties, useMemo, memo, useCallback } from "react"
+import { CSSProperties, memo, useCallback, useEffect, useMemo } from "react"
 import pkg from "../../../ios-symbols/package.json"
 import { Cell } from "../components/Cell"
 import { LEVA_MARGIN, LEVA_WIDTH } from "../constants"
@@ -32,14 +32,11 @@ interface AppearanceControlsProps {
 
 const symbols = getSymbols()
 
-/* eslint-disable sort-keys-fix/sort-keys-fix */
 const fonts = {
   "SF Pro": `"SF Pro", "SF Pro Display", "SF Pro Text", "SF Pro Rounded"`,
   "SF Compact": `"SF Compact", "SF Compact Display", "SF Compact Text", "SF Compact Rounded"`
 }
-/* eslint-enable sort-keys-fix/sort-keys-fix */
 
-/* eslint-disable sort-keys-fix/sort-keys-fix */
 const weights = {
   Ultralight: 100,
   Light: 300,
@@ -50,7 +47,6 @@ const weights = {
   Heavy: 800,
   Black: 900
 }
-/* eslint-enable sort-keys-fix/sort-keys-fix */
 
 const DEFAULT_COLOR = "#000"
 const DEFAULT_FONT = fonts["SF Pro"]
