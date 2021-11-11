@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "prettier": "@bouchenoiremarc/prettier-config",
   "husky": {
     "hooks": {
       "pre-commit": "lerna run --concurrency 1 --stream precommit --since HEAD --exclude-dependents"
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@bouchenoiremarc/eslint-config": "^2.1.0",
+    "@bouchenoiremarc/prettier-config": "^1.1.0",
     "@types/node": "^16.4.2",
     "@types/rimraf": "^3.0.0",
     "eslint": "^8.2.0",
