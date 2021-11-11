@@ -1,1 +1,1 @@
-./packages/ios-symbols/README.md
+./packages/symbolist/README.md

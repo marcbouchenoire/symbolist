@@ -11029,10 +11029,10 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-tsc-mixed@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/tsc-mixed/-/tsc-mixed-1.0.0.tgz#9a390acf2afa8f54f1c9f78358cb843b7063cd0f"
-  integrity sha512-3QQImT1FCInFg4PAcRROeUTB3RwKg+a8DPJquvAYg32eVq3OYOu5IU6pEXzGz1mQyfSjf8um/YNcoDU81rChhQ==
+tsatsiki@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tsatsiki/-/tsatsiki-1.0.1.tgz#7ef0dbeef8655c2a3400b4722727cd2a7b5b1694"
+  integrity sha512-GkolDFYKR5ix6EAt8M5TTtRV1VzaWNDlXUi/r8nJRXFV2tb5TKhMMfYdFnAV5H1YBXdOJW3C2nxagpmCRFW/WA==
   dependencies:
     execa "^5.1.1"
     exit-hook "^2.2.1"

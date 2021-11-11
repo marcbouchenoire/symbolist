@@ -1,11 +1,11 @@
 {
-  "name": "ios-symbols",
+  "name": "symbolist",
   "version": "1.1.0",
   "description": "A collection of every symbol from SF Symbols.",
   "author": "Marc Bouchenoire",
   "license": "MIT",
-  "repository": "https://github.com/bouchenoiremarc/ios-symbols",
-  "homepage": "https://marcbouchenoire.com/projects/ios-symbols",
+  "repository": "https://github.com/bouchenoiremarc/symbolist",
+  "homepage": "https://marcbouchenoire.com/projects/symbolist",
   "keywords": [
     "ios",
     "symbols",
@@ -18,13 +18,13 @@
   ],
   "sideEffects": false,
   "source": "./src/index.ts",
-  "main": "./dist/ios-symbols.js",
-  "unpkg": "./dist/ios-symbols.umd.js",
-  "module": "./dist/ios-symbols.module.js",
+  "main": "./dist/symbolist.js",
+  "unpkg": "./dist/symbolist.umd.js",
+  "module": "./dist/symbolist.module.js",
   "exports": {
     ".": {
-      "require": "./dist/ios-symbols.js",
-      "import": "./dist/ios-symbols.modern.js",
+      "require": "./dist/symbolist.js",
+      "import": "./dist/symbolist.modern.js",
       "types": "./dist/index.d.ts"
     }
   },

@@ -12,7 +12,7 @@ function App({ Component, pageProps }: AppProps) {
           images: [
             {
               height: 620,
-              url: "https://www.marcbouchenoire.com/api/screenshot/capture/https%3A%2F%2Fwww.marcbouchenoire.com%2Fios-symbols?width=1200&height=620",
+              url: "https://www.marcbouchenoire.com/api/screenshot/capture/https%3A%2F%2Fwww.marcbouchenoire.com%2Fsymbolist?width=1200&height=620",
               width: 1200
             }
           ],
@@ -23,7 +23,7 @@ function App({ Component, pageProps }: AppProps) {
           },
           site_name: "Marc Bouchenoire"
         }}
-        title="ios-symbols"
+        title="symbolist"
         twitter={{
           handle: "@bouchenoiremarc"
         }}

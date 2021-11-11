@@ -1,10 +1,10 @@
-# ios-symbols
+# symbolist
 
 🔣 ️A collection of every symbol from SF Symbols.
 
-[![build](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/ios-symbols/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/ios-symbols?color=%230cf)](https://www.npmjs.com/package/ios-symbols) [![gzipped](https://img.shields.io/bundlephobia/minzip/ios-symbols?label=gzipped&color=%2385f)](https://www.npmjs.com/package/ios-symbols) [![license](https://img.shields.io/github/license/bouchenoiremarc/ios-symbols?color=%23e4b)](https://github.com/bouchenoiremarc/ios-symbols/blob/main/LICENSE)
+[![build](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/symbolist?color=%230cf)](https://www.npmjs.com/package/symbolist) [![gzipped](https://img.shields.io/bundlephobia/minzip/symbolist?label=gzipped&color=%2385f)](https://www.npmjs.com/package/symbolist) [![license](https://img.shields.io/github/license/bouchenoiremarc/symbolist?color=%23e4b)](https://github.com/bouchenoiremarc/symbolist/blob/main/LICENSE)
 
-🔗 Explore and preview symbols in the [playground](https://marcbouchenoire.com/projects/ios-symbols).
+🔗 Explore and preview symbols in the [playground](https://marcbouchenoire.com/projects/symbolist).
 
 ## Introduction
 
@@ -16,20 +16,20 @@
 
 ```html
 <script type="module">
-  import { symbols } from "https://cdn.skypack.dev/ios-symbols"
+  import { symbols } from "https://cdn.skypack.dev/symbolist"
 </script>
 ```
 
 #### Yarn
 
 ```sh
-yarn add ios-symbols
+yarn add symbolist
 ```
 
 #### npm
 
 ```sh
-npm install ios-symbols
+npm install symbolist
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ npm install ios-symbols
 Import `symbols`.
 
 ```tsx
-import { symbols } from "ios-symbols"
+import { symbols } from "symbolist"
 
 // symbols: {"0.circle": "􀀸", "0.circle.fill": "􀀹", ...}
 ```
@@ -49,7 +49,7 @@ import { symbols } from "ios-symbols"
 Import `getSymbol`.
 
 ```tsx
-import { getSymbol } from "ios-symbols"
+import { getSymbol } from "symbolist"
 ```
 
 Given a symbol name, `getSymbol` will return its symbol (or `undefined` for unknown symbols).
@@ -65,7 +65,7 @@ const symbol = getSymbol("scribble.variable")
 Import `getSymbolName`.
 
 ```tsx
-import { getSymbolName } from "ios-symbols"
+import { getSymbolName } from "symbolist"
 ```
 
 Given a symbol, `getSymbolName` will return its name (or `undefined` for unknown symbols).

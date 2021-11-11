@@ -4,7 +4,7 @@ import debounce from "just-debounce-it"
 import { Leva, LevaInputs, button, useControls } from "leva"
 import { GetStaticProps } from "next"
 import { CSSProperties, memo, useCallback, useEffect, useMemo } from "react"
-import pkg from "../../../ios-symbols/package.json"
+import pkg from "../../../symbolist/package.json"
 import { Cell } from "../components/Cell"
 import { LEVA_MARGIN, LEVA_WIDTH } from "../constants"
 import { isBoolean } from "../guards"
@@ -155,10 +155,10 @@ function Page({ version }: Props) {
       <header className={styles.header}>
         <div className={styles.headings}>
           <h1>
-            ios-symbols{" "}
+            symbolist{" "}
             <a
               className={styles.version}
-              href={`https://github.com/bouchenoiremarc/ios-symbols/releases/tag/v${version}`}
+              href={`https://github.com/bouchenoiremarc/symbolist/releases/tag/v${version}`}
               rel="noreferrer"
               target="_blank"
             >
@@ -173,7 +173,7 @@ function Page({ version }: Props) {
               <a
                 aria-label="GitHub"
                 className={clsx(styles.link, styles.github)}
-                href="https://github.com/bouchenoiremarc/ios-symbols"
+                href="https://github.com/bouchenoiremarc/symbolist"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -190,7 +190,7 @@ function Page({ version }: Props) {
               <a
                 aria-label="npm"
                 className={clsx(styles.link, styles.npm)}
-                href="https://www.npmjs.com/package/ios-symbols"
+                href="https://www.npmjs.com/package/symbolist"
                 rel="noreferrer"
                 target="_blank"
               >

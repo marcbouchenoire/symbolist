@@ -1,4 +1,4 @@
-import { symbols } from "ios-symbols"
+import { symbols } from "symbolist"
 import { NamedSymbol } from "../types"
 
 export function getSymbols() {
