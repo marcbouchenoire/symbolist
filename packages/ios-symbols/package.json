@@ -32,7 +32,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
-      "tsc-mixed --project tsconfig.json declarations.d.ts",
+      "tsatsiki --project tsconfig.json declarations.d.ts",
       "prettier --write"
     ]
   },

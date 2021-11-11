@@ -5,7 +5,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
-      "tsc-mixed --project tsconfig.json next-env.d.ts",
+      "tsatsiki --project tsconfig.json next-env.d.ts",
       "prettier --write"
     ],
     "**/*.scss": [
