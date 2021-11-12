@@ -14,21 +14,19 @@
 
 #### Skypack
 
-```html
-<script type="module">
-  import { symbols } from "https://cdn.skypack.dev/symbolist"
-</script>
+```javascript
+import { symbols } from "https://cdn.skypack.dev/symbolist"
 ```
 
 #### Yarn
 
-```sh
+```bash
 yarn add symbolist
 ```
 
 #### npm
 
-```sh
+```bash
 npm install symbolist
 ```
 
@@ -38,7 +36,7 @@ npm install symbolist
 
 Import `symbols`.
 
-```tsx
+```typescript
 import { symbols } from "symbolist"
 
 // symbols: {"0.circle": "􀀸", "0.circle.fill": "􀀹", ...}
@@ -48,13 +46,13 @@ import { symbols } from "symbolist"
 
 Import `getSymbol`.
 
-```tsx
+```typescript
 import { getSymbol } from "symbolist"
 ```
 
 Given a symbol name, `getSymbol` will return its symbol (or `undefined` for unknown symbols).
 
-```tsx
+```typescript
 const symbol = getSymbol("scribble.variable")
 
 // symbol: "􀤑"
@@ -64,13 +62,13 @@ const symbol = getSymbol("scribble.variable")
 
 Import `getSymbolName`.
 
-```tsx
+```typescript
 import { getSymbolName } from "symbolist"
 ```
 
 Given a symbol, `getSymbolName` will return its name (or `undefined` for unknown symbols).
 
-```tsx
+```typescript
 const name = getSymbolName("􀣳")
 
 // name: "lasso.sparkles"
