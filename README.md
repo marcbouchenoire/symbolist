@@ -8,21 +8,19 @@
 
 #### Skypack
 
-```html
-<script type="module">
-  import { createCanvasContext } from "https://cdn.skypack.dev/create-canvas-context"
-</script>
+```javascript
+import { createCanvasContext } from "https://cdn.skypack.dev/create-canvas-context"
 ```
 
 #### Yarn
 
-```sh
+```bash
 yarn add create-canvas-context
 ```
 
 #### npm
 
-```sh
+```bash
 npm install create-canvas-context
 ```
 
@@ -30,13 +28,13 @@ npm install create-canvas-context
 
 Import `createCanvasContext`.
 
-```tsx
+```typescript
 import { createCanvasContext } from "create-canvas-context"
 ```
 
 Invoke it while specifying a context type (`"2d"`, `"bitmaprenderer"`, `"webgl"` or `"webgl2"`) and access in return the specified rendering context and its canvas as a pair.
 
-```tsx
+```typescript
 const [context, canvas] = createCanvasContext("2d")
 
 // context: CanvasRenderingContext2D
@@ -45,7 +43,7 @@ const [context, canvas] = createCanvasContext("2d")
 
 Optionally override defaults using [options](#options).
 
-```tsx
+```typescript
 const [context, canvas] = createCanvasContext("webgl", {
   canvas: document.createElement("canvas"),
   offscreen: true,
@@ -62,7 +60,7 @@ A secondary `options` argument surfaces all context-specific attributes availabl
 
 #### `canvas`
 
-```tsx
+```typescript
 canvas?: HTMLCanvasElement | OffscreenCanvas
 ```
 
@@ -70,7 +68,7 @@ Setting `canvas` to an existing canvas (either an `HTMLCanvasElement` or an `Off
 
 #### `offscreen`
 
-```tsx
+```typescript
 offscreen?: boolean = false
 ```
 
@@ -80,7 +78,7 @@ If you provided an existing `HTMLCanvasElement` using the `canvas` option, it wi
 
 #### `width` and `height`
 
-```tsx
+```typescript
 width?: number
 height?: number
 ```
