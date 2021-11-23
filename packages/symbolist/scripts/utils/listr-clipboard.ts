@@ -1,4 +1,4 @@
-import { readSync as readClipboard } from "clipboardy"
+import clipboard from "clipboardy"
 import { ListrTask } from "listr"
 import { ListrInput } from "./listr-input"
 
@@ -10,7 +10,7 @@ export function ListrClipboard<C>(
     title,
     " ",
     (_, context) => {
-      callback(readClipboard(), context)
+      callback(clipboard.readSync(), context)
     },
     "↩",
     "waiting…",

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   basePath: "/projects/symbolist",
   cleanUrls: true,
   trailingSlash: false,

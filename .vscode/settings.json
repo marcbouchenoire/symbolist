@@ -11,6 +11,7 @@
     "node_modules": true,
     "yarn.lock": true
   },
+  "prettier.ignorePath": ".gitignore",
   "stylelint.enable": true,
   "stylelint.validate": ["scss"]
 }

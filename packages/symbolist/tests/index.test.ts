@@ -1,21 +1,23 @@
+import * as assert from "uvu/assert"
 import { getSymbol, getSymbolName } from "../src"
+import { describe } from "./helpers"
 
-describe("getSymbol", () => {
-  test("should return the expected symbol", () => {
-    expect(getSymbol("scribble.variable")).toBe("􀤑")
+describe("getSymbol", (it) => {
+  it("should return the expected symbol", () => {
+    assert.equal(getSymbol("scribble.variable"), "􀤑")
   })
 
-  test("should return undefined for unknown symbols", () => {
-    expect(getSymbol("scribble.variable.fill" as any)).toBeUndefined()
+  it("should return undefined for unknown symbols", () => {
+    assert.type(getSymbol("scribble.variable.fill" as any), "undefined")
   })
 })
 
-describe("getSymbolName", () => {
-  test("should return the expected symbol name", () => {
-    expect(getSymbolName("􀤑")).toBe("scribble.variable")
+describe("getSymbolName", (it) => {
+  it("should return the expected symbol name", () => {
+    assert.equal(getSymbolName("􀤑"), "scribble.variable")
   })
 
-  test("should return undefined for unknown symbols", () => {
-    expect(getSymbolName("🥳")).toBeUndefined()
+  it("should return undefined for unknown symbols", () => {
+    assert.type(getSymbolName("🥳"), "undefined")
   })
 })

@@ -1,3 +1,4 @@
+import * as assert from "uvu/assert"
 import { isSomething } from "../src/guards"
 import {
   array,
@@ -9,21 +10,22 @@ import {
   set,
   string
 } from "./constants"
+import { describe } from "./helpers"
 
-describe("isSomething", () => {
-  test("should return false for undefined and null", () => {
-    expect(isSomething(undefined)).toBeFalsy()
-    expect(isSomething(null)).toBeFalsy()
+describe("isSomething", (it) => {
+  it("should return false for undefined and null", () => {
+    assert.equal(isSomething(undefined), false)
+    assert.equal(isSomething(null), false)
   })
 
-  test("should return true for any other types", () => {
-    expect(isSomething(array)).toBeTruthy()
-    expect(isSomething(boolean)).toBeTruthy()
-    expect(isSomething(fun)).toBeTruthy()
-    expect(isSomething(map)).toBeTruthy()
-    expect(isSomething(number)).toBeTruthy()
-    expect(isSomething(object)).toBeTruthy()
-    expect(isSomething(set)).toBeTruthy()
-    expect(isSomething(string)).toBeTruthy()
+  it("should return true for any other types", () => {
+    assert.equal(isSomething(array), true)
+    assert.equal(isSomething(boolean), true)
+    assert.equal(isSomething(fun), true)
+    assert.equal(isSomething(map), true)
+    assert.equal(isSomething(number), true)
+    assert.equal(isSomething(object), true)
+    assert.equal(isSomething(set), true)
+    assert.equal(isSomething(string), true)
   })
 })

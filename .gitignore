@@ -1,8 +1,7 @@
-.cache
 .DS_Store
-*.log
-xcuserdata
 node_modules
+coverage
 dist
-build
 .next
+*.tsbuildinfo
+*.log

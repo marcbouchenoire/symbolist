@@ -3,6 +3,10 @@
   "version": "1.1.0",
   "private": true,
   "lint-staged": {
+    "**/*.mjs": [
+      "eslint --fix",
+      "prettier --write"
+    ],
     "**/*.{ts,tsx}": [
       "eslint --fix",
       "tsatsiki --project tsconfig.json next-env.d.ts",
@@ -11,36 +15,38 @@
     "**/*.scss": [
       "stylelint --fix",
       "prettier --write"
+    ],
+    "**/*.{json,md,yml}": [
+      "prettier --ignore-path .eslintignore --write"
     ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "dev": "next dev",
     "build": "next build",
-    "clean": "rimraf node_modules",
     "lint": "yarn lint:eslint & yarn lint:stylelint && yarn lint:tsc && yarn lint:prettier",
-    "lint:eslint": "eslint '**/*.{ts,tsx}' --fix",
-    "lint:prettier": "prettier --write '**/*.{ts,tsx}' --loglevel silent",
+    "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
+    "lint:prettier": "prettier --write '**/*.{mjs,ts,tsx,json,md,yml,scss}' --loglevel silent",
     "lint:stylelint": "stylelint '**/*.scss' --fix",
     "lint:tsc": "tsc --project tsconfig.json"
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "framer-motion": "^5.0.0",
+    "framer-motion": "^5.3.2",
     "symbolist": "^1.1.0",
-    "just-debounce-it": "^2.0.0",
-    "leva": "^0.9.13",
-    "next": "^12.0.1",
-    "next-seo": "^4.26.0",
+    "just-debounce-it": "^3.0.1",
+    "leva": "^0.9.15",
+    "next": "^12.0.4",
+    "next-seo": "^4.28.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@bouchenoiremarc/stylelint-config": "^1.1.0",
-    "@types/css-font-loading-module": "^0.0.6",
-    "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9",
-    "sass": "^1.36.0",
-    "stylelint": "^14.0.1"
+    "@bouchenoiremarc/stylelint-config": "^1.2.0",
+    "@types/css-font-loading-module": "^0.0.7",
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "sass": "^1.43.4",
+    "stylelint": "^14.1.0"
   }
 }
