@@ -8,5 +8,6 @@
   "files.exclude": {
     "node_modules": true,
     "yarn.lock": true
-  }
+  },
+  "prettier.ignorePath": ".eslintignore"
 }

@@ -1,3 +1,5 @@
-**/*.js
+.DS_Store
 node_modules
+coverage
 dist
+*.log

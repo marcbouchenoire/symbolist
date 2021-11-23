@@ -1,3 +1,4 @@
+import * as assert from "uvu/assert"
 import {
   isCanvas,
   isFunction,
@@ -16,34 +17,34 @@ import {
 } from "./constants"
 
 describe("isFunction", () => {
-  test("should return true for functions", () => {
-    expect(isFunction(fun)).toBeTruthy()
+  it("should return true for functions", () => {
+    assert.equal(isFunction(fun), true)
   })
 
-  test("should return false for any other types", () => {
-    expect(isFunction(array)).toBeFalsy()
-    expect(isFunction(boolean)).toBeFalsy()
-    expect(isFunction(map)).toBeFalsy()
-    expect(isFunction(number)).toBeFalsy()
-    expect(isFunction(object)).toBeFalsy()
-    expect(isFunction(set)).toBeFalsy()
-    expect(isFunction(string)).toBeFalsy()
+  it("should return false for any other types", () => {
+    assert.equal(isFunction(array), false)
+    assert.equal(isFunction(boolean), false)
+    assert.equal(isFunction(map), false)
+    assert.equal(isFunction(number), false)
+    assert.equal(isFunction(object), false)
+    assert.equal(isFunction(set), false)
+    assert.equal(isFunction(string), false)
   })
 })
 
 describe("isNumber", () => {
-  test("should return true for numbers", () => {
-    expect(isNumber(number)).toBeTruthy()
+  it("should return true for numbers", () => {
+    assert.equal(isNumber(number), true)
   })
 
-  test("should return false for any other types", () => {
-    expect(isNumber(array)).toBeFalsy()
-    expect(isNumber(boolean)).toBeFalsy()
-    expect(isNumber(fun)).toBeFalsy()
-    expect(isNumber(map)).toBeFalsy()
-    expect(isNumber(object)).toBeFalsy()
-    expect(isNumber(set)).toBeFalsy()
-    expect(isNumber(string)).toBeFalsy()
+  it("should return false for any other types", () => {
+    assert.equal(isNumber(array), false)
+    assert.equal(isNumber(boolean), false)
+    assert.equal(isNumber(fun), false)
+    assert.equal(isNumber(map), false)
+    assert.equal(isNumber(object), false)
+    assert.equal(isNumber(set), false)
+    assert.equal(isNumber(string), false)
   })
 })
 
@@ -51,20 +52,20 @@ describe("isCanvas", () => {
   const canvas = document.createElement("canvas")
   const offscreenCanvas = new OffscreenCanvas(200, 200)
 
-  test("should return true for HTMLCanvasElement and OffscreenCanvas", () => {
-    expect(isCanvas(canvas)).toBeTruthy()
-    expect(isCanvas(offscreenCanvas)).toBeTruthy()
+  it("should return true for HTMLCanvasElement and OffscreenCanvas", () => {
+    assert.equal(isCanvas(canvas), true)
+    assert.equal(isCanvas(offscreenCanvas), true)
   })
 
-  test("should return false for any other types", () => {
-    expect(isCanvas(array)).toBeFalsy()
-    expect(isCanvas(boolean)).toBeFalsy()
-    expect(isCanvas(fun)).toBeFalsy()
-    expect(isCanvas(map)).toBeFalsy()
-    expect(isCanvas(number)).toBeFalsy()
-    expect(isCanvas(object)).toBeFalsy()
-    expect(isCanvas(set)).toBeFalsy()
-    expect(isCanvas(string)).toBeFalsy()
+  it("should return false for any other types", () => {
+    assert.equal(isCanvas(array), false)
+    assert.equal(isCanvas(boolean), false)
+    assert.equal(isCanvas(fun), false)
+    assert.equal(isCanvas(map), false)
+    assert.equal(isCanvas(number), false)
+    assert.equal(isCanvas(object), false)
+    assert.equal(isCanvas(set), false)
+    assert.equal(isCanvas(string), false)
   })
 })
 
@@ -72,11 +73,11 @@ describe("isHTMLCanvasElement", () => {
   const canvas = document.createElement("canvas")
   const offscreenCanvas = new OffscreenCanvas(200, 200)
 
-  test("should return true for HTMLCanvasElement", () => {
-    expect(isHTMLCanvasElement(canvas)).toBeTruthy()
+  it("should return true for HTMLCanvasElement", () => {
+    assert.equal(isHTMLCanvasElement(canvas), true)
   })
 
-  test("should return false for OffscreenCanvas", () => {
-    expect(isHTMLCanvasElement(offscreenCanvas)).toBeFalsy()
+  it("should return false for OffscreenCanvas", () => {
+    assert.equal(isHTMLCanvasElement(offscreenCanvas), false)
   })
 })

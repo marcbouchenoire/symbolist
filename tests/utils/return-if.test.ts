@@ -1,15 +1,16 @@
+import * as assert from "uvu/assert"
 import { isFunction, isNumber } from "../../src/guards"
 import { returnIf } from "../../src/utils/return-if"
 import { boolean, fun, number, string } from "../constants"
 
 describe("returnIf", () => {
-  test("should return its input for positive guards", () => {
-    expect(returnIf(fun, isFunction)).toBe(fun)
-    expect(returnIf(number, isNumber)).toBe(number)
+  it("should return its input for positive guards", () => {
+    assert.equal(returnIf(fun, isFunction), fun)
+    assert.equal(returnIf(number, isNumber), number)
   })
 
-  test("should return null for negative guards", () => {
-    expect(returnIf(string as any, isFunction)).toBeNull()
-    expect(returnIf(boolean as any, isNumber)).toBeNull()
+  it("should return null for negative guards", () => {
+    assert.equal(returnIf(string as any, isFunction), null)
+    assert.equal(returnIf(boolean as any, isNumber), null)
   })
 })
