@@ -32,25 +32,26 @@
   "lint-staged": {
     "**/*.mjs": [
       "eslint --fix",
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ],
     "**/*.{ts,tsx}": [
       "eslint --fix",
       "tsatsiki --project tsconfig.json declarations.d.ts",
-      "prettier --write"
+      "yarn prettier"
     ],
     "**/*.{json,md,yml}": [
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
+    "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
-    "lint:prettier": "prettier --write '**/*.{mjs,ts,tsx,json,md,yml}' --loglevel silent",
+    "lint:prettier": "yarn prettier '**/*.{mjs,ts,tsx,json,md,yml}'",
     "lint:tsc": "tsc --project tsconfig.json",
-    "generate": "tsm scripts/generate.ts",
+    "generate": "tsm scripts/generate.ts && yarn prettier 'src/data/*.{ts,json}'",
     "prepublishOnly": "yarn build",
     "test": "uvu --require tsm tests",
     "test:coverage": "c8 --include=src yarn test && c8 report --reporter=lcov"

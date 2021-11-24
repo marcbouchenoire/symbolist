@@ -5,28 +5,29 @@
   "lint-staged": {
     "**/*.mjs": [
       "eslint --fix",
-      "prettier --write"
+      "yarn prettier"
     ],
     "**/*.{ts,tsx}": [
       "eslint --fix",
       "tsatsiki --project tsconfig.json next-env.d.ts",
-      "prettier --write"
+      "yarn prettier"
     ],
     "**/*.scss": [
       "stylelint --fix",
-      "prettier --write"
+      "yarn prettier"
     ],
     "**/*.{json,md,yml}": [
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "dev": "next dev",
     "build": "next build",
+    "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint & yarn lint:stylelint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
-    "lint:prettier": "prettier --write '**/*.{mjs,ts,tsx,json,md,yml,scss}' --loglevel silent",
+    "lint:prettier": "yarn prettier '**/*.{mjs,ts,tsx,json,md,yml,scss}'",
     "lint:stylelint": "stylelint '**/*.scss' --fix",
     "lint:tsc": "tsc --project tsconfig.json"
   },
