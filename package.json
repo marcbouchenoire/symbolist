@@ -34,15 +34,15 @@
   "lint-staged": {
     "**/*.mjs": [
       "eslint --fix",
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ],
     "**/*.{ts,tsx}": [
       "eslint --fix",
       "tsatsiki --project tsconfig.json",
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ],
     "**/*.{json,md,yml}": [
-      "prettier --ignore-path .eslintignore --write"
+      "yarn prettier"
     ]
   },
   "husky": {
@@ -52,9 +52,10 @@
   },
   "scripts": {
     "build": "microbundle --tsconfig tsconfig.build.json",
+    "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
-    "lint:prettier": "prettier '**/*.{mjs,ts,tsx,json,md,yml}' --ignore-path .eslintignore --write --loglevel silent",
+    "lint:prettier": "yarn prettier '**/*.{mjs,ts,tsx,json,md,yml}'",
     "lint:tsc": "tsc --project tsconfig.json",
     "prepublishOnly": "yarn build",
     "release": "yarn login && np",
