@@ -1,6 +1,5 @@
 import withApp from "app-exists"
 import Listr from "listr"
-import * as prettier from "prettier"
 import writeFile from "write-file-atomic"
 import { writeJsonFile } from "write-json-file"
 import { SymbolName } from "../src"
@@ -102,16 +101,9 @@ const tasks = new Listr([
         },
         {
           task: async (context: Context) => {
-            const options = await prettier.resolveConfig(".prettierrc")
             const types = context.names.map((name) => `"${name}"`).join(" | ")
 
-            await writeFile(
-              TYPES,
-              prettier.format(`export type SymbolName = ${types}`, {
-                ...options,
-                parser: "typescript"
-              })
-            )
+            await writeFile(TYPES, `export type SymbolName = ${types}`)
           },
           title: "Generating types"
         },
