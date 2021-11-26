@@ -6,9 +6,11 @@ import {
   OffscreenContextRenderingContext,
   OffscreenContextType
 } from "./types"
-import { isBrowser } from "./utils/is-browser"
 import { returnIf } from "./utils/return-if"
-import { supportsOffscreenCanvas } from "./utils/supports-offscreen-canvas"
+import {
+  supportsCanvas,
+  supportsOffscreenCanvas
+} from "./utils/supports-canvas"
 
 const DEFAULT_WIDTH = 300
 const DEFAULT_HEIGHT = 150
@@ -22,16 +24,6 @@ interface Options {
 
 const defaultOptions: Options = {
   offscreen: false
-}
-
-function createCanvas(offscreen: boolean) {
-  if (isBrowser()) {
-    return offscreen
-      ? new OffscreenCanvas(DEFAULT_WIDTH, DEFAULT_HEIGHT)
-      : document.createElement("canvas")
-  } else {
-    return null
-  }
 }
 
 export function createCanvasContext<T extends ContextType>(
@@ -83,28 +75,31 @@ export function createCanvasContext<
     ...defaultOptions,
     ...options
   }
-  const asOffscreenCanvas = Boolean(offscreen && supportsOffscreenCanvas())
 
-  const defaultCanvas =
-    returnIf(optionsCanvas, isCanvas) ?? createCanvas(asOffscreenCanvas)
-  const canvas =
-    asOffscreenCanvas && isHTMLCanvasElement(defaultCanvas)
-      ? defaultCanvas?.transferControlToOffscreen()
-      : defaultCanvas
+  const providedCanvas = returnIf(optionsCanvas, isCanvas)
+  let canvas: HTMLCanvasElement | OffscreenCanvas
 
-  if (isCanvas(canvas)) {
-    if (isNumber(width)) {
-      canvas.width = width
-    }
-
-    if (isNumber(height)) {
-      canvas.height = height
-    }
+  if (offscreen && supportsOffscreenCanvas()) {
+    canvas =
+      providedCanvas && isHTMLCanvasElement(providedCanvas)
+        ? providedCanvas.transferControlToOffscreen()
+        : new OffscreenCanvas(DEFAULT_WIDTH, DEFAULT_HEIGHT)
+  } else if (supportsCanvas()) {
+    canvas = providedCanvas ?? document.createElement("canvas")
+  } else {
+    return [null, providedCanvas]
   }
 
-  const context = isCanvas(canvas)
-    ? canvas.getContext(type as OffscreenContextType, attributes)
-    : null
+  if (isNumber(width)) {
+    canvas.width = width
+  }
+
+  if (isNumber(height)) {
+    canvas.height = height
+  }
+
+  const context =
+    canvas?.getContext(type as OffscreenContextType, attributes) ?? null
 
   return [context, canvas]
 }
