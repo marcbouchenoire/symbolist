@@ -1,4 +1,4 @@
-import { isCanvas, isHTMLCanvasElement, isNumber } from "./guards"
+import { isCanvas, isNumber, isTransferableCanvas } from "./guards"
 import {
   ContextAttributes,
   ContextRenderingContext,
@@ -81,7 +81,7 @@ export function createCanvasContext<
 
   if (offscreen && supportsOffscreenCanvas()) {
     canvas =
-      providedCanvas && isHTMLCanvasElement(providedCanvas)
+      providedCanvas && isTransferableCanvas(providedCanvas)
         ? providedCanvas.transferControlToOffscreen()
         : new OffscreenCanvas(DEFAULT_WIDTH, DEFAULT_HEIGHT)
   } else if (supportsCanvas()) {
@@ -98,8 +98,5 @@ export function createCanvasContext<
     canvas.height = height
   }
 
-  const context =
-    canvas?.getContext(type as OffscreenContextType, attributes) ?? null
-
-  return [context, canvas]
+  return [canvas.getContext(type as OffscreenContextType, attributes), canvas]
 }

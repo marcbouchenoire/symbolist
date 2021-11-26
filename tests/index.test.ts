@@ -1,5 +1,9 @@
 import * as assert from "uvu/assert"
 import { createCanvasContext } from "../src"
+import { mock } from "./helpers"
+
+const PROVIDED_WIDTH = 200
+const PROVIDED_HEIGHT = 100
 
 describe("createCanvasContext", () => {
   it("should return an HTMLCanvasElement when the offscreen option is not specified or set to false", () => {
@@ -14,6 +18,34 @@ describe("createCanvasContext", () => {
     const [, canvas] = createCanvasContext("2d", { offscreen: true })
 
     assert.instance(canvas, OffscreenCanvas)
+  })
+
+  it("should return an HTMLCanvasElement when the offscreen option is to true but OffscreenCanvas isn't supported", () => {
+    const restoreOffscreenCanvas = mock(window, "OffscreenCanvas")
+
+    const [, canvas] = createCanvasContext("2d", { offscreen: true })
+
+    assert.instance(canvas, HTMLCanvasElement)
+
+    restoreOffscreenCanvas()
+  })
+
+  it("should return null values when HTMLCanvasElement or OffscreenCanvas aren't supported", () => {
+    const restoreHTMLCanvasElement = mock(window, "HTMLCanvasElement")
+    const restoreOffscreenCanvas = mock(window, "OffscreenCanvas")
+
+    const [context, canvas] = createCanvasContext("2d")
+    const [offscreenContext, offscreenCanvas] = createCanvasContext("2d", {
+      offscreen: true
+    })
+
+    assert.equal(context, null)
+    assert.equal(canvas, null)
+    assert.equal(offscreenContext, null)
+    assert.equal(offscreenCanvas, null)
+
+    restoreHTMLCanvasElement()
+    restoreOffscreenCanvas()
   })
 
   it("should return a rendering context from the canvas instance it returns", () => {
@@ -52,10 +84,22 @@ describe("createCanvasContext", () => {
     assert.equal(offscreenCanvas, providedOffscreenCanvas)
   })
 
-  it("should set the width and/or height canvas attributes when provided values", () => {
-    const PROVIDED_WIDTH = 100
-    const PROVIDED_HEIGHT = 100
+  it("should transfer control from a provided HTMLCanvasElement to an OffscreenCanvas", () => {
+    const providedCanvas = document.createElement("canvas")
+    providedCanvas.width = PROVIDED_WIDTH
+    providedCanvas.height = PROVIDED_HEIGHT
 
+    const [, canvas] = createCanvasContext("2d", {
+      offscreen: true,
+      canvas: providedCanvas
+    })
+
+    assert.instance(canvas, OffscreenCanvas)
+    assert.equal(canvas.width, PROVIDED_WIDTH)
+    assert.equal(canvas.height, PROVIDED_HEIGHT)
+  })
+
+  it("should set the width and/or height canvas attributes when provided values", () => {
     const [, canvas] = createCanvasContext("2d", {
       height: PROVIDED_HEIGHT,
       width: PROVIDED_WIDTH

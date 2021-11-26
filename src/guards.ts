@@ -16,8 +16,11 @@ export function isCanvas<T extends HTMLCanvasElement | OffscreenCanvas>(
   return isFunction((value as HTMLCanvasElement | OffscreenCanvas)?.getContext)
 }
 
-export function isHTMLCanvasElement(
+export function isTransferableCanvas(
   value: HTMLCanvasElement | OffscreenCanvas | unknown
 ): value is HTMLCanvasElement {
-  return isFunction((value as HTMLCanvasElement)?.transferControlToOffscreen)
+  return (
+    Boolean(value) &&
+    "transferControlToOffscreen" in (value as HTMLCanvasElement)
+  )
 }

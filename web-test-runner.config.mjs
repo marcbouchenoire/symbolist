@@ -5,5 +5,8 @@ export default {
   files: ["tests/**/*.test.ts"],
   nodeResolve: true,
   plugins: [esbuildPlugin({ ts: true })],
-  browsers: [puppeteerLauncher({ concurrency: 1 })]
+  browsers: [puppeteerLauncher({ concurrency: 1 })],
+  coverageConfig: {
+    include: ["src/**/*.ts"]
+  }
 }

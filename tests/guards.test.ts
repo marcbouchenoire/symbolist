@@ -2,8 +2,8 @@ import * as assert from "uvu/assert"
 import {
   isCanvas,
   isFunction,
-  isHTMLCanvasElement,
-  isNumber
+  isNumber,
+  isTransferableCanvas
 } from "../src/guards"
 import {
   array,
@@ -69,15 +69,15 @@ describe("isCanvas", () => {
   })
 })
 
-describe("isHTMLCanvasElement", () => {
+describe("isTransferableCanvas", () => {
   const canvas = document.createElement("canvas")
   const offscreenCanvas = new OffscreenCanvas(200, 200)
 
   it("should return true for HTMLCanvasElement", () => {
-    assert.equal(isHTMLCanvasElement(canvas), true)
+    assert.equal(isTransferableCanvas(canvas), true)
   })
 
   it("should return false for OffscreenCanvas", () => {
-    assert.equal(isHTMLCanvasElement(offscreenCanvas), false)
+    assert.equal(isTransferableCanvas(offscreenCanvas), false)
   })
 })
