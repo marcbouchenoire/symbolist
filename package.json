@@ -20,14 +20,16 @@
   "sideEffects": false,
   "source": "./src/index.ts",
   "main": "./dist/create-canvas-context.js",
-  "unpkg": "./dist/create-canvas-context.umd.js",
   "module": "./dist/create-canvas-context.module.js",
+  "modern": "./dist/create-canvas-context.mjs",
   "exports": {
     ".": {
-      "require": "./dist/create-canvas-context.js",
-      "import": "./dist/create-canvas-context.modern.js",
-      "types": "./dist/index.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "module": "./dist/create-canvas-context.module.js",
+      "import": "./dist/create-canvas-context.mjs",
+      "default": "./dist/create-canvas-context.js"
+    },
+    "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
   "prettier": "@bouchenoiremarc/prettier-config",
