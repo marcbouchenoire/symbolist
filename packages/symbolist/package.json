@@ -19,14 +19,16 @@
   "sideEffects": false,
   "source": "./src/index.ts",
   "main": "./dist/symbolist.js",
-  "unpkg": "./dist/symbolist.umd.js",
   "module": "./dist/symbolist.module.js",
+  "modern": "./dist/symbolist.mjs",
   "exports": {
     ".": {
-      "require": "./dist/symbolist.js",
-      "import": "./dist/symbolist.modern.js",
-      "types": "./dist/index.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "module": "./dist/symbolist.module.js",
+      "import": "./dist/symbolist.mjs",
+      "default": "./dist/symbolist.js"
+    },
+    "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
   "lint-staged": {
