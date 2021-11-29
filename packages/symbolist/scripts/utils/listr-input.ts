@@ -1,6 +1,6 @@
-import chalk from "chalk"
 import { ListrTask } from "listr"
 import ListrDefaultInput from "listr-input"
+import pc from "picocolors"
 import { join } from "./join"
 
 export function ListrInput<C>(
@@ -22,8 +22,8 @@ export function ListrInput<C>(
     },
     title: join(
       title,
-      message ? chalk.dim(`(${message})`) : null,
-      warning ? chalk.yellow(`(${warning})`) : null
+      message ? pc.dim(`(${message})`) : null,
+      warning ? pc.yellow(`(${warning})`) : null
     )
   }
 }
