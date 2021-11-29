@@ -18,15 +18,15 @@
   ],
   "sideEffects": false,
   "source": "./src/index.ts",
-  "main": "./dist/symbolist.js",
-  "module": "./dist/symbolist.module.js",
-  "modern": "./dist/symbolist.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "modern": "./dist/index.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "module": "./dist/symbolist.module.js",
-      "import": "./dist/symbolist.mjs",
-      "default": "./dist/symbolist.js"
+      "module": "./dist/index.module.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
