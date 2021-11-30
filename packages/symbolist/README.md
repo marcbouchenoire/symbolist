@@ -1,10 +1,18 @@
-# symbolist
+# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/bouchenoiremarc/symbolist/main/.github/logo.svg" height="40" alt="Symbolist" /></a>
 
 🔣 ️A collection of every symbol from SF Symbols.
 
-[![build](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/symbolist?color=%230cf)](https://www.npmjs.com/package/symbolist) [![gzipped](https://img.shields.io/bundlephobia/minzip/symbolist?label=gzipped&color=%2385f)](https://www.npmjs.com/package/symbolist) [![license](https://img.shields.io/github/license/bouchenoiremarc/symbolist?color=%23e4b)](https://github.com/bouchenoiremarc/symbolist/blob/main/LICENSE)
+[![version](https://img.shields.io/badge/SF%20Symbols%203.1-message?color=%23e27)](https://developer.apple.com/sf-symbols/)
+[![build](https://img.shields.io/github/workflow/status/bouchenoiremarc/symbolist/CI?color=%23e27)](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/symbolist?color=%23e27)](https://www.npmjs.com/package/symbolist)
+[![size](https://img.shields.io/bundlephobia/minzip/symbolist?label=size&color=%23e27)](https://bundlephobia.com/package/symbolist)
+[![coverage](https://img.shields.io/codecov/c/github/bouchenoiremarc/symbolist?color=%23e27)](https://codecov.io/gh/bouchenoiremarc/symbolist)
+[![license](https://img.shields.io/github/license/bouchenoiremarc/symbolist?color=%23e27)](https://github.com/bouchenoiremarc/symbolist/blob/main/LICENSE)
 
-🔗 Explore and preview symbols in the [playground](https://marcbouchenoire.com/projects/symbolist).
+- [🤖 **Automated**](#automation): Authored and updated automatically
+- 🧪 **Reliable**: Fully tested with [100% code coverage](https://codecov.io/gh/bouchenoiremarc/symbolist)
+- 📦 **Typed**: Written in [TypeScript](https://www.typescriptlang.org/) and includes definitions out-of-the-box
+- 💨 **Zero dependencies**
 
 ## Introduction
 
