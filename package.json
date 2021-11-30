@@ -14,8 +14,9 @@
     "packages/*"
   ],
   "scripts": {
-    "site:dev": "yarn build && yarn workspace site dev",
-    "site:build": "yarn build && yarn workspace site build",
+    "site:dev": "yarn workspace site dev",
+    "site:build": "yarn workspace site build",
+    "site:publish": "yarn build && yarn site:build",
     "generate": "yarn workspace symbolist generate",
     "build": "yarn workspace symbolist build",
     "test": "yarn workspace symbolist test",
