@@ -1169,41 +1169,6 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@bouchenoiremarc/eslint-config@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/eslint-config/-/eslint-config-2.2.1.tgz#2bab7e2c6b3d42bd4c3648e963596bfd01b4f5c8"
-  integrity sha512-BWExkvfHcM2+xWF8MpZvAz+LagG+crDNKgGA0bO1kbVn4GmAgrBS37E44PH/DVjSsTq2A88aA7cj8rBjqI5CYg==
-  dependencies:
-    "@typescript-eslint/eslint-plugin" "^5.4.0"
-    "@typescript-eslint/parser" "^5.4.0"
-    eslint-config-prettier "^8.3.0"
-    eslint-import-resolver-typescript "^2.5.0"
-    eslint-plugin-import "^2.25.3"
-    eslint-plugin-jest "^25.2.4"
-    eslint-plugin-prettier "^4.0.0"
-    eslint-plugin-react "^7.27.1"
-    eslint-plugin-react-hooks "^4.3.0"
-    eslint-plugin-typescript-sort-keys "^2.0.0"
-    eslint-plugin-unicorn "^39.0.0"
-    eslint-plugin-unused-imports "^2.0.0"
-
-"@bouchenoiremarc/prettier-config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/prettier-config/-/prettier-config-1.1.0.tgz#acc30113056b7bc692668258f3870d1f65ba1ce4"
-  integrity sha512-5kT/iTsrEf80Jmqr/sSWOGgkXTC/HlAYU/fIj2SN+OIA5ILJbhScs8z05zj/XcMUOJW/boa3uxWTBshlX5gF3w==
-
-"@bouchenoiremarc/stylelint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@bouchenoiremarc/stylelint-config/-/stylelint-config-1.2.0.tgz#c75e02d5d5cba0d4c8651f310302606387cad260"
-  integrity sha512-u3hiYiMzl3tSMJ6zCAPCi5wDGYI3EyKWuIdQ02hiYPVdqh+HrIUSmrMMDu1H9MfsWqzQJJhbEgr0jrtYMBsv4A==
-  dependencies:
-    postcss "^8.3.11"
-    stylelint-config-css-modules "^2.3.0"
-    stylelint-config-idiomatic-order "^8.1.0"
-    stylelint-config-prettier "^9.0.3"
-    stylelint-config-standard "^24.0.0"
-    stylelint-config-standard-scss "^3.0.0"
-
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
@@ -1956,6 +1921,41 @@
   dependencies:
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
+
+"@marcbouchenoire/eslint-config@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@marcbouchenoire/eslint-config/-/eslint-config-2.2.1.tgz#105d9fafc4ab2d045ed9fb5daec17ad5fb2a5d7f"
+  integrity sha512-ZwPOk/S0ABeZwtuN90lv855Bbw5kUIBhtSr/ZguxY5ihJe+R2DNWA8GAl1xIcMW3DndvXqxjBBlNPrrTyLNhhQ==
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^5.4.0"
+    "@typescript-eslint/parser" "^5.4.0"
+    eslint-config-prettier "^8.3.0"
+    eslint-import-resolver-typescript "^2.5.0"
+    eslint-plugin-import "^2.25.3"
+    eslint-plugin-jest "^25.2.4"
+    eslint-plugin-prettier "^4.0.0"
+    eslint-plugin-react "^7.27.1"
+    eslint-plugin-react-hooks "^4.3.0"
+    eslint-plugin-typescript-sort-keys "^2.0.0"
+    eslint-plugin-unicorn "^39.0.0"
+    eslint-plugin-unused-imports "^2.0.0"
+
+"@marcbouchenoire/prettier-config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@marcbouchenoire/prettier-config/-/prettier-config-1.1.0.tgz#3662bd282a9b41567fe1c0376e74a3abcea8f08d"
+  integrity sha512-4QJKqNm3V+J6TJCnhsYXSAzLoQXhggbbv7ZBsFEu7ISJZz3VYXL1NYEXf/AMTN6IoGsYQ1FUiNzEOHZAbpxyVQ==
+
+"@marcbouchenoire/stylelint-config@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@marcbouchenoire/stylelint-config/-/stylelint-config-1.2.0.tgz#e62b5cdc744e781cf85c29ba47512940eccae976"
+  integrity sha512-Z9A+i3lXoBpzvrZ+yrzU6d5/gqexBSqPp0KB4PBVEDDmVpgz6FYzfrqgleCj2Mlrmz/REn6p1inf/jMSw8Z7Jg==
+  dependencies:
+    postcss "^8.3.11"
+    stylelint-config-css-modules "^2.3.0"
+    stylelint-config-idiomatic-order "^8.1.0"
+    stylelint-config-prettier "^9.0.3"
+    stylelint-config-standard "^24.0.0"
+    stylelint-config-standard-scss "^3.0.0"
 
 "@napi-rs/triples@1.0.3":
   version "1.0.3"

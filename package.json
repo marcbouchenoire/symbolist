@@ -1,7 +1,7 @@
 {
   "name": "",
   "private": true,
-  "prettier": "@bouchenoiremarc/prettier-config",
+  "prettier": "@marcbouchenoire/prettier-config",
   "husky": {
     "hooks": {
       "pre-commit": "lerna run --concurrency 1 --stream precommit --since HEAD --exclude-dependents"
@@ -25,8 +25,8 @@
     "release": "yarn test && lerna publish"
   },
   "devDependencies": {
-    "@bouchenoiremarc/eslint-config": "^2.2.1",
-    "@bouchenoiremarc/prettier-config": "^1.1.0",
+    "@marcbouchenoire/eslint-config": "^2.2.1",
+    "@marcbouchenoire/prettier-config": "^1.1.0",
     "@types/node": "^16.11.10",
     "eslint": "^8.3.0",
     "husky": "4.3.8",

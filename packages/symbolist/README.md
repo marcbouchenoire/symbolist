@@ -1,16 +1,16 @@
-# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/bouchenoiremarc/symbolist/main/.github/logo.svg" height="40" alt="Symbolist" /></a>
+# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/marcbouchenoire/symbolist/main/.github/logo.svg" height="40" alt="Symbolist" /></a>
 
 🔣 ️A collection of every symbol from SF Symbols.
 
 [![version](https://img.shields.io/badge/SF%20Symbols%203.1-message?color=%23e27)](https://developer.apple.com/sf-symbols/)
-[![build](https://img.shields.io/github/workflow/status/bouchenoiremarc/symbolist/CI?color=%23e27)](https://github.com/bouchenoiremarc/symbolist/actions/workflows/ci.yml)
+[![build](https://img.shields.io/github/workflow/status/marcbouchenoire/symbolist/CI?color=%23e27)](https://github.com/marcbouchenoire/symbolist/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/symbolist?color=%23e27)](https://www.npmjs.com/package/symbolist)
 [![size](https://img.shields.io/bundlephobia/minzip/symbolist?label=size&color=%23e27)](https://bundlephobia.com/package/symbolist)
-[![coverage](https://img.shields.io/codecov/c/github/bouchenoiremarc/symbolist?color=%23e27)](https://codecov.io/gh/bouchenoiremarc/symbolist)
-[![license](https://img.shields.io/github/license/bouchenoiremarc/symbolist?color=%23e27)](https://github.com/bouchenoiremarc/symbolist/blob/main/LICENSE)
+[![coverage](https://img.shields.io/codecov/c/github/marcbouchenoire/symbolist?color=%23e27)](https://codecov.io/gh/marcbouchenoire/symbolist)
+[![license](https://img.shields.io/github/license/marcbouchenoire/symbolist?color=%23e27)](https://github.com/marcbouchenoire/symbolist/blob/main/LICENSE)
 
 - [🤖 **Automated**](#automation): Authored and updated automatically
-- 🧪 **Reliable**: Fully tested with [100% code coverage](https://codecov.io/gh/bouchenoiremarc/symbolist)
+- 🧪 **Reliable**: Fully tested with [100% code coverage](https://codecov.io/gh/marcbouchenoire/symbolist)
 - 📦 **Typed**: Written in [TypeScript](https://www.typescriptlang.org/) and includes definitions out-of-the-box
 - 💨 **Zero dependencies**
 

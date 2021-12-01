@@ -19,13 +19,13 @@ function App({ Component, pageProps }: AppProps) {
           profile: {
             firstName: "Marc",
             lastName: "Bouchenoire",
-            username: "bouchenoiremarc"
+            username: "marcbouchenoire"
           },
           site_name: "Marc Bouchenoire"
         }}
         title="symbolist"
         twitter={{
-          handle: "@bouchenoiremarc"
+          handle: "@marcbouchenoire"
         }}
       />
       <Favicon>🔣</Favicon>
