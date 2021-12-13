@@ -1,6 +1,6 @@
-# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/marcbouchenoire/symbolist/main/.github/logo.svg" height="40" alt="Symbolist" /></a>
+# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/marcbouchenoire/symbolist/main/.github/logo.svg" width="304" height="40" alt="Symbolist" /></a>
 
-🔣 ️A collection of every symbol from SF Symbols.
+🔣 A collection of every symbol from SF Symbols.
 
 [![version](https://img.shields.io/badge/SF%20Symbols%203.1-message?color=%23e27)](https://developer.apple.com/sf-symbols/)
 [![build](https://img.shields.io/github/workflow/status/marcbouchenoire/symbolist/CI?color=%23e27)](https://github.com/marcbouchenoire/symbolist/actions/workflows/ci.yml)
