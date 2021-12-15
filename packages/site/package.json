@@ -2,7 +2,7 @@
   "name": "site",
   "version": "1.2.0",
   "private": true,
-  "lint-staged": {
+  "nano-staged": {
     "**/*.mjs": [
       "eslint --fix",
       "yarn prettier"
@@ -21,9 +21,9 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
     "dev": "next dev",
     "build": "next build",
+    "nano-staged": "nano-staged",
     "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint & yarn lint:stylelint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",

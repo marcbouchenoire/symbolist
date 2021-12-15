@@ -31,7 +31,7 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
-  "lint-staged": {
+  "nano-staged": {
     "**/*.mjs": [
       "eslint --fix",
       "yarn prettier"
@@ -46,8 +46,8 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
     "build": "microbundle --tsconfig tsconfig.build.json",
+    "nano-staged": "nano-staged",
     "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
