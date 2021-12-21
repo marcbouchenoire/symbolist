@@ -1,4 +1,5 @@
 {
+  "css.validate": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -12,6 +13,6 @@
     "yarn.lock": true
   },
   "prettier.ignorePath": ".gitignore",
-  "stylelint.enable": true,
-  "stylelint.validate": ["scss"]
+  "stylelint.configBasedir": "packages/site",
+  "stylelint.enable": true
 }

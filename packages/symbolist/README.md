@@ -1,4 +1,4 @@
-# <a href="https://marcbouchenoire.com/projects/symbolist"><img src="https://raw.githubusercontent.com/marcbouchenoire/symbolist/main/.github/logo.svg" width="304" height="40" alt="Symbolist" /></a>
+# <a href="https://symbolist.marcbouchenoire.com"><img src="https://raw.githubusercontent.com/marcbouchenoire/symbolist/main/packages/site/public/logo.svg" width="304" height="40" alt="Symbolist" /></a>
 
 🔣 A collection of every symbol from SF Symbols.
 
@@ -9,7 +9,7 @@
 [![coverage](https://img.shields.io/codecov/c/github/marcbouchenoire/symbolist?color=%23e27)](https://codecov.io/gh/marcbouchenoire/symbolist)
 [![license](https://img.shields.io/github/license/marcbouchenoire/symbolist?color=%23e27)](https://github.com/marcbouchenoire/symbolist/blob/main/LICENSE)
 
-- [🤖 **Automated**](#automation): Authored and updated automatically
+- 🤖 [**Automated**](#automation): Authored and updated automatically
 - 🧪 **Reliable**: Fully tested with [100% code coverage](https://codecov.io/gh/marcbouchenoire/symbolist)
 - 📦 **Typed**: Written in [TypeScript](https://www.typescriptlang.org/) and includes definitions out-of-the-box
 - 💨 **Zero dependencies**
@@ -79,7 +79,7 @@ Given a symbol, `getSymbolName` will return its name (or `undefined` for unknown
 ```typescript
 const name = getSymbolName("􀣳")
 
-// name: "lasso.sparkles"
+// name: "lasso.and.sparkles"
 ```
 
 ## Automation

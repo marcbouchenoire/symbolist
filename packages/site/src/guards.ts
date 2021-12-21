@@ -1,3 +1,3 @@
-export function isBoolean(value: boolean | unknown): value is boolean {
-  return typeof value === "boolean"
+export function isSomething<T>(value: T): value is NonNullable<T> {
+  return value !== undefined && value !== null
 }

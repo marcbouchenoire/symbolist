@@ -1,36 +1,29 @@
-import { NextSeo } from "next-seo"
+import { ThemeProvider } from "next-themes"
 import { AppProps } from "next/app"
+import Head from "next/head"
 import { Favicon } from "../components/Favicon"
-import "../styles/main.scss"
+import "../styles/main.css"
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <NextSeo
-        description="A collection of every symbol from SF Symbols."
-        openGraph={{
-          images: [
-            {
-              height: 620,
-              url: "https://www.marcbouchenoire.com/api/screenshot/capture/https%3A%2F%2Fwww.marcbouchenoire.com%2Fsymbolist?width=1200&height=620",
-              width: 1200
-            }
-          ],
-          profile: {
-            firstName: "Marc",
-            lastName: "Bouchenoire",
-            username: "marcbouchenoire"
-          },
-          site_name: "Marc Bouchenoire"
-        }}
-        title="symbolist"
-        twitter={{
-          handle: "@marcbouchenoire"
-        }}
-      />
+    <ThemeProvider attribute="class" disableTransitionOnChange>
+      <Head>
+        <title>Symbolist</title>
+        <meta content="initial-scale=1, viewport-fit=cover" name="viewport" />
+        <meta
+          content="A collection of every symbol from SF Symbols."
+          name="description"
+        />
+        <meta content="Symbolist" property="og:title" />
+        <meta
+          content="A collection of every symbol from SF Symbols."
+          property="og:description"
+        />
+        <meta content="@marcbouchenoire" name="twitter:creator" />
+      </Head>
       <Favicon>🔣</Favicon>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 
