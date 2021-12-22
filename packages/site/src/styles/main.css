@@ -274,24 +274,17 @@ pre[class*="language-"] {
   }
 }
 
-.color-picker-well {
-  @apply highlight dark:highlight-invert;
-}
-
-.color-picker-popover {
-  @apply p-2.5 bg-white rounded-lg shadow-popover dark:bg-zinc-800;
-
-  transform-origin: var(--radix-popover-content-transform-origin);
-
-  svg {
-    @apply text-white dark:text-zinc-800;
+.color-picker {
+  &,
+  .color-picker-arrow {
+    transform-origin: var(--radix-popover-content-transform-origin);
   }
 
+  /* stylelint-disable selector-class-pattern */
   .react-colorful {
     @apply h-40 w-56;
   }
 
-  /* stylelint-disable selector-class-pattern */
   .react-colorful__pointer {
     @apply w-2 h-2 z-20 border-none highlight;
 

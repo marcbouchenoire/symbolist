@@ -365,7 +365,7 @@ export function Symbols(props: ComponentProps<"section">) {
             className="relative w-14 h-9 rounded-md transition cursor-pointer color-picker focusable bg-zinc-100 dark:bg-zinc-750 hover:bg-zinc-150 dark:hover:bg-zinc-700"
           >
             <span
-              className="absolute inset-1.5 rounded-sm bg-zinc-700 dark:bg-zinc-100 color-picker-well"
+              className="absolute inset-1.5 rounded-sm bg-zinc-700 dark:bg-zinc-100 highlight dark:highlight-invert"
               style={{ background: color }}
             />
           </button>
