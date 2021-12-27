@@ -1,4 +1,5 @@
 declare module "tailwindcss/colors" {
+  /* eslint-disable jsdoc/require-jsdoc */
   interface ColorGroup {
     readonly 100: string
     readonly 200: string
@@ -40,6 +41,7 @@ declare module "tailwindcss/colors" {
     yellow: ColorGroup
     zinc: ColorGroup
   }
+  /* eslint-enable jsdoc/require-jsdoc */
 
   declare const colors: Colors
 

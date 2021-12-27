@@ -1,9 +1,18 @@
 import Head from "next/head"
 
 interface Props {
+  /**
+   * The emoji to set as favicon.
+   */
   children: string
 }
 
+/**
+ * Set an emoji as favicon.
+ *
+ * @param props - A set of props.
+ * @param props.children - The emoji to set as favicon.
+ */
 export function Favicon({ children }: Props) {
   return (
     <Head>

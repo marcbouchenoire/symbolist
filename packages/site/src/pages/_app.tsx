@@ -4,6 +4,13 @@ import Head from "next/head"
 import { Favicon } from "../components/Favicon"
 import "../styles/main.css"
 
+/**
+ * A custom `App` component, used to initialize pages.
+ *
+ * @param props - A set of props.
+ * @param props.Component - The active page component.
+ * @param props.pageProps - The initial props preloaded for the page.
+ */
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" disableTransitionOnChange>

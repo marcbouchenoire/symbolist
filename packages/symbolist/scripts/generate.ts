@@ -15,9 +15,24 @@ const LOGS = "./src/data/logs.json"
 const TYPES = "./src/data/types.ts"
 
 interface Context {
+  /**
+   * All symbol characters.
+   */
   characters: string[]
+
+  /**
+   * All symbol names.
+   */
   names: string[]
+
+  /**
+   * All symbols.
+   */
   symbols: Symbols
+
+  /**
+   * The SF Symbols version.
+   */
   version: string
 }
 
@@ -114,7 +129,7 @@ const tasks = new Listr([
                 task: () => {
                   return new Listr([
                     ListrInput<Context>(
-                      "Specify SF Symbols' version",
+                      "Specify the SF Symbols version",
                       "Version:",
                       (value, context) => {
                         if (versionRegex.test(value)) {
@@ -129,7 +144,7 @@ const tasks = new Listr([
                     )
                   ])
                 },
-                title: "Gathering SF Symbols' version"
+                title: "Gathering the SF Symbols version"
               },
               {
                 task: async (context: Context) => {

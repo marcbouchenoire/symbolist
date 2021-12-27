@@ -2,6 +2,7 @@
   "extends": [
     "@marcbouchenoire/eslint-config",
     "@marcbouchenoire/eslint-config/react",
+    "@marcbouchenoire/eslint-config/jsdoc",
     "plugin:tailwindcss/recommended"
   ],
   "plugins": ["tailwindcss"],

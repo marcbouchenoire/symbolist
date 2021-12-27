@@ -6,6 +6,13 @@ import { springier } from "../transitions"
 
 type Props = ComponentProps<typeof HexColorPicker>
 
+/**
+ * A color picker within a popover.
+ *
+ * @param props - A set of props.
+ * @param props.color - The selected color value.
+ * @param props.children - The popover's trigger content.
+ */
 export const ColorPickerPopover = memo(
   ({ color, children, ...props }: Props) => {
     const [open, setOpen] = useState(false)

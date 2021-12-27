@@ -9,6 +9,12 @@ type ResolvedTheme = Theme | undefined
 
 type MediaQueryListCallback = (event: MediaQueryListEvent) => void
 
+/**
+ * Create an event listener on a media query.
+ *
+ * @param mediaQuery - The media query to listen to.
+ * @param callback - The function to invoke on changes.
+ */
 function addMediaQueryListener(
   mediaQuery: MediaQueryList,
   callback: MediaQueryListCallback
@@ -18,6 +24,12 @@ function addMediaQueryListener(
     : mediaQuery.addListener(callback)
 }
 
+/**
+ * Remove an event listener from a media query.
+ *
+ * @param mediaQuery - The listened to media query.
+ * @param callback - The function invoked on changes.
+ */
 function removeMediaQueryListener(
   mediaQuery: MediaQueryList,
   callback: MediaQueryListCallback
@@ -27,10 +39,18 @@ function removeMediaQueryListener(
     : mediaQuery.removeListener(callback)
 }
 
+/**
+ * Create a `prefers-color-scheme` media query.
+ *
+ * @param theme - The preferred color scheme to match.
+ */
 function getThemeMediaQuery(theme: Theme) {
   return window.matchMedia(`(prefers-color-scheme: ${theme})`)
 }
 
+/**
+ * Get the current theme and a function to toggle it.
+ */
 export function useSystemTheme(): [ResolvedTheme, () => void] {
   const { theme, resolvedTheme, setTheme } = useTheme()
   const isSystemTheme = useMemo(
