@@ -5,19 +5,45 @@ import { Node, Parent } from "unist"
 import { isSomething } from "../../guards"
 
 interface Heading {
+  /**
+   * The heading's scale.
+   */
   depth?: 1 | 2 | 3 | 4 | 5 | 6
+
+  /**
+   * The heading's content.
+   */
   value?: string
 }
 
 interface Options {
+  /**
+   * A list of headings to exclude.
+   */
   exclude?: Heading[]
+
+  /**
+   * A list of headings to include.
+   */
   include?: Heading[]
 }
 
+/**
+ * Whether the node is a `HeadingNode`.
+ *
+ * @param node - The heading to check.
+ */
 function isHeadingNode(node: Node): node is HeadingNode {
   return node.type === "heading"
 }
 
+/**
+ * A plugin to filter out headings and their sections.
+ *
+ * @param [options] - An optional set of settings.
+ * @param [options.include] - A list of headings to include.
+ * @param [options.exclude] - A list of headings to exclude.
+ */
 const filterHeadings: Plugin<[Options | undefined], Parent> = (options) => {
   return (tree) => {
     const included = options?.include ?? []

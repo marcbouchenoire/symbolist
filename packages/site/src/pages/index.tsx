@@ -18,12 +18,36 @@ import remarkFilterHeadings from "../plugins/remark/filter-headings"
 import remarkFindNode from "../plugins/remark/find-node"
 
 interface Props {
+  /**
+   * The filtered README content formatted as HTML.
+   */
   content: string
+
+  /**
+   * The current year.
+   */
   date: string
+
+  /**
+   * The README list of features formatted as HTML.
+   */
   features: string
+
+  /**
+   * The latest package version.
+   */
   version: string
 }
 
+/**
+ * The index page component.
+ *
+ * @param props - A set of props.
+ * @param props.date - The current year.
+ * @param props.content - The filtered README content formatted as HTML.
+ * @param props.features - The README list of features formatted as HTML.
+ * @param props.version - The latest package version.
+ */
 function Page({ date, content, features, version }: Props) {
   return (
     <>

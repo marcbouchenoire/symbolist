@@ -1,5 +1,11 @@
 import { useCallback, useRef, useState } from "react"
 
+/**
+ * Copy a value to the clipboard and get a confirmation state.
+ *
+ * @param content - The value to copy.
+ * @param duration - The duration after which to reset the confirmation state.
+ */
 export function useCopy(
   content: string,
   duration = 3000

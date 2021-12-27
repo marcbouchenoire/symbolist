@@ -4,10 +4,20 @@ import { ComponentProps } from "react"
 import avatar from "../../public/avatar.jpg"
 
 interface Props extends ComponentProps<"footer"> {
+  /**
+   * The current year.
+   */
   date: string
 }
 
-export function Footer({ className, date, ...props }: Props) {
+/**
+ * A footer section with credits.
+ *
+ * @param props - A set of `footer` props.
+ * @param props.date - The current year.
+ * @param [props.className] - A list of one or more classes.
+ */
+export function Footer({ date, className, ...props }: Props) {
   return (
     <footer
       className={clsx(

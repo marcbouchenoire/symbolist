@@ -7,7 +7,14 @@ import { useSystemTheme } from "../hooks/use-system-theme"
 import { springier, springiest } from "../transitions"
 
 interface Props extends ComponentProps<"header"> {
+  /**
+   * The README list of features formatted as HTML.
+   */
   features: string
+
+  /**
+   * The latest package version.
+   */
   version: string
 }
 
@@ -60,6 +67,13 @@ const clipboardVariants: Variants = {
   }
 }
 
+/**
+ * A header section introducing the library.
+ *
+ * @param props - A set of `header` props.
+ * @param props.features - The README list of features formatted as HTML.
+ * @param props.version - The latest package version.
+ */
 export function Header({ features, version, ...props }: Props) {
   const [theme, toggleTheme] = useSystemTheme()
   const [clipboardCopied, handleClipboardClick] = useCopy(NPM_INSTALL)

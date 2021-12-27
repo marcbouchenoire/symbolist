@@ -2,19 +2,55 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { clamp } from "../utils/clamp"
 
 export interface Pagination<T> extends PaginationCallbacks {
+  /**
+   * The elements within the active page.
+   */
   content: T[]
+
+  /**
+   * The first element's index within the active page.
+   */
   leadingIndex: number
+
+  /**
+   * The active page index.
+   */
   page: number
+
+  /**
+   * All page indices.
+   */
   pages: number[]
+
+  /**
+   * The last element's index within the active page.
+   */
   trailingIndex: number
 }
 
 export interface PaginationCallbacks {
+  /**
+   * A function to go to the next page, if it exists.
+   */
   goToNextPage: () => void
+
+  /**
+   * A function to go to a specific page, if it exists.
+   */
   goToPage: (index: number) => void
+
+  /**
+   * A function to go to the previous page, if it exists.
+   */
   goToPreviousPage: () => void
 }
 
+/**
+ * Paginate a list of elements.
+ *
+ * @param elements - The elements to paginate.
+ * @param size - The number of elements per page.
+ */
 export function usePagination<T>(elements: T[], size: number): Pagination<T> {
   const [page, setPage] = useState(0)
   const leadingIndex = useMemo(() => {
