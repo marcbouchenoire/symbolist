@@ -8,10 +8,8 @@ import rehypeStringify from "rehype-stringify"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import { unified } from "unified"
-import pkg from "../../../symbolist/package.json"
-import { Footer } from "../components/Footer"
-import { Header } from "../components/Header"
-import { Symbols } from "../components/Symbols"
+import { Introduction } from "../components/sections/Introduction"
+import { Symbols } from "../components/sections/Symbols"
 import rehypeRemoveImages from "../plugins/rehype/remove-images"
 import rehypeWrapSymbols from "../plugins/rehype/wrap-symbols"
 import remarkFilterHeadings from "../plugins/remark/filter-headings"
@@ -24,97 +22,28 @@ interface Props {
   content: string
 
   /**
-   * The current year.
-   */
-  date: string
-
-  /**
    * The README list of features formatted as HTML.
    */
   features: string
-
-  /**
-   * The latest package version.
-   */
-  version: string
 }
 
 /**
  * The index page component.
  *
  * @param props - A set of props.
- * @param props.date - The current year.
  * @param props.content - The filtered README content formatted as HTML.
  * @param props.features - The README list of features formatted as HTML.
- * @param props.version - The latest package version.
  */
-function Page({ date, content, features, version }: Props) {
+function Page({ content, features }: Props) {
   return (
-    <>
-      <div className="overflow-hidden absolute top-0 w-screen h-72 pointer-events-none md:h-80 lg:h-96">
-        <div className="relative h-full content">
-          <div className="absolute left-[-100%] w-[300%] h-full opacity-30 md:left-[-150%] md:w-[400%] aura z-negative" />
-        </div>
-      </div>
-      <Header
-        className="pt-5 md:pt-6 lg:pt-8 content"
-        features={features}
-        version={version}
-      />
-      <div className="my-8 md:my-12 lg:my-16 content">
-        <div className="flex gap-2 p-5 pl-4 text-sm rounded-md sm:gap-3 bg-primary-500/10 dark:bg-primary-400/20">
-          <svg
-            className="flex-none text-primary-500 dark:text-primary-400"
-            height="24"
-            role="presentation"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clipRule="evenodd"
-              d="M3.773 15.986 10.276 4.93c.774-1.315 2.675-1.315 3.448 0l6.503 11.055C21.011 17.319 20.05 19 18.503 19H5.497c-1.547 0-2.508-1.68-1.724-3.014ZM12 8a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1Zm-1 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-              fill="currentColor"
-              fillRule="evenodd"
-            />
-          </svg>
-          <div>
-            <small className="font-semibold tracking-widest leading-none uppercase text-primary-500 dark:text-primary-400 text-2xs">
-              Seeing missing characters
-              <span className="hidden sm:inline"> instead of symbols</span>?
-            </small>
-            <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-100">
-              <a
-                className="font-medium link link-primary focusable"
-                href="https://developer.apple.com/sf-symbols/"
-              >
-                SF Symbols
-              </a>{" "}
-              require San Fransisco—the system font on Apple platforms—installed
-              to be visible. Additionally, you’ll also need{" "}
-              <a
-                className="font-medium link link-primary focusable"
-                href="https://developer.apple.com/fonts/"
-              >
-                SF Pro
-              </a>{" "}
-              installed when using Chromium-based browsers or Firefox.
-            </p>
-          </div>
-        </div>
-      </div>
+    <main>
+      <Introduction className="content" features={features} />
       <Symbols className="mb-10 md:mb-16 lg:mb-20 content-lg" />
       <article
-        className="my-10 prose md:my-16 lg:my-20 content prose-zinc dark:prose-invert"
+        className="mb-10 prose md:mb-16 lg:mb-20 content prose-zinc dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: content }}
       />
-      <div className="content">
-        <hr className="w-full border-t dark:border-zinc-800 border-zinc-150" />
-      </div>
-      <Footer
-        className="flex items-center my-8 md:my-10 lg:my-12 content pb-0-safe"
-        date={date}
-      />
-    </>
+    </main>
   )
 }
 
@@ -146,8 +75,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      version: pkg.version,
-      date: String(new Date().getFullYear()),
       content: String(content.value),
       features: String(features.value)
     }

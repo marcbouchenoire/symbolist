@@ -7,8 +7,23 @@ body {
 }
 
 @layer base {
+  html,
   body {
+    @apply min-h-screen;
+  }
+
+  body {
+    @apply flex flex-col;
+
     -webkit-tap-highlight-color: transparent;
+  }
+
+  [data-reactroot] {
+    @apply contents;
+
+    > * {
+      @apply flex-none w-full;
+    }
   }
 
   a,
