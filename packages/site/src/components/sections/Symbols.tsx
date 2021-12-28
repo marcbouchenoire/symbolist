@@ -13,12 +13,12 @@ import {
 } from "react"
 import { Symbols, symbols } from "symbolist"
 import colors from "tailwindcss/colors"
-import { useKey } from "../hooks/use-key"
-import { usePagination } from "../hooks/use-pagination"
-import { useSystemTheme } from "../hooks/use-system-theme"
-import { NamedSymbol } from "../types"
-import { ColorPickerPopover } from "./ColorPickerPopover"
-import { Pagination } from "./Pagination"
+import { useKey } from "../../hooks/use-key"
+import { usePagination } from "../../hooks/use-pagination"
+import { useSystemTheme } from "../../hooks/use-system-theme"
+import { NamedSymbol } from "../../types"
+import { ColorPicker } from "../controls/ColorPicker"
+import { Pagination } from "../controls/Pagination"
 
 type IconProps = ComponentProps<"div"> & NamedSymbol
 
@@ -249,7 +249,7 @@ export function Symbols(props: ComponentProps<"section">) {
             value={weight}
           />
         </div>
-        <ColorPickerPopover color={color} onChange={handleColorChange}>
+        <ColorPicker color={color} onChange={handleColorChange}>
           <button
             aria-label="Color"
             className="relative w-14 h-9 bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition cursor-pointer color-picker focusable dark:bg-zinc-750 hover:bg-zinc-150"
@@ -259,7 +259,7 @@ export function Symbols(props: ComponentProps<"section">) {
               style={{ background: color }}
             />
           </button>
-        </ColorPickerPopover>
+        </ColorPicker>
       </div>
       {paginatedSymbols.length > 0 ? (
         <>

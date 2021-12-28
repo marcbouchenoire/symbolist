@@ -1,6 +1,8 @@
 import { ThemeProvider } from "next-themes"
 import { AppProps } from "next/app"
 import Head from "next/head"
+import { Footer } from "../components/layout/Footer"
+import { Header } from "../components/layout/Header"
 import "../styles/main.css"
 
 /**
@@ -54,7 +56,14 @@ function App({ Component, pageProps }: AppProps) {
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <meta content="#e37" name="theme-color" />
       </Head>
+      <div className="overflow-hidden absolute top-0 w-screen h-72 pointer-events-none md:h-80 lg:h-96">
+        <div className="relative h-full content">
+          <div className="absolute left-[-100%] w-[300%] h-full opacity-30 md:left-[-150%] md:w-[400%] aura z-negative" />
+        </div>
+      </div>
+      <Header className="content" />
       <Component {...pageProps} />
+      <Footer className="content pb-0-safe" />
     </ThemeProvider>
   )
 }
