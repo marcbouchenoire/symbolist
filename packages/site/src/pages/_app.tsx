@@ -26,10 +26,10 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta content="website" property="og:type" />
         <meta
-          content="https://symbolist.marcbouchenoire.com/"
+          content="https://symbolist.marcbouchenoire.com"
           property="og:url"
         />
-        <meta content="Marc Bouchenoire" property="og:title" />
+        <meta content="Symbolist" property="og:title" />
         <meta
           content="A collection of every symbol from SF Symbols."
           property="og:description"
@@ -39,7 +39,7 @@ function App({ Component, pageProps }: AppProps) {
           property="og:image"
         />
         <meta
-          content="https://www.marcbouchenoire.com/"
+          content="https://symbolist.marcbouchenoire.com"
           property="twitter:url"
         />
         <meta content="@marcbouchenoire" property="twitter:creator" />
