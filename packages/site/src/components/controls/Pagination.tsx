@@ -102,8 +102,8 @@ export function Pagination({
   }, [currentPage, pages, truncation])
   const isFirstPage = useMemo(() => currentPage === 0, [currentPage])
   const isLastPage = useMemo(
-    () => currentPage === truncatedPages.length - 1,
-    [currentPage, truncatedPages]
+    () => currentPage === pages.length - 1,
+    [currentPage, pages]
   )
 
   return (
