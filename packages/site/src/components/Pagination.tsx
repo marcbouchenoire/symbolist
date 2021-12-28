@@ -117,7 +117,7 @@ export function Pagination({
     >
       <button
         aria-label="Previous"
-        className="flex justify-center items-center w-9 h-full font-medium bg-transparent rounded-md disabled:opacity-40 transition text-zinc-500 dark:text-zinc-400 hover:bg-zinc-500/10 dark:hover:bg-zinc-100/10 disabled:!bg-transparent focusable"
+        className="flex justify-center items-center w-9 h-full font-medium text-zinc-500 dark:text-zinc-400 bg-transparent hover:bg-zinc-500/10 disabled:!bg-transparent dark:hover:bg-zinc-100/10 rounded-md disabled:opacity-40 transition focusable"
         disabled={isFirstPage}
         onClick={goToPreviousPage}
       >
@@ -143,7 +143,7 @@ export function Pagination({
             className={clsx(
               "w-9 h-full font-medium rounded-md transition focusable",
               {
-                "hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 selection:bg-white/30 dark:selection:bg-zinc-900/30 dark:text-zinc-900 bg-primary-500 dark:bg-primary-400 shadow-lg focusable shadow-primary-500/10 dark:shadow-primary-400/10 text-white hover:bg-opacity-80 dark:hover:bg-opacity-80":
+                "hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 selection:bg-white/30 dark:selection:bg-zinc-900/30 dark:text-zinc-900 bg-primary-500 dark:bg-primary-400 shadow-lg focusable shadow-primary-500/10 dark:shadow-primary-400/10 text-white hover:bg-primary-500/80 dark:hover:bg-primary-400/80":
                   currentPage === page,
                 "hover:bg-zinc-500/10 dark:hover:bg-zinc-100/10":
                   currentPage !== page
@@ -157,7 +157,7 @@ export function Pagination({
       )}
       <button
         aria-label="Previous"
-        className="flex justify-center items-center w-9 h-full font-medium bg-transparent rounded-md disabled:opacity-40 transition text-zinc-500 dark:text-zinc-400 hover:bg-zinc-500/10 dark:hover:bg-zinc-100/10 disabled:!bg-transparent focusable"
+        className="flex justify-center items-center w-9 h-full font-medium text-zinc-500 dark:text-zinc-400 bg-transparent hover:bg-zinc-500/10 disabled:!bg-transparent dark:hover:bg-zinc-100/10 rounded-md disabled:opacity-40 transition focusable"
         disabled={isLastPage}
         onClick={goToNextPage}
       >

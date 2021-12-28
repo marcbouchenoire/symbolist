@@ -26,7 +26,7 @@ export const ColorPickerPopover = memo(
               <div className="relative text-white dark:text-zinc-800">
                 <motion.div
                   animate="visible"
-                  className="p-2.5 bg-current rounded-lg color-picker shadow-popover will-change-transform"
+                  className="p-2.5 bg-current rounded-lg color-picker shadow-popover"
                   exit="hidden"
                   initial="hidden"
                   transition={springier}
@@ -40,7 +40,7 @@ export const ColorPickerPopover = memo(
                 <Arrow asChild>
                   <motion.svg
                     animate="visible"
-                    className="color-picker-arrow will-change-transform"
+                    className="color-picker-arrow"
                     exit="hidden"
                     height="8"
                     initial="hidden"

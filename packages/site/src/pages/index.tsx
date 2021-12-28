@@ -51,9 +51,9 @@ interface Props {
 function Page({ date, content, features, version }: Props) {
   return (
     <>
-      <div className="overflow-hidden absolute top-0 w-screen h-72 md:h-80 lg:h-96 pointer-events-none">
+      <div className="overflow-hidden absolute top-0 w-screen h-72 pointer-events-none md:h-80 lg:h-96">
         <div className="relative h-full content">
-          <div className="absolute h-full opacity-30 aura w-[300%] md:w-[400%] left-[-100%] md:left-[-150%] z-negative" />
+          <div className="absolute left-[-100%] w-[300%] h-full opacity-30 md:left-[-150%] md:w-[400%] aura z-negative" />
         </div>
       </div>
       <Header
@@ -62,7 +62,7 @@ function Page({ date, content, features, version }: Props) {
         version={version}
       />
       <div className="my-8 md:my-12 lg:my-16 content">
-        <div className="flex gap-2 sm:gap-3 p-5 pl-4 text-sm rounded-md bg-primary-500/10 dark:bg-primary-400/20">
+        <div className="flex gap-2 p-5 pl-4 text-sm rounded-md sm:gap-3 bg-primary-500/10 dark:bg-primary-400/20">
           <svg
             className="flex-none text-primary-500 dark:text-primary-400"
             height="24"
@@ -104,11 +104,11 @@ function Page({ date, content, features, version }: Props) {
       </div>
       <Symbols className="mb-10 md:mb-16 lg:mb-20 content-lg" />
       <article
-        className="my-10 md:my-16 lg:my-20 prose content prose-zinc dark:prose-invert"
+        className="my-10 prose md:my-16 lg:my-20 content prose-zinc dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: content }}
       />
       <div className="content">
-        <hr className="w-full border-t border-zinc-150 dark:border-zinc-800" />
+        <hr className="w-full border-t dark:border-zinc-800 border-zinc-150" />
       </div>
       <Footer
         className="flex items-center my-8 md:my-10 lg:my-12 content pb-0-safe"
