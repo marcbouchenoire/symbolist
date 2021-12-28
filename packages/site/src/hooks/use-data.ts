@@ -1,16 +1,5 @@
-import data from "../.data.json"
-
-interface Data {
-  /**
-   * The current year.
-   */
-  date: string
-
-  /**
-   * The latest package version.
-   */
-  version: string
-}
+import data from "../data.json" // eslint-disable-line import/no-unresolved
+import { Data } from "../types"
 
 /**
  * Fetch a static data object.
