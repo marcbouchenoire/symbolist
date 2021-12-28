@@ -161,7 +161,7 @@ export function Header({ features, version, ...props }: Props) {
       </nav>
       <section className="mt-16 md:mt-20 lg:mt-28">
         <h1 className="text-4xl md:text-5xl font-bold logo">
-          <img alt="Symbolist" height="40" src="/logo.svg" width="304" />
+          <img alt="Symbolist" height="80" src="/logo.svg" width="609" />
         </h1>
         <p className="mt-6 text-lg md:text-xl text-zinc-700 dark:text-zinc-300">
           A collection of every symbol from SF Symbols.

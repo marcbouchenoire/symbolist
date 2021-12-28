@@ -52,7 +52,7 @@ body {
   }
 
   .link {
-    @apply transition focusable rounded-sm underline focus:decoration-transparent underline-offset-1 decoration-2 decoration-zinc-600/20 dark:decoration-white/20 selection:decoration-zinc-600/20 dark:selection:decoration-white/20 hover:decoration-zinc-600/40 dark:hover:decoration-white/40;
+    @apply transition focusable rounded-sm underline focus:decoration-transparent underline-offset-2 decoration-zinc-600/20 dark:decoration-white/20 selection:decoration-zinc-600/20 dark:selection:decoration-white/20 hover:decoration-zinc-600/40 dark:hover:decoration-white/40;
   }
 
   .link-primary {
