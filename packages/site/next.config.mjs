@@ -2,7 +2,7 @@ import { createRequire } from "module"
 import path from "path"
 import { writeJsonFileSync } from "write-json-file"
 
-const DATA_PATH = path.resolve("./src/.data.json")
+const DATA_PATH = path.resolve("./src/data.json")
 
 /**
  * Create a static data object.

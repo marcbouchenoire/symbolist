@@ -1,3 +1,9 @@
+declare module "*/data.json" {
+  const value: any
+
+  export default value
+}
+
 declare module "tailwindcss/colors" {
   /* eslint-disable jsdoc/require-jsdoc */
   interface ColorGroup {
