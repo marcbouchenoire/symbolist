@@ -160,10 +160,10 @@ export function Header({ features, version, ...props }: Props) {
         </div>
       </nav>
       <section className="mt-16 md:mt-20 lg:mt-28">
-        <h1 className="text-4xl md:text-5xl font-bold logo">
+        <h1 className="text-4xl font-bold md:text-5xl logo">
           <img alt="Symbolist" height="80" src="/logo.svg" width="609" />
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-zinc-700 dark:text-zinc-300">
+        <p className="mt-6 text-lg text-zinc-700 dark:text-zinc-300 md:text-xl">
           A collection of every symbol from SF Symbols.
         </p>
         <div
@@ -172,7 +172,7 @@ export function Header({ features, version, ...props }: Props) {
         />
         <div className="flex flex-wrap gap-4 mt-8 text-center">
           <a
-            className="flex flex-none gap-2 justify-center items-center py-2 px-3 pl-2.5 w-full sm:w-auto font-medium text-white hover:bg-opacity-80 dark:hover:bg-opacity-80 rounded-md shadow-lg transition cursor-pointer hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 selection:bg-white/30 dark:selection:bg-zinc-900/30 dark:text-zinc-900 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
+            className="flex flex-none gap-2 justify-center items-center py-2 px-3 pl-2.5 w-full font-medium text-white dark:text-zinc-900 selection:bg-white/30 dark:selection:bg-zinc-900/30 rounded-md shadow-lg transition cursor-pointer sm:w-auto hover:bg-primary-500/80 dark:hover:bg-primary-400/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
             href="https://github.com/marcbouchenoire/symbolist"
           >
             <svg
@@ -191,7 +191,7 @@ export function Header({ features, version, ...props }: Props) {
             <span>View on GitHub</span>
           </a>
           <button
-            className="group flex flex-none gap-2 justify-center items-center py-2 px-2.5 pr-2.5 w-full sm:w-auto font-mono text-sm font-medium rounded-md transition cursor-pointer hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
+            className="group flex flex-none gap-2 justify-center items-center py-2 px-2.5 pr-2.5 w-full font-mono text-sm font-medium rounded-md transition cursor-pointer sm:w-auto hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
             onClick={handleClipboardClick}
             type="button"
           >

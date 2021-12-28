@@ -99,7 +99,7 @@ const Symbol = memo(({ symbol, name, className, ...props }: IconProps) => {
     <div
       className={clsx(
         className,
-        "grid grid-flow-col rounded-md border border-zinc-150 dark:border-zinc-800 aspect-square grid-rows-symbol"
+        "aspect-square grid grid-flow-col rounded-md border dark:border-zinc-800 border-zinc-150 grid-rows-symbol"
       )}
       {...props}
     >
@@ -108,7 +108,7 @@ const Symbol = memo(({ symbol, name, className, ...props }: IconProps) => {
       </div>
       <div className="flex justify-center p-4 pt-0 min-w-0">
         <code
-          className="max-w-full leading-tight select-all text-2xs text-zinc-600 dark:text-zinc-400"
+          className="max-w-full leading-tight text-zinc-600 dark:text-zinc-400 select-all text-2xs"
           title={name}
         >
           <span className="block max-w-full truncate">{name}</span>
@@ -197,8 +197,8 @@ export function Symbols(props: ComponentProps<"section">) {
 
   return (
     <section {...props}>
-      <div className="flex flex-wrap sm:flex-nowrap gap-4 mx-auto mb-8 max-w-sm">
-        <div className="relative flex-none sm:flex-1 w-full sm:w-auto h-9 text-zinc-400 hover:text-zinc-450 dark:text-zinc-450 dark:hover:text-zinc-400">
+      <div className="flex flex-wrap gap-4 mx-auto mb-8 max-w-sm sm:flex-nowrap">
+        <div className="relative flex-none w-full h-9 text-zinc-400 dark:hover:text-zinc-400 sm:flex-1 sm:w-auto hover:text-zinc-450 dark:text-zinc-450">
           <svg
             className="absolute top-2 left-2 transition-colors pointer-events-none"
             height="20"
@@ -216,18 +216,18 @@ export function Symbols(props: ComponentProps<"section">) {
           </svg>
           <input
             aria-label="Search (Press / to focus)"
-            className="flex flex-none justify-center items-center pr-8 pl-8 w-full h-full text-sm font-medium truncate rounded-md transition appearance-none focusable bg-zinc-100 text-zinc-500 placeholder:text-zinc-500/60 dark:bg-zinc-750 dark:text-zinc-350 dark:placeholder:text-zinc-350/60 hover:bg-zinc-150 dark:hover:bg-zinc-700"
+            className="flex flex-none justify-center items-center pr-8 pl-8 w-full h-full text-sm font-medium text-zinc-500 placeholder:text-zinc-500/60 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none focusable dark:bg-zinc-750 dark:text-zinc-350 dark:placeholder:text-zinc-350/60 hover:bg-zinc-150"
             onChange={handleSearchChange}
             placeholder={`Search ${SYMBOLS_LENGTH} symbols…`}
             ref={searchRef}
             type="search"
             value={search}
           />
-          <kbd className="flex absolute top-2 right-2 justify-center items-center w-5 h-5 text-xs font-medium leading-none pointer-events-none select-none bg-zinc-500/10 text-zinc-400 dark:bg-zinc-300/10 dark:text-zinc-450 rounded-[0.2rem]">
+          <kbd className="flex absolute top-2 right-2 justify-center items-center w-5 h-5 text-xs font-medium leading-none text-zinc-400 bg-zinc-500/10 dark:bg-zinc-300/10 rounded-[0.2rem] pointer-events-none select-none dark:text-zinc-450">
             /
           </kbd>
         </div>
-        <div className="relative flex-1 sm:flex-none w-auto sm:w-40 h-9 text-zinc-400 hover:text-zinc-450 dark:text-zinc-450 dark:hover:text-zinc-400">
+        <div className="relative flex-1 w-auto h-9 text-zinc-400 dark:hover:text-zinc-400 sm:flex-none sm:w-40 hover:text-zinc-450 dark:text-zinc-450">
           <svg
             className="absolute top-2 right-1 transition-colors pointer-events-none"
             fill="currentColor"
@@ -244,7 +244,7 @@ export function Symbols(props: ComponentProps<"section">) {
           </svg>
           <Select
             aria-label="Weight"
-            className="flex flex-none justify-center items-center pr-7 pl-3 w-full h-full text-sm font-medium truncate rounded-md transition appearance-none cursor-pointer focusable bg-zinc-100 text-zinc-500 dark:bg-zinc-750 dark:text-zinc-350 hover:bg-zinc-150 dark:hover:bg-zinc-700"
+            className="flex flex-none justify-center items-center pr-7 pl-3 w-full h-full text-sm font-medium text-zinc-500 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none cursor-pointer focusable dark:bg-zinc-750 dark:text-zinc-350 hover:bg-zinc-150"
             onChange={handleWeightChange}
             value={weight}
           />
@@ -252,10 +252,10 @@ export function Symbols(props: ComponentProps<"section">) {
         <ColorPickerPopover color={color} onChange={handleColorChange}>
           <button
             aria-label="Color"
-            className="relative w-14 h-9 rounded-md transition cursor-pointer color-picker focusable bg-zinc-100 dark:bg-zinc-750 hover:bg-zinc-150 dark:hover:bg-zinc-700"
+            className="relative w-14 h-9 bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition cursor-pointer color-picker focusable dark:bg-zinc-750 hover:bg-zinc-150"
           >
             <span
-              className="absolute inset-1.5 rounded-sm bg-zinc-700 dark:bg-zinc-100 highlight dark:highlight-invert"
+              className="absolute inset-1.5 bg-zinc-700 dark:bg-zinc-100 rounded-sm highlight dark:highlight-invert"
               style={{ background: color }}
             />
           </button>
@@ -297,7 +297,7 @@ export function Symbols(props: ComponentProps<"section">) {
             ”.
           </div>
           <button
-            className="flex flex-none gap-2 justify-center items-center py-2 px-3 w-full sm:w-auto font-medium text-white hover:bg-opacity-80 dark:hover:bg-opacity-80 rounded-md shadow-lg transition cursor-pointer hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 selection:bg-white/30 dark:selection:bg-zinc-900/30 dark:text-zinc-900 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
+            className="flex flex-none gap-2 justify-center items-center py-2 px-3 w-full font-medium text-white dark:text-zinc-900 selection:bg-white/30 dark:selection:bg-zinc-900/30 rounded-md shadow-lg transition cursor-pointer sm:w-auto hover:bg-primary-500/80 dark:hover:bg-primary-400/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
             onClick={handleShowAllClick}
           >
             View all symbols

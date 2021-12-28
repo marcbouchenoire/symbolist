@@ -37,7 +37,7 @@ export function Footer({ date, className, ...props }: Props) {
         MIT License
       </a>
       <div className="flex items-center ml-auto">
-        <span className="hidden sm:inline whitespace-pre">Made by </span>
+        <span className="hidden whitespace-pre sm:inline">Made by </span>
         <a
           className="inline-flex items-center link"
           href="https://marcbouchenoire.com"
