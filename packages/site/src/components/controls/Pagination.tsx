@@ -2,7 +2,9 @@ import clsx from "clsx"
 import { ComponentProps, useCallback, useMemo } from "react"
 import { PaginationCallbacks } from "../../hooks/use-pagination"
 
-interface PaginationProps extends ComponentProps<"nav">, PaginationCallbacks {
+export interface PaginationProps
+  extends ComponentProps<"nav">,
+    PaginationCallbacks {
   /**
    * The active page index.
    */
@@ -19,7 +21,7 @@ interface PaginationProps extends ComponentProps<"nav">, PaginationCallbacks {
   truncation?: number
 }
 
-interface PaginationPageProps
+export interface PaginationPageProps
   extends ComponentProps<"button">,
     Pick<PaginationCallbacks, "goToPage"> {
   /**
