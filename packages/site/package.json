@@ -2,32 +2,13 @@
   "name": "site",
   "version": "1.2.0",
   "private": true,
-  "nano-staged": {
-    "**/*.{cjs,mjs}": [
-      "eslint --fix",
-      "yarn prettier"
-    ],
-    "**/*.{ts,tsx}": [
-      "eslint --fix",
-      "tsatsiki --project tsconfig.json next-env.d.ts declarations.d.ts",
-      "yarn prettier"
-    ],
-    "**/*.css": [
-      "stylelint --fix",
-      "yarn prettier"
-    ],
-    "**/*.{json,md,yml}": [
-      "yarn prettier"
-    ]
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "nano-staged": "nano-staged",
     "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
     "lint": "yarn lint:eslint && yarn lint:stylelint && yarn lint:tsc && yarn lint:prettier",
     "lint:eslint": "eslint '**/*.{cjs,mjs,ts,tsx}' --fix",
-    "lint:prettier": "yarn prettier '**/*.{cjs,mjs,ts,tsx,json,md,yml,css}'",
+    "lint:prettier": "yarn prettier '**/*.{cjs,mjs,ts,tsx,json,md,css}'",
     "lint:stylelint": "stylelint '**/*.css' --fix",
     "lint:tsc": "tsc --project tsconfig.json"
   },
