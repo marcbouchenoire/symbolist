@@ -42,7 +42,8 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        popover: `0px 2px 8px rgba(0, 0, 0, 0.08), 0px 6px 32px rgba(0, 0, 0, 0.08), 0px 8px 64px rgba(0, 0, 0, 0.06)`
+        popover:
+          "0px 2px 8px rgba(0, 0, 0, 0.08), 0px 6px 32px rgba(0, 0, 0, 0.08), 0px 8px 64px rgba(0, 0, 0, 0.06)"
       },
       colors: {
         primary: {

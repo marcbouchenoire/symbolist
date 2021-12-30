@@ -99,7 +99,7 @@ export function Introduction({ features, className, ...props }: Props) {
           </svg>
           <span className="truncate">{NPM_INSTALL}</span>
           <svg
-            className="flex-none opacity-30 dark:opacity-50 transition-opacity"
+            className="flex-none opacity-30 dark:opacity-50"
             height="24"
             role="presentation"
             width="24"
