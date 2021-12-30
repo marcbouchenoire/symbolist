@@ -2,9 +2,42 @@
   "name": "",
   "private": true,
   "prettier": "@marcbouchenoire/prettier-config",
+  "nano-staged": {
+    "*.{json,md,yml}": [
+      "yarn prettier"
+    ],
+    "packages/symbolist/**/*.mjs": [
+      "yarn workspace symbolist eslint --fix",
+      "yarn workspace symbolist prettier"
+    ],
+    "packages/symbolist/**/*.{ts,tsx}": [
+      "yarn workspace symbolist eslint --fix",
+      "yarn workspace symbolist tsatsiki --project tsconfig.json declarations.d.ts",
+      "yarn workspace symbolist prettier"
+    ],
+    "packages/symbolist/**/*.{json,md}": [
+      "yarn workspace symbolist prettier"
+    ],
+    "packages/site/**/*.{cjs,mjs}": [
+      "yarn workspace site eslint --fix",
+      "yarn workspace site prettier"
+    ],
+    "packages/site/**/*.{ts,tsx}": [
+      "yarn workspace site eslint --fix",
+      "yarn workspace site tsatsiki --project tsconfig.json next-env.d.ts declarations.d.ts",
+      "yarn workspace site prettier"
+    ],
+    "packages/site/**/*.css": [
+      "yarn workspace site stylelint --fix",
+      "yarn workspace site prettier"
+    ],
+    "packages/site/**/*.{json,md}": [
+      "yarn workspace site prettier"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream nano-staged --since HEAD --exclude-dependents"
+      "pre-commit": "nano-staged"
     }
   },
   "engines": {
@@ -17,11 +50,12 @@
     "site:dev": "yarn workspace site dev",
     "site:build": "yarn workspace site build",
     "site:publish": "yarn build && yarn site:build",
+    "prettier": "prettier --write --loglevel silent --ignore-path .gitignore",
     "generate": "yarn workspace symbolist generate",
     "build": "yarn workspace symbolist build",
     "test": "yarn workspace symbolist test",
     "test:coverage": "yarn workspace symbolist test:coverage",
-    "lint": "lerna run lint --stream",
+    "lint": "yarn prettier '*.{json,md,yml}' && lerna run lint --stream",
     "release": "yarn test && lerna publish"
   },
   "devDependencies": {
