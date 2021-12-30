@@ -65,7 +65,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/unist": "^2.0.6",
     "autoprefixer": "^10.4.0",
-    "eslint-plugin-tailwindcss": "^1.17.2",
+    "eslint-plugin-tailwindcss": "^3.0.2",
     "postcss": "^8.4.5",
     "postcss-nesting": "^10.0.3",
     "stylelint": "^14.2.0",
