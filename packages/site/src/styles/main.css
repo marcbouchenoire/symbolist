@@ -159,7 +159,7 @@ pre[class*="language-"] {
     .language-markdown &.strike &.punctuation,
     .language-markdown &.list.punctuation,
     .language-markdown &.title.important > &.punctuation {
-      @apply text-pink-600 dark:text-pink-300;
+      @apply text-cyan-600 dark:text-cyan-300;
     }
 
     &.attr-name,
@@ -204,7 +204,7 @@ pre[class*="language-"] {
     .language-css &.url > &.function,
     .language-markdown &.url > &.url,
     .language-markdown &.url-reference.url {
-      @apply text-cyan-600 dark:text-cyan-300;
+      @apply text-pink-600 dark:text-pink-300;
     }
   }
 }
