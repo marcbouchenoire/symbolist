@@ -18,7 +18,9 @@ import { usePagination } from "../../hooks/use-pagination"
 import { useSystemTheme } from "../../hooks/use-system-theme"
 import { NamedSymbol } from "../../types"
 import { ColorPicker } from "../controls/ColorPicker"
+import { Input } from "../controls/Input"
 import { Pagination } from "../controls/Pagination"
+import { Select } from "../controls/Select"
 
 type IconProps = ComponentProps<"div"> & NamedSymbol
 
@@ -63,28 +65,17 @@ const weights: Weight[] = [
   { name: "Black", value: 900 }
 ]
 
+const weightOptions = weights.map((weight) => (
+  <option key={weight.value} value={weight.value}>
+    {weight.name}
+  </option>
+))
+
 const SYMBOLS_LENGTH = namedSymbols.length
 const SYMBOLS_PAGE_LENGTH = 42
 const DEFAULT_WEIGHT = 400
 const DEFAULT_COLOR_LIGHT = colors.zinc[700]
 const DEFAULT_COLOR_DARK = colors.zinc[100]
-
-/**
- * A select element containing all font weights as options.
- *
- * @param props - A set of `select` props.
- */
-function Select(props: ComponentProps<"select">) {
-  return (
-    <select {...props}>
-      {weights.map((weight) => (
-        <option key={weight.value} value={weight.value}>
-          {weight.name}
-        </option>
-      ))}
-    </select>
-  )
-}
 
 /**
  * A single symbol component.
@@ -150,7 +141,7 @@ export function Symbols(props: ComponentProps<"section">) {
     goToNextPage
   } = usePagination(filteredSymbols, SYMBOLS_PAGE_LENGTH)
 
-  const handleShortcutKey = useCallback((event) => {
+  const handleShortcutKey = useCallback((event: KeyboardEvent) => {
     if (document.activeElement !== searchRef?.current) {
       event?.preventDefault()
     }
@@ -198,7 +189,18 @@ export function Symbols(props: ComponentProps<"section">) {
   return (
     <section {...props}>
       <div className="flex flex-wrap gap-4 mx-auto mb-8 max-w-sm sm:flex-nowrap">
-        <div className="relative flex-none w-full h-9 text-zinc-400 dark:hover:text-zinc-400 sm:flex-1 sm:w-auto hover:text-zinc-450 dark:text-zinc-450">
+        <Input
+          className="flex-none w-full sm:flex-1 sm:w-auto"
+          inputProps={{
+            "aria-label": "Search (Press / to focus)",
+            className: "pr-8 pl-8",
+            onChange: handleSearchChange,
+            placeholder: `Search ${SYMBOLS_LENGTH} symbols…`,
+            type: "search",
+            value: search
+          }}
+          ref={searchRef}
+        >
           <svg
             className="absolute top-2 left-2 transition-colors pointer-events-none"
             height="20"
@@ -214,41 +216,19 @@ export function Symbols(props: ComponentProps<"section">) {
               fillRule="evenodd"
             />
           </svg>
-          <input
-            aria-label="Search (Press / to focus)"
-            className="flex flex-none justify-center items-center pr-8 pl-8 w-full h-full text-sm font-medium text-zinc-500 placeholder:text-zinc-500/60 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none focusable dark:bg-zinc-750 dark:text-zinc-350 dark:placeholder:text-zinc-350/60 hover:bg-zinc-150"
-            onChange={handleSearchChange}
-            placeholder={`Search ${SYMBOLS_LENGTH} symbols…`}
-            ref={searchRef}
-            type="search"
-            value={search}
-          />
           <kbd className="flex absolute top-2 right-2 justify-center items-center w-5 h-5 text-xs font-medium leading-none text-zinc-400 bg-zinc-500/10 dark:bg-zinc-300/10 rounded-[0.2rem] pointer-events-none select-none dark:text-zinc-450">
             /
           </kbd>
-        </div>
-        <div className="relative flex-1 w-auto h-9 text-zinc-400 dark:hover:text-zinc-400 sm:flex-none sm:w-40 hover:text-zinc-450 dark:text-zinc-450">
-          <svg
-            className="absolute top-2 right-1 transition-colors pointer-events-none"
-            fill="currentColor"
-            height="20"
-            role="presentation"
-            width="20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clipRule="evenodd"
-              d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-              fillRule="evenodd"
-            />
-          </svg>
-          <Select
-            aria-label="Weight"
-            className="flex flex-none justify-center items-center pr-7 pl-3 w-full h-full text-sm font-medium text-zinc-500 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none cursor-pointer focusable dark:bg-zinc-750 dark:text-zinc-350 hover:bg-zinc-150"
-            onChange={handleWeightChange}
-            value={weight}
-          />
-        </div>
+        </Input>
+        <Select
+          className="flex-1 w-auto sm:flex-none sm:w-40"
+          selectProps={{
+            "aria-label": "Weight",
+            children: weightOptions,
+            onChange: handleWeightChange,
+            value: weight
+          }}
+        />
         <ColorPicker color={color} onChange={handleColorChange}>
           <button
             aria-label="Color"
