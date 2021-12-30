@@ -1,15 +1,19 @@
 import { Spring } from "framer-motion"
-import { SetRequired } from "type-fest"
 
-type DurationSpring = SetRequired<Spring, "duration">
+type DurationSpring = Spring & {
+  /**
+   * The duration of the animation.
+   */
+  duration: number
+}
 
-export const springy: Spring = {
+export const springy: DurationSpring = {
   type: "spring",
   duration: 0.4,
   bounce: 0.08
 }
 
-export const springier: Spring = {
+export const springier: DurationSpring = {
   type: "spring",
   duration: 0.4,
   bounce: 0.2
