@@ -73,6 +73,39 @@ body {
   .link-primary {
     @apply decoration-primary-500/30 dark:decoration-primary-400/30 selection:decoration-primary-500/30 dark:selection:decoration-primary-400/30 hover:decoration-primary-500/60 dark:hover:decoration-primary-400/60;
   }
+
+  .scrollbar {
+    --scrollbar-color: theme("colors.zinc.150");
+
+    scrollbar-color: var(--scrollbar-color) transparent;
+    scrollbar-width: thin;
+
+    &:hover {
+      --scrollbar-color: theme("colors.zinc.200");
+    }
+
+    &::-webkit-scrollbar {
+      @apply bg-transparent;
+
+      width: 18px;
+      height: 18px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-full;
+
+      border: solid 6px transparent;
+      box-shadow: inset 0 0 0 20px var(--scrollbar-color);
+    }
+
+    .dark & {
+      --scrollbar-color: theme("colors.zinc.750");
+
+      &:hover {
+        --scrollbar-color: theme("colors.zinc.700");
+      }
+    }
+  }
 }
 
 @layer components {
@@ -100,7 +133,7 @@ body {
 }
 
 pre[class*="language-"] {
-  @apply border border-zinc-150 dark:border-zinc-800;
+  @apply scrollbar border border-zinc-150 dark:border-zinc-800;
 
   .token {
     &.important,
