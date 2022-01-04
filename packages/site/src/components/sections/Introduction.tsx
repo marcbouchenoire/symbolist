@@ -62,6 +62,8 @@ export function Introduction({ features, className, ...props }: Props) {
         <a
           className="flex flex-none gap-2 justify-center items-center py-2 px-3 pl-2.5 w-full font-medium text-white dark:text-zinc-900 selection:bg-white/30 dark:selection:bg-zinc-900/30 rounded-md shadow-lg transition cursor-pointer sm:w-auto dark:hover:bg-primary-400/80 hover:bg-primary-500/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
           href="https://github.com/marcbouchenoire/symbolist"
+          rel="noreferrer"
+          target="_blank"
         >
           <svg
             height="24"
@@ -79,7 +81,7 @@ export function Introduction({ features, className, ...props }: Props) {
           <span>View on GitHub</span>
         </a>
         <button
-          className="group flex flex-none gap-2 justify-center items-center py-2 px-2.5 w-full font-mono text-sm font-medium rounded-md transition cursor-pointer sm:w-auto hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
+          className="group flex flex-none gap-2 justify-center items-center py-2 px-2.5 w-full font-mono text-sm rounded-md transition cursor-pointer sm:w-auto hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
           onClick={handleClipboardClick}
           type="button"
         >
