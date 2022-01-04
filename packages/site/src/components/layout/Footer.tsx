@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import Image from "next/image"
 import { ComponentProps } from "react"
-import avatar from "../../../public/avatar.jpg"
+import portrait from "../../../public/portrait.jpg"
 import { useData } from "../../hooks/use-data"
 
 /**
@@ -39,12 +39,12 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
             className="inline-flex items-center link"
             href="https://marcbouchenoire.com"
           >
-            <span className="mr-2 ml-1.5 w-4 h-4 avatar">
+            <span className="mr-2 ml-1.5 w-4 h-4 portrait">
               <Image
                 alt="Portrait of Marc Bouchenoire"
                 height="20"
                 layout="fixed"
-                src={avatar}
+                src={portrait}
                 width="20"
               />
             </span>{" "}

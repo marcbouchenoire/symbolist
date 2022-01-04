@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { Transition, Variants, motion } from "framer-motion"
 import Image from "next/image"
 import { ComponentProps } from "react"
-import avatar from "../../../public/avatar.jpg"
+import portrait from "../../../public/portrait.jpg"
 import { useData } from "../../hooks/use-data"
 import { useSystemTheme } from "../../hooks/use-system-theme"
 import { springiest } from "../../transitions"
@@ -47,14 +47,14 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
         <p className="flex items-center leading-none whitespace-pre">
           <a
             aria-label="marcbouchenoire.com"
-            className="mr-0.5 w-5 h-5 hover:opacity-60 transition focusable avatar"
+            className="mr-0.5 w-5 h-5 hover:opacity-60 transition focusable portrait"
             href="https://marcbouchenoire.com"
           >
             <Image
               alt="Portrait of Marc Bouchenoire"
               height="20"
               layout="fixed"
-              src={avatar}
+              src={portrait}
               width="20"
             />
           </a>{" "}
