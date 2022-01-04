@@ -32,7 +32,7 @@ const themeVariants: Variants = {
 }
 
 /**
- * A header section with a navigation.
+ * A header section.
  *
  * @param props - A set of `header` props.
  * @param [props.className] - A list of one or more classes.
@@ -43,7 +43,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
 
   return (
     <header className={clsx(className, "pt-6 lg:pt-8")} {...props}>
-      <nav className="flex items-center text-zinc-700 dark:text-zinc-100">
+      <div className="flex items-center text-zinc-700 dark:text-zinc-100">
         <p className="flex items-center leading-none whitespace-pre">
           <a
             aria-label="marcbouchenoire.com"
@@ -121,7 +121,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
             </svg>
           </button>
         </div>
-      </nav>
+      </div>
     </header>
   )
 }
