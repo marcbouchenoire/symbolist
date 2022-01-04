@@ -31,7 +31,7 @@ export const ColorPicker = memo(
                   initial="hidden"
                   transition={springier}
                   variants={{
-                    hidden: { scale: 0, opacity: 0 },
+                    hidden: { scale: 0.2, opacity: 0 },
                     visible: { scale: 1, opacity: 1 }
                   }}
                 >
