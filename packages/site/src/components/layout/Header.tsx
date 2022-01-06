@@ -44,7 +44,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
   return (
     <header className={clsx(className, "pt-6 lg:pt-8")} {...props}>
       <div className="flex items-center text-zinc-700 dark:text-zinc-100">
-        <p className="flex items-center leading-none whitespace-pre">
+        <span className="flex items-center leading-none whitespace-pre">
           <a
             aria-label="marcbouchenoire.com"
             className="mr-0.5 w-5 h-5 hover:opacity-60 transition focusable portrait"
@@ -80,7 +80,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
           >
             v{version}
           </a>
-        </p>
+        </span>
         <div className="ml-auto">
           <button
             aria-label="Toggle Theme"
