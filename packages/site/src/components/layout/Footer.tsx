@@ -23,17 +23,22 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
     >
       <hr className="w-full border-t dark:border-zinc-800 border-zinc-150" />
       <div className="flex items-center py-6 lg:py-8">
-        <span className="whitespace-pre">
-          © <span className="hidden sm:inline">{date} </span>
-          <span className="text-zinc-300 dark:text-zinc-600">—</span>{" "}
+        <span className="flex items-center">
+          <span>
+            © <span className="hidden sm:inline">{date}</span>
+          </span>
+          <span className="text-zinc-300 dark:text-zinc-600 whitespace-pre">
+            {" "}
+            —{" "}
+          </span>
+          <a
+            className="link"
+            href="https://github.com/marcbouchenoire/symbolist/blob/main/LICENSE"
+          >
+            MIT License
+          </a>
         </span>
-        <a
-          className="link"
-          href="https://github.com/marcbouchenoire/symbolist/blob/main/LICENSE"
-        >
-          MIT License
-        </a>
-        <div className="flex items-center ml-auto">
+        <span className="flex items-center ml-auto">
           <span className="hidden whitespace-pre sm:inline">Made by </span>
           <a
             className="inline-flex items-center link"
@@ -50,7 +55,7 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
             </span>{" "}
             Marc Bouchenoire
           </a>
-        </div>
+        </span>
       </div>
     </footer>
   )
