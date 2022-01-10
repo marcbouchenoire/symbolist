@@ -1,3 +1,4 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
 const plugin = require("tailwindcss/plugin")
 
 const paddingSafe = plugin(({ addUtilities, config, e }) => {
@@ -71,6 +72,7 @@ module.exports = {
         }
       },
       fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
         sf: `"SF Pro", "SF Pro Display", "SF Pro Text"`
       },
       fontSize: {
