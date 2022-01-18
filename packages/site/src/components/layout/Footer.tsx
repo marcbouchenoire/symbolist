@@ -25,7 +25,10 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
       <div className="flex items-center py-6 lg:py-8">
         <span className="flex items-center">
           <span>
-            © <span className="hidden sm:inline">{date}</span>
+            ©{" "}
+            <time className="hidden sm:inline" dateTime={String(date)}>
+              {date}
+            </time>
           </span>
           <span className="text-zinc-300 dark:text-zinc-600 whitespace-pre">
             {" "}
