@@ -127,7 +127,7 @@ export function Introduction({ features, className, ...props }: Props) {
         </button>
       </div>
       <div className="my-8 md:my-12 lg:my-16">
-        <div className="flex gap-2 p-5 pl-4 text-sm rounded-md sm:gap-3 bg-primary-500/10 dark:bg-primary-400/20">
+        <div className="flex gap-2 p-5 pl-4 text-sm rounded-lg sm:gap-3 bg-primary-500/10 dark:bg-primary-400/20">
           <svg
             className="flex-none text-primary-500 dark:text-primary-400"
             height="24"

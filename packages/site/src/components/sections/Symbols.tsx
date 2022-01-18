@@ -90,7 +90,7 @@ const Symbol = memo(({ symbol, name, className, ...props }: IconProps) => {
     <div
       className={clsx(
         className,
-        "aspect-square grid grid-flow-col rounded-md border dark:border-zinc-800 border-zinc-150 grid-rows-symbol"
+        "aspect-square grid grid-flow-col rounded-lg border dark:border-zinc-800 border-zinc-150 grid-rows-symbol"
       )}
       {...props}
     >
