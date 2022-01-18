@@ -75,7 +75,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
           </svg>
           <strong>Symbolist</strong>
           <a
-            className="py-1 px-1.5 ml-1.5 font-semibold rounded-full transition cursor-pointer text-2xs focusable hover:bg-primary-500/20 dark:hover:bg-primary-400/30 text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
+            className="p-1.5 pb-1 ml-2 font-semibold leading-none rounded transition cursor-pointer text-2xs focusable hover:bg-primary-500/20 dark:hover:bg-primary-400/30 text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
             href="https://github.com/marcbouchenoire/symbolist/releases"
           >
             v{version}
