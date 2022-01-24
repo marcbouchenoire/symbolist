@@ -21,12 +21,12 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     <div
       className={clsx(
         className,
-        "relative h-9 text-zinc-400 dark:hover:text-zinc-400 hover:text-zinc-450 dark:text-zinc-450"
+        "hover:text-zinc-450 dark:text-zinc-450 relative h-9 text-zinc-400 dark:hover:text-zinc-400"
       )}
       {...props}
     >
       <svg
-        className="absolute top-2 right-1 transition-colors pointer-events-none"
+        className="pointer-events-none absolute top-2 right-1 transition-colors"
         fill="currentColor"
         height="20"
         role="presentation"
@@ -44,7 +44,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {...selectProps}
         className={clsx(
           selectProps?.className,
-          "px-3 pr-7 w-full h-full text-sm font-medium text-zinc-500 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none cursor-pointer focusable dark:bg-zinc-750 dark:text-zinc-350 hover:bg-zinc-150"
+          "focusable dark:bg-zinc-750 dark:text-zinc-350 hover:bg-zinc-150 h-full w-full cursor-pointer appearance-none truncate rounded-md bg-zinc-100 px-3 pr-7 text-sm font-medium text-zinc-500 transition dark:hover:bg-zinc-700"
         )}
         ref={ref}
       />

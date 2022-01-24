@@ -48,19 +48,19 @@ export function Introduction({ features, className, ...props }: Props) {
 
   return (
     <section className={clsx(className, "mt-16 md:mt-20 lg:mt-28")} {...props}>
-      <h1 className="text-4xl font-bold md:text-5xl logo">
+      <h1 className="logo text-4xl font-bold md:text-5xl">
         <img alt="Symbolist" height="80" src="/logo.svg" width="609" />
       </h1>
       <p className="mt-6 text-lg text-zinc-700 dark:text-zinc-300 md:text-xl">
         A collection of every symbol from SF Symbols.
       </p>
       <div
-        className="mt-6 prose prose-zinc prose-primary dark:prose-invert"
+        className="prose prose-zinc prose-primary dark:prose-invert mt-6"
         dangerouslySetInnerHTML={{ __html: features }}
       />
-      <div className="flex flex-wrap gap-4 mt-8 text-center">
+      <div className="mt-8 flex flex-wrap gap-4 text-center">
         <a
-          className="flex flex-none gap-2 justify-center items-center py-2 px-3 pl-2.5 w-full font-medium text-white dark:text-zinc-900 selection:bg-white/30 dark:selection:bg-zinc-900/30 rounded-md shadow-lg transition cursor-pointer sm:w-auto dark:hover:bg-primary-400/80 hover:bg-primary-500/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10"
+          className="dark:hover:bg-primary-400/80 hover:bg-primary-500/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10 flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-3 pl-2.5 font-medium text-white shadow-lg transition selection:bg-white/30 dark:text-zinc-900 dark:selection:bg-zinc-900/30 sm:w-auto"
           href="https://github.com/marcbouchenoire/symbolist"
           rel="noreferrer"
           target="_blank"
@@ -81,7 +81,7 @@ export function Introduction({ features, className, ...props }: Props) {
           <span>View on GitHub</span>
         </a>
         <button
-          className="group flex flex-none gap-2 justify-center items-center py-2 px-2.5 w-full font-mono text-sm rounded-md transition cursor-pointer sm:w-auto hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
+          className="group hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400 flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-2.5 font-mono text-sm transition sm:w-auto"
           onClick={handleClipboardClick}
           type="button"
         >
@@ -127,9 +127,9 @@ export function Introduction({ features, className, ...props }: Props) {
         </button>
       </div>
       <div className="my-8 md:my-12 lg:my-16">
-        <div className="flex gap-2 p-5 pl-4 text-sm rounded-lg sm:gap-3 bg-primary-500/10 dark:bg-primary-400/20">
+        <div className="bg-primary-500/10 dark:bg-primary-400/20 flex gap-2 rounded-lg p-5 pl-4 text-sm sm:gap-3">
           <svg
-            className="flex-none text-primary-500 dark:text-primary-400"
+            className="text-primary-500 dark:text-primary-400 flex-none"
             height="24"
             role="presentation"
             width="24"
@@ -143,13 +143,13 @@ export function Introduction({ features, className, ...props }: Props) {
             />
           </svg>
           <div>
-            <small className="font-semibold tracking-widest leading-none uppercase text-primary-500 dark:text-primary-400 text-2xs">
+            <small className="text-primary-500 dark:text-primary-400 text-2xs font-semibold uppercase leading-none tracking-widest">
               Seeing missing characters
               <span className="hidden sm:inline"> instead of symbols</span>?
             </small>
             <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-100">
               <a
-                className="font-medium link link-primary focusable"
+                className="link link-primary focusable font-medium"
                 href="https://developer.apple.com/sf-symbols/"
               >
                 SF Symbols
@@ -157,7 +157,7 @@ export function Introduction({ features, className, ...props }: Props) {
               require San Fransisco—the system font on Apple platforms—installed
               to be visible. Additionally, you’ll also need{" "}
               <a
-                className="font-medium link link-primary focusable"
+                className="link link-primary focusable font-medium"
                 href="https://developer.apple.com/fonts/"
               >
                 SF Pro

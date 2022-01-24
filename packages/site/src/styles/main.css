@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-zinc-900 selection:bg-primary-500/30 dark:selection:bg-primary-400/40;
+    @apply selection:bg-primary-500/30 dark:selection:bg-primary-400/40 bg-white dark:bg-zinc-900;
 
     -webkit-tap-highlight-color: transparent;
   }
@@ -19,7 +19,7 @@
     @apply flex flex-col;
 
     > * {
-      @apply flex-none w-full;
+      @apply w-full flex-none;
     }
   }
 
@@ -44,12 +44,12 @@
 
 @layer utilities {
   .focusable {
-    @apply box-decoration-clone focus:!decoration-transparent focus:outline-none focus:ring focus:ring-primary-500/40 dark:focus:ring-primary-400/40;
+    @apply focus:ring-primary-500/40 dark:focus:ring-primary-400/40 box-decoration-clone focus:!decoration-transparent focus:outline-none focus:ring;
   }
 
   .highlight {
     &::before {
-      @apply absolute inset-0 pointer-events-none z-10;
+      @apply pointer-events-none absolute inset-0 z-10;
 
       border-radius: inherit;
       box-shadow: inset 0 0 0 1px rgb(0 0 0 / 6%);
@@ -64,7 +64,7 @@
   }
 
   .link {
-    @apply transition focusable rounded-sm underline focus:decoration-transparent decoration-2 underline-offset-2 decoration-zinc-600/20 dark:decoration-white/20 selection:decoration-zinc-600/20 dark:selection:decoration-white/20 hover:decoration-zinc-600/40 dark:hover:decoration-white/40;
+    @apply focusable rounded-sm underline decoration-zinc-600/20 decoration-2 underline-offset-2 transition selection:decoration-zinc-600/20 hover:decoration-zinc-600/40 focus:decoration-transparent dark:decoration-white/20 dark:selection:decoration-white/20 dark:hover:decoration-white/40;
   }
 
   .link-primary {
@@ -107,11 +107,11 @@
 
 @layer components {
   .content {
-    @apply mx-auto max-w-screen-sm px-5-safe;
+    @apply px-5-safe mx-auto max-w-screen-sm;
   }
 
   .content-lg {
-    @apply mx-auto max-w-screen-lg px-5-safe;
+    @apply px-5-safe mx-auto max-w-screen-lg;
   }
 }
 
@@ -121,7 +121,7 @@
   margin: 0 0.4em;
 
   &::before {
-    @apply absolute z-negative bg-zinc-100 dark:bg-zinc-750;
+    @apply z-negative dark:bg-zinc-750 absolute bg-zinc-100;
 
     border-radius: 0.4em;
     content: "";
@@ -130,7 +130,7 @@
 }
 
 pre[class*="language-"] {
-  @apply scrollbar rounded-lg border border-zinc-150 dark:border-zinc-800;
+  @apply scrollbar border-zinc-150 rounded-lg border dark:border-zinc-800;
 
   .token {
     &.important,
@@ -200,7 +200,7 @@ pre[class*="language-"] {
     &.atrule,
     .language-json &.null.keyword,
     .language-markdown &.bold &.content {
-      @apply text-violet-600 dark:text-violet-400 bg-violet-600/5 dark:bg-violet-400/10;
+      @apply bg-violet-600/5 text-violet-600 dark:bg-violet-400/10 dark:text-violet-400;
 
       padding: 0 0.2em;
       border-radius: 0.2em;
@@ -216,7 +216,7 @@ pre[class*="language-"] {
     &.attr-value > &.punctuation,
     .language-css &.url > &.string.url,
     .language-markdown &.code-snippet {
-      @apply text-lime-600 dark:text-lime-300 bg-lime-600/5 dark:bg-lime-300/10;
+      @apply bg-lime-600/5 text-lime-600 dark:bg-lime-300/10 dark:text-lime-300;
 
       padding: 0 0.2em;
       border-radius: 0.2em;
@@ -249,7 +249,7 @@ pre[class*="language-"] {
     @apply scroll-mt-6;
 
     a[aria-hidden="true"] {
-      @apply relative no-underline hidden md:block opacity-0 transition focus:outline-none text-zinc-300 hover:!text-zinc-400 dark:text-zinc-600 dark:hover:!text-zinc-500;
+      @apply relative hidden text-zinc-300 no-underline opacity-0 transition hover:!text-zinc-400 focus:outline-none dark:text-zinc-600 dark:hover:!text-zinc-500 md:block;
 
       padding-right: 1em;
       margin-left: -1em;
@@ -274,7 +274,7 @@ pre[class*="language-"] {
     @apply my-1;
 
     summary {
-      @apply my-1 rounded-md cursor-pointer focusable ring-offset-2 dark:ring-offset-zinc-900 transition;
+      @apply focusable my-1 cursor-pointer rounded-md ring-offset-2 transition dark:ring-offset-zinc-900;
     }
   }
 }
@@ -286,13 +286,13 @@ pre[class*="language-"] {
 }
 
 .portrait {
-  @apply bg-white inline-block overflow-hidden relative highlight rounded-full ring-offset-2;
+  @apply highlight relative inline-block overflow-hidden rounded-full bg-white ring-offset-2;
 
   box-shadow: 0 0 0 2px theme("colors.white"), 0 0 1px 2px rgb(0 0 0 / 8%),
     0 1px 4px 2px rgb(0 0 0 / 8%), 0 2px 8px 2px rgb(0 0 0 / 6%);
 
   & > span {
-    @apply !absolute !inset-0 !w-full !h-full;
+    @apply !absolute !inset-0 !h-full !w-full;
   }
 }
 
@@ -312,7 +312,7 @@ pre[class*="language-"] {
   padding-top: 0.2em;
 
   img {
-    @apply max-w-full h-auto;
+    @apply h-auto max-w-full;
 
     width: calc(1em * 609 / 80);
     margin-bottom: -0.2em;
@@ -331,14 +331,14 @@ pre[class*="language-"] {
   }
 
   .react-colorful__pointer {
-    @apply w-2 h-2 z-20 border-none highlight;
+    @apply highlight z-20 h-2 w-2 border-none;
 
     box-shadow: 0 0 0 2px theme("colors.white"), 0 0 1px 2px rgb(0 0 0 / 8%),
       0 1px 4px 2px rgb(0 0 0 / 8%), 0 2px 8px 2px rgb(0 0 0 / 6%);
   }
 
   .react-colorful__saturation {
-    @apply border-none mb-2.5 rounded shadow-none;
+    @apply mb-2.5 rounded border-none shadow-none;
   }
 
   .react-colorful__hue {

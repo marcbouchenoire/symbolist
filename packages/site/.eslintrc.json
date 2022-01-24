@@ -2,12 +2,9 @@
   "extends": [
     "@marcbouchenoire/eslint-config",
     "@marcbouchenoire/eslint-config/react",
-    "@marcbouchenoire/eslint-config/jsdoc",
-    "plugin:tailwindcss/recommended"
+    "@marcbouchenoire/eslint-config/jsdoc"
   ],
-  "plugins": ["tailwindcss"],
   "rules": {
-    "import/no-unresolved": ["error", { "ignore": ["mdast", "unist"] }],
-    "tailwindcss/no-custom-classname": "off"
+    "import/no-unresolved": ["error", { "ignore": ["mdast", "unist"] }]
   }
 }
