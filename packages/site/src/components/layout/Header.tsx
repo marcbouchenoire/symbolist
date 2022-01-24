@@ -44,10 +44,10 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
   return (
     <header className={clsx(className, "pt-6 lg:pt-8")} {...props}>
       <div className="flex items-center text-zinc-700 dark:text-zinc-100">
-        <span className="flex items-center leading-none whitespace-pre">
+        <span className="flex items-center whitespace-pre leading-none">
           <a
             aria-label="marcbouchenoire.com"
-            className="mr-0.5 w-5 h-5 hover:opacity-60 transition focusable portrait"
+            className="focusable portrait mr-0.5 h-5 w-5 transition hover:opacity-60"
             href="https://marcbouchenoire.com"
           >
             <Image
@@ -75,7 +75,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
           </svg>
           <strong>Symbolist</strong>
           <a
-            className="p-1.5 pb-1 ml-2 font-semibold leading-none rounded transition cursor-pointer text-2xs focusable hover:bg-primary-500/20 dark:hover:bg-primary-400/30 text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400"
+            className="text-2xs focusable hover:bg-primary-500/20 dark:hover:bg-primary-400/30 text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400 ml-2 cursor-pointer rounded p-1.5 pb-1 font-semibold leading-none transition"
             href="https://github.com/marcbouchenoire/symbolist/releases"
           >
             v{version}
@@ -84,7 +84,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
         <div className="ml-auto">
           <button
             aria-label="Toggle Theme"
-            className="p-1.5 bg-transparent rounded-md transition hover:bg-primary-500/10 dark:hover:bg-primary-400/20 focusable"
+            className="hover:bg-primary-500/10 dark:hover:bg-primary-400/20 focusable rounded-md bg-transparent p-1.5 transition"
             onClick={toggleTheme}
           >
             <svg

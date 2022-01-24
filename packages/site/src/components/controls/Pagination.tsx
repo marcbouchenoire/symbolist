@@ -112,14 +112,14 @@ export function Pagination({
     <nav
       aria-label="Pagination"
       className={clsx(
-        "flex gap-2 justify-center items-center h-9 text-sm",
+        "flex h-9 items-center justify-center gap-2 text-sm",
         className
       )}
       {...props}
     >
       <button
         aria-label="Previous"
-        className="flex justify-center items-center w-9 h-full font-medium text-zinc-500 dark:text-zinc-400 bg-transparent hover:bg-zinc-500/10 disabled:!bg-transparent dark:hover:bg-zinc-100/10 rounded-md disabled:opacity-40 transition focusable"
+        className="focusable flex h-full w-9 items-center justify-center rounded-md bg-transparent font-medium text-zinc-500 transition hover:bg-zinc-500/10 disabled:!bg-transparent disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-zinc-100/10"
         disabled={isFirstPage}
         onClick={goToPreviousPage}
       >
@@ -134,7 +134,7 @@ export function Pagination({
       {truncatedPages.map((page, index) =>
         page === null ? (
           <span
-            className="flex justify-center items-center w-9 h-full font-medium text-zinc-400 dark:text-zinc-500"
+            className="flex h-full w-9 items-center justify-center font-medium text-zinc-400 dark:text-zinc-500"
             key={`ellipsis-${index}`}
           >
             …
@@ -143,9 +143,9 @@ export function Pagination({
           <PaginationPage
             aria-current={currentPage === page ? "page" : false}
             className={clsx(
-              "w-9 h-full font-medium rounded-md transition focusable",
+              "focusable h-full w-9 rounded-md font-medium transition",
               {
-                "hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 selection:bg-white/30 dark:selection:bg-zinc-900/30 dark:text-zinc-900 bg-primary-500 dark:bg-primary-400 shadow-lg focusable shadow-primary-500/10 dark:shadow-primary-400/10 text-white hover:bg-primary-500/80 dark:hover:bg-primary-400/80":
+                "hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10 hover:bg-primary-500/80 dark:hover:bg-primary-400/80 text-white shadow-lg selection:bg-white/30 dark:text-zinc-900 dark:selection:bg-zinc-900/30":
                   currentPage === page,
                 "hover:bg-zinc-500/10 dark:hover:bg-zinc-100/10":
                   currentPage !== page
@@ -159,7 +159,7 @@ export function Pagination({
       )}
       <button
         aria-label="Previous"
-        className="flex justify-center items-center w-9 h-full font-medium text-zinc-500 dark:text-zinc-400 bg-transparent hover:bg-zinc-500/10 disabled:!bg-transparent dark:hover:bg-zinc-100/10 rounded-md disabled:opacity-40 transition focusable"
+        className="focusable flex h-full w-9 items-center justify-center rounded-md bg-transparent font-medium text-zinc-500 transition hover:bg-zinc-500/10 disabled:!bg-transparent disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-zinc-100/10"
         disabled={isLastPage}
         onClick={goToNextPage}
       >

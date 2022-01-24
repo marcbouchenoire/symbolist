@@ -26,7 +26,7 @@ export const ColorPicker = memo(
               <div className="relative text-white dark:text-zinc-800">
                 <motion.div
                   animate="visible"
-                  className="p-2.5 bg-current rounded-lg color-picker shadow-popover"
+                  className="color-picker shadow-popover rounded-lg bg-current p-2.5"
                   exit="hidden"
                   initial="hidden"
                   transition={springier}

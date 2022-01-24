@@ -38,9 +38,9 @@ function Page({ content, features }: Props) {
   return (
     <main>
       <Introduction className="content" features={features} />
-      <Symbols className="mb-10 md:mb-16 lg:mb-20 content-lg" />
+      <Symbols className="content-lg mb-10 md:mb-16 lg:mb-20" />
       <article
-        className="mb-10 prose md:mb-16 lg:mb-20 content prose-zinc dark:prose-invert"
+        className="prose content prose-zinc dark:prose-invert mb-10 md:mb-16 lg:mb-20"
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </main>

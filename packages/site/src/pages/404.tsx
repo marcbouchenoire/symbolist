@@ -5,7 +5,7 @@ import Link from "next/link"
  */
 function Page() {
   return (
-    <main className="flex flex-col flex-1 justify-center items-center py-12 text-center md:py-16 lg:py-20 content">
+    <main className="content flex flex-1 flex-col items-center justify-center py-12 text-center md:py-16 lg:py-20">
       <h1 className="mb-3 text-3xl font-extrabold text-zinc-800 dark:text-zinc-100 sm:mb-4 sm:text-4xl">
         Oops
       </h1>
@@ -13,7 +13,7 @@ function Page() {
         The page you are looking for doesn’t exist.
       </p>
       <Link href="/">
-        <a className="flex flex-none gap-2 justify-center items-center py-2 px-3 w-full font-medium text-white dark:text-zinc-900 selection:bg-white/30 dark:selection:bg-zinc-900/30 rounded-md shadow-lg transition cursor-pointer sm:w-auto hover:bg-primary-500/80 dark:hover:bg-primary-400/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10">
+        <a className="hover:bg-primary-500/80 dark:hover:bg-primary-400/80 hover:shadow-primary-500/5 dark:hover:shadow-primary-400/5 bg-primary-500 dark:bg-primary-400 focusable shadow-primary-500/10 dark:shadow-primary-400/10 flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-3 font-medium text-white shadow-lg transition selection:bg-white/30 dark:text-zinc-900 dark:selection:bg-zinc-900/30 sm:w-auto">
           Return to home page
         </a>
       </Link>

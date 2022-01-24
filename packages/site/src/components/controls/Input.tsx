@@ -21,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     <div
       className={clsx(
         className,
-        "relative h-9 text-zinc-400 dark:hover:text-zinc-400 hover:text-zinc-450 dark:text-zinc-450"
+        "hover:text-zinc-450 dark:text-zinc-450 relative h-9 text-zinc-400 dark:hover:text-zinc-400"
       )}
       {...props}
     >
@@ -30,7 +30,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {...inputProps}
         className={clsx(
           inputProps?.className,
-          "px-3 w-full h-full text-sm font-medium text-zinc-500 placeholder:text-zinc-500/60 truncate bg-zinc-100 dark:hover:bg-zinc-700 rounded-md transition appearance-none focusable dark:bg-zinc-750 dark:text-zinc-350 dark:placeholder:text-zinc-350/60 hover:bg-zinc-150"
+          "focusable dark:bg-zinc-750 dark:text-zinc-350 dark:placeholder:text-zinc-350/60 hover:bg-zinc-150 h-full w-full appearance-none truncate rounded-md bg-zinc-100 px-3 text-sm font-medium text-zinc-500 transition placeholder:text-zinc-500/60 dark:hover:bg-zinc-700"
         )}
         ref={ref}
       />

@@ -57,9 +57,9 @@ function App({ Component, pageProps }: AppProps) {
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <meta content="#e37" name="theme-color" />
       </Head>
-      <div className="overflow-hidden absolute top-0 w-full h-72 pointer-events-none md:h-80 lg:h-96">
-        <div className="relative h-full content">
-          <div className="absolute left-[-100%] w-[300%] h-full opacity-30 md:left-[-150%] md:w-[400%] aura z-negative" />
+      <div className="pointer-events-none absolute top-0 h-72 w-full overflow-hidden md:h-80 lg:h-96">
+        <div className="content relative h-full">
+          <div className="aura z-negative absolute left-[-100%] h-full w-[300%] opacity-30 md:left-[-150%] md:w-[400%]" />
         </div>
       </div>
       <Header className="content" />

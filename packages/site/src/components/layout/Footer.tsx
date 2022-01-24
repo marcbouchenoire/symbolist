@@ -21,7 +21,7 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
       )}
       {...props}
     >
-      <hr className="w-full border-t dark:border-zinc-800 border-zinc-150" />
+      <hr className="border-zinc-150 w-full border-t dark:border-zinc-800" />
       <div className="flex items-center py-6 lg:py-8">
         <span className="flex items-center">
           <span>
@@ -30,7 +30,7 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
               {date}
             </time>
           </span>
-          <span className="text-zinc-300 dark:text-zinc-600 whitespace-pre">
+          <span className="whitespace-pre text-zinc-300 dark:text-zinc-600">
             {" "}
             —{" "}
           </span>
@@ -41,13 +41,13 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
             MIT License
           </a>
         </span>
-        <span className="flex items-center ml-auto">
+        <span className="ml-auto flex items-center">
           <span className="hidden whitespace-pre sm:inline">Made by </span>
           <a
-            className="inline-flex items-center link"
+            className="link inline-flex items-center"
             href="https://marcbouchenoire.com"
           >
-            <span className="mr-2 ml-1.5 w-4 h-4 portrait">
+            <span className="portrait mr-2 ml-1.5 h-4 w-4">
               <Image
                 alt="Portrait of Marc Bouchenoire"
                 height="20"
