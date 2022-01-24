@@ -54,6 +54,7 @@ export function Header({ className, ...props }: ComponentProps<"header">) {
               alt="Portrait of Marc Bouchenoire"
               height="20"
               layout="fixed"
+              priority
               src={portrait}
               width="20"
             />
