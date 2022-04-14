@@ -24,7 +24,7 @@
     ],
     "packages/site/**/*.{ts,tsx}": [
       "yarn workspace site eslint --fix",
-      "yarn workspace site tsatsiki --project tsconfig.json next-env.d.ts declarations.d.ts",
+      "yarn workspace site tsatsiki --project tsconfig.json next-env.d.ts declarations.d.ts patches.d.ts",
       "yarn workspace site prettier"
     ],
     "packages/site/**/*.css": [
