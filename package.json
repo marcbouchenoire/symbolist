@@ -61,7 +61,7 @@
   "devDependencies": {
     "@marcbouchenoire/eslint-config": "^2.4.2",
     "@marcbouchenoire/prettier-config": "^1.1.0",
-    "@types/node": "^17.0.5",
+    "@types/node": "^18.0.0",
     "eslint": "^8.5.0",
     "husky": "4.3.8",
     "lerna": "^4.0.0",
