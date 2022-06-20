@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* stylelint-disable selector-id-pattern */
 @layer base {
   html,
   body,
-  [data-reactroot] {
-    @apply min-h-screen;
+  #__next {
+    @apply min-h-screen max-w-full overflow-x-hidden;
   }
 
   body {
@@ -15,11 +16,11 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  [data-reactroot] {
+  #__next {
     @apply flex flex-col;
 
     > * {
-      @apply w-full flex-none;
+      @apply w-full;
     }
   }
 
@@ -33,14 +34,8 @@
   select:not([disabled]) {
     @apply touch-manipulation;
   }
-
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration {
-    appearance: none;
-  }
 }
+/* stylelint-enable selector-id-pattern */
 
 @layer utilities {
   .focusable {
