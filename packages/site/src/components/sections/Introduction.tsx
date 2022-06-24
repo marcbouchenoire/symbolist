@@ -81,7 +81,7 @@ export function Introduction({ features, className, ...props }: Props) {
           <span>View on GitHub</span>
         </a>
         <button
-          className="group hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400 flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-2.5 font-mono text-sm transition sm:w-auto"
+          className="hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400 group flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-2.5 font-mono text-sm transition sm:w-auto"
           onClick={handleClipboardClick}
           type="button"
         >

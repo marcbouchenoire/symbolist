@@ -5,6 +5,6 @@
     "@marcbouchenoire/eslint-config/jsdoc"
   ],
   "rules": {
-    "import/no-unresolved": ["error", { "ignore": ["mdast", "unist"] }]
+    "import/no-unresolved": ["error", { "ignore": ["hast", "mdast", "unist"] }]
   }
 }

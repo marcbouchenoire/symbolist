@@ -1,4 +1,5 @@
-import { Content, Node, findAndReplace } from "hast-util-find-and-replace"
+import { Content, Root } from "hast"
+import { findAndReplace } from "hast-util-find-and-replace"
 import { Plugin } from "unified"
 
 /**
@@ -6,14 +7,18 @@ import { Plugin } from "unified"
  */
 const wrapSymbols: Plugin<[]> = () => {
   return (tree) => {
-    findAndReplace(tree as Node, /[\u{100000}-\u{10FFFF}]/gmu, (symbol) => {
-      return {
-        type: "element",
-        tagName: "span",
-        properties: { "data-symbol": true },
-        children: [{ type: "text", value: symbol }]
-      } as Content
-    })
+    findAndReplace(
+      tree as Root,
+      /[\u{100000}-\u{10FFFF}]/gmu,
+      (symbol: string) => {
+        return {
+          type: "element",
+          tagName: "span",
+          properties: { "data-symbol": true },
+          children: [{ type: "text", value: symbol }]
+        } as Content
+      }
+    )
   }
 }
 
