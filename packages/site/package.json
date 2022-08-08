@@ -13,7 +13,7 @@
     "lint:tsc": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^0.1.6",
+    "@radix-ui/react-popover": "^1.0.0",
     "clsx": "^1.1.1",
     "colord": "^2.9.2",
     "framer-motion": "^7.0.0",
