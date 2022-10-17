@@ -55,7 +55,7 @@
     "nyc": "^15.1.0",
     "picocolors": "^1.0.0",
     "uvu": "^0.5.4",
-    "write-file-atomic": "^4.0.1",
+    "write-file-atomic": "^5.0.0",
     "write-json-file": "^5.0.0"
   }
 }
