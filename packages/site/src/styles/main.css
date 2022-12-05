@@ -34,6 +34,10 @@
   select:not([disabled]) {
     @apply touch-manipulation;
   }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply appearance-none;
+  }
 }
 /* stylelint-enable selector-id-pattern */
 
