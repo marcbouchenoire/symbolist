@@ -38,9 +38,9 @@
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
     "lint:prettier": "yarn prettier '**/*.{mjs,ts,tsx,json,md}'",
     "lint:tsc": "tsc --project tsconfig.json",
-    "generate": "node --loader tsm scripts/generate.ts && yarn prettier 'src/data/*.{ts,json}'",
+    "generate": "tsx scripts/generate.ts && yarn prettier 'src/data/*.{ts,json}'",
     "prepublishOnly": "yarn build",
-    "test": "uvu --require tsm tests",
+    "test": "uvu --require tsx tests",
     "test:coverage": "nyc --temp-dir=.nyc.log --include=src yarn test && nyc report --temp-dir=.nyc.log --reporter=lcov"
   },
   "devDependencies": {
