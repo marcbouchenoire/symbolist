@@ -3,7 +3,7 @@
 🔣 A collection of every symbol from SF Symbols.
 
 [![version](https://img.shields.io/badge/SF%20Symbols%203.1-message?color=%23e27)](https://developer.apple.com/sf-symbols/)
-[![build](https://img.shields.io/github/workflow/status/marcbouchenoire/symbolist/CI?color=%23e27)](https://github.com/marcbouchenoire/symbolist/actions/workflows/ci.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/marcbouchenoire/symbolist/.github/workflows/ci.yml?color=%23e27)](https://github.com/marcbouchenoire/symbolist/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/symbolist?color=%23e27)](https://www.npmjs.com/package/symbolist)
 [![size](https://img.shields.io/bundlephobia/minzip/symbolist?label=size&color=%23e27)](https://bundlephobia.com/package/symbolist)
 [![coverage](https://img.shields.io/codecov/c/github/marcbouchenoire/symbolist?color=%23e27)](https://codecov.io/gh/marcbouchenoire/symbolist)
