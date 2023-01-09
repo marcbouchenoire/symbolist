@@ -1,6 +1,6 @@
-import clsx from "clsx"
+import { clsx } from "clsx"
 import Image from "next/image"
-import { ComponentProps } from "react"
+import type { ComponentProps } from "react"
 import portrait from "../../../public/portrait.jpg"
 import { useData } from "../../hooks/use-data"
 

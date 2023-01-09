@@ -1,5 +1,6 @@
-import clsx from "clsx"
-import { ComponentProps, forwardRef } from "react"
+import { clsx } from "clsx"
+import type { ComponentProps } from "react"
+import { forwardRef } from "react"
 
 export interface SelectProps extends ComponentProps<"div"> {
   /**

@@ -1,5 +1,5 @@
 import clipboard from "clipboardy"
-import { ListrTask } from "listr"
+import type { ListrTask } from "listr"
 import { ListrInput } from "./listr-input"
 
 /**

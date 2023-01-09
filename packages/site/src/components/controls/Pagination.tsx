@@ -1,6 +1,7 @@
-import clsx from "clsx"
-import { ComponentProps, useCallback, useMemo } from "react"
-import { PaginationCallbacks } from "../../hooks/use-pagination"
+import { clsx } from "clsx"
+import type { ComponentProps } from "react"
+import { useCallback, useMemo } from "react"
+import type { PaginationCallbacks } from "../../hooks/use-pagination"
 
 export interface PaginationProps
   extends ComponentProps<"nav">,

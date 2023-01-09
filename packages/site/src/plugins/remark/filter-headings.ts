@@ -1,7 +1,7 @@
-import { Heading as HeadingNode } from "mdast"
+import type { Heading as HeadingNode } from "mdast"
 import { toString } from "mdast-util-to-string"
-import { Plugin } from "unified"
-import { Node, Parent } from "unist"
+import type { Plugin } from "unified"
+import type { Node, Parent } from "unist"
 import { isSomething } from "../../guards"
 
 interface Heading {

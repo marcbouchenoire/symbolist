@@ -1,4 +1,4 @@
-import { Spring } from "framer-motion"
+import type { Spring } from "framer-motion"
 
 type DurationSpring = Spring & {
   /**

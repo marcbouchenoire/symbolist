@@ -1,6 +1,6 @@
 import data from "./data/symbols.json"
-import { SymbolName } from "./data/types"
-import { Symbols } from "./types"
+import type { SymbolName } from "./data/types"
+import type { Symbols } from "./types"
 
 /**
  * A collection of all symbols.

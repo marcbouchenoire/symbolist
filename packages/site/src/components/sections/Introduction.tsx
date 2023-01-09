@@ -1,6 +1,7 @@
-import clsx from "clsx"
-import { Transition, Variants, motion } from "framer-motion"
-import { ComponentProps } from "react"
+import { clsx } from "clsx"
+import type { Transition, Variants } from "framer-motion"
+import { motion } from "framer-motion"
+import type { ComponentProps } from "react"
 import { useCopy } from "../../hooks/use-copy"
 import { springier } from "../../transitions"
 

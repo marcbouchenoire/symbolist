@@ -1,22 +1,14 @@
-import clsx from "clsx"
+import { clsx } from "clsx"
 import { colord } from "colord"
-import {
-  CSSProperties,
-  ChangeEvent,
-  ComponentProps,
-  memo,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from "react"
-import { Symbols, symbols } from "symbolist"
+import type { CSSProperties, ChangeEvent, ComponentProps } from "react"
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import type { Symbols } from "symbolist"
+import { symbols } from "symbolist"
 import colors from "tailwindcss/colors"
 import { useKey } from "../../hooks/use-key"
 import { usePagination } from "../../hooks/use-pagination"
 import { useSystemTheme } from "../../hooks/use-system-theme"
-import { NamedSymbol } from "../../types"
+import type { NamedSymbol } from "../../types"
 import { ColorPicker } from "../controls/ColorPicker"
 import { Input } from "../controls/Input"
 import { Pagination } from "../controls/Pagination"

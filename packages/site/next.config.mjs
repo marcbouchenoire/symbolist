@@ -16,8 +16,15 @@ function getData() {
   }
 }
 
-export default () => {
+/**
+ * Store various things as static files.
+ */
+export function storeStaticFiles() {
   writeJsonFileSync(DATA_PATH, getData())
+}
+
+export default () => {
+  storeStaticFiles()
 
   return {
     trailingSlash: false,
