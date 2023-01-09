@@ -1,6 +1,7 @@
 import { Arrow, Content, Root, Trigger } from "@radix-ui/react-popover"
 import { AnimatePresence, motion } from "framer-motion"
-import { ComponentProps, memo, useState } from "react"
+import type { ComponentProps } from "react"
+import { memo, useState } from "react"
 import { HexColorPicker } from "react-colorful"
 import { springier } from "../../transitions"
 

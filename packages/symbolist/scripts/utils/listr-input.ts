@@ -1,4 +1,4 @@
-import { ListrTask } from "listr"
+import type { ListrTask } from "listr"
 import ListrDefaultInput from "listr-input"
 import pc from "picocolors"
 import { join } from "./join"

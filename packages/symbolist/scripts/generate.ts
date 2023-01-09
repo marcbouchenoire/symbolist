@@ -1,9 +1,11 @@
+/* eslint-disable unicorn/prefer-top-level-await */
+
 import withApp from "app-exists"
 import Listr from "listr"
 import writeFile from "write-file-atomic"
 import { writeJsonFile } from "write-json-file"
-import { SymbolName } from "../src"
-import { Symbols } from "../src/types"
+import type { SymbolName } from "../src"
+import type { Symbols } from "../src/types"
 import { isMacOS } from "./utils/is-macOS"
 import { ListrClipboard } from "./utils/listr-clipboard"
 import { ListrInput } from "./utils/listr-input"
@@ -91,9 +93,7 @@ const tasks = new Listr([
   },
   {
     task: async (context: Context) => {
-      if (context.characters.length !== context.names.length) {
-        throw new SilentError("The symbols and their names don't match.")
-      } else {
+      if (context.characters.length === context.names.length) {
         const symbols = {} as Symbols
 
         for (const [index, name] of context.names.entries()) {
@@ -101,6 +101,8 @@ const tasks = new Listr([
         }
 
         context.symbols = symbols
+      } else {
+        throw new SilentError("The symbols and their names don't match.")
       }
     },
     title: "Formatting symbols"

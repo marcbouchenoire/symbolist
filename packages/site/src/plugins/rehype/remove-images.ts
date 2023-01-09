@@ -1,4 +1,4 @@
-import { Plugin } from "unified"
+import type { Plugin } from "unified"
 import { remove } from "unist-util-remove"
 
 /**

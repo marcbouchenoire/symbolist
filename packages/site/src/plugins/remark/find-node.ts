@@ -1,5 +1,5 @@
-import { Plugin } from "unified"
-import { Parent } from "unist"
+import type { Plugin } from "unified"
+import type { Parent } from "unist"
 import { select } from "unist-util-select"
 
 /**

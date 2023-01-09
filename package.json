@@ -56,13 +56,14 @@
     "test": "yarn workspace symbolist test",
     "test:coverage": "yarn workspace symbolist test:coverage",
     "lint": "yarn prettier '*.{json,md,yml}' && lerna run lint --stream",
-    "release": "yarn test && lerna publish"
+    "release": "yarn test && lerna publish",
+    "postinstall": "yarn workspace site postinstall"
   },
   "devDependencies": {
-    "@marcbouchenoire/eslint-config": "^2.7.0",
+    "@marcbouchenoire/eslint-config": "^2.8.1",
     "@marcbouchenoire/prettier-config": "^1.1.0",
     "@types/node": "^18.0.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.31.0",
     "husky": "4.3.8",
     "lerna": "^6.0.3",
     "nano-staged": "^0.8.0",

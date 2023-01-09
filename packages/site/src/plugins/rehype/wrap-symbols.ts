@@ -1,6 +1,6 @@
-import { Content, Root } from "hast"
+import type { Content, Root } from "hast"
 import { findAndReplace } from "hast-util-find-and-replace"
-import { Plugin } from "unified"
+import type { Plugin } from "unified"
 
 /**
  * A plugin to wrap all SF Symbols within `span` elements with a `data-symbol` attribute.
