@@ -51,7 +51,7 @@ export function Footer({ className, ...props }: ComponentProps<"footer">) {
               <Image
                 alt="Portrait of Marc Bouchenoire"
                 height="20"
-                layout="fixed"
+                role="presentation"
                 src={portrait}
                 width="20"
               />
