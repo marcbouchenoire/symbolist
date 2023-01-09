@@ -45,16 +45,16 @@
   },
   "devDependencies": {
     "@types/listr": "^0.14.4",
-    "@types/prettier": "^2.6.3",
+    "@types/prettier": "^2.7.2",
     "@types/write-file-atomic": "^4.0.0",
     "app-exists": "^2.1.1",
     "clipboardy": "^3.0.0",
     "listr": "^0.14.3",
     "listr-input": "^0.2.1",
-    "microbundle": "^0.15.0",
+    "microbundle": "^0.15.1",
     "nyc": "^15.1.0",
     "picocolors": "^1.0.0",
-    "uvu": "^0.5.4",
+    "uvu": "^0.5.6",
     "write-file-atomic": "^5.0.0",
     "write-json-file": "^5.0.0"
   }
