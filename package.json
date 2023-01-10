@@ -43,9 +43,6 @@
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "site:dev": "pnpm --filter site dev",
     "site:build": "pnpm --filter site build",
