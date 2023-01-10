@@ -34,14 +34,14 @@
   "scripts": {
     "build": "microbundle --tsconfig tsconfig.build.json",
     "prettier": "prettier --write --loglevel silent --ignore-path .eslintignore",
-    "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:prettier",
+    "lint": "pnpm lint:eslint && pnpm lint:tsc && pnpm lint:prettier",
     "lint:eslint": "eslint '**/*.{mjs,ts,tsx}' --fix",
-    "lint:prettier": "yarn prettier '**/*.{mjs,ts,tsx,json,md}'",
+    "lint:prettier": "pnpm prettier '**/*.{mjs,ts,tsx,json,md}'",
     "lint:tsc": "tsc --project tsconfig.json",
-    "generate": "tsm scripts/generate.ts && yarn prettier 'src/data/*.{ts,json}'",
-    "prepublishOnly": "yarn build",
+    "generate": "tsm scripts/generate.ts && pnpm prettier 'src/data/*.{ts,json}'",
+    "prepublishOnly": "pnpm build",
     "test": "uvu --require tsm tests",
-    "test:coverage": "nyc --temp-dir=.nyc.log --include=src yarn test && nyc report --temp-dir=.nyc.log --reporter=lcov"
+    "test:coverage": "nyc --temp-dir=.nyc.log --include=src pnpm test && nyc report --temp-dir=.nyc.log --reporter=lcov"
   },
   "devDependencies": {
     "@types/listr": "^0.14.4",
