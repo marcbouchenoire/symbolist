@@ -9,8 +9,7 @@
   "eslint.validate": ["typescript", "typescriptreact"],
   "eslint.workingDirectories": ["packages/site", "packages/symbolist"],
   "files.exclude": {
-    "node_modules": true,
-    "yarn.lock": true
+    "node_modules": true
   },
   "prettier.ignorePath": ".gitignore",
   "stylelint.configBasedir": "packages/site",
