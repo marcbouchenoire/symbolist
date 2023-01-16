@@ -8,7 +8,7 @@ const DATA_PATH = path.resolve("./src/data.json")
  * Create a static data object.
  */
 function getData() {
-  const pkg = createRequire(import.meta.url)("./package.json")
+  const pkg = createRequire(import.meta.url)("../symbolist/package.json")
 
   return {
     version: pkg.version,

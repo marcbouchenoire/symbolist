@@ -1,40 +1,12 @@
 import { clsx } from "clsx"
-import type { Transition, Variants } from "framer-motion"
-import { motion } from "framer-motion"
 import type { ComponentProps } from "react"
-import { useCopy } from "../../hooks/use-copy"
-import { springier } from "../../transitions"
+import { InstallButton } from "../controls/InstallButton"
 
 interface Props extends ComponentProps<"section"> {
   /**
    * The README list of features formatted as HTML.
    */
   features: string
-}
-
-const NPM_INSTALL = "npm i symbolist"
-
-const clipboardTransition: Transition = {
-  default: {
-    ...springier,
-    delay: 0.1
-  },
-  opacity: {
-    type: "spring",
-    duration: springier.duration,
-    bounce: 0
-  }
-}
-
-const clipboardVariants: Variants = {
-  hidden: {
-    pathLength: 0,
-    opacity: 0
-  },
-  visible: {
-    pathLength: 1,
-    opacity: 1
-  }
 }
 
 /**
@@ -45,8 +17,6 @@ const clipboardVariants: Variants = {
  * @param [props.className] - A list of one or more classes.
  */
 export function Introduction({ features, className, ...props }: Props) {
-  const [clipboardCopied, handleClipboardClick] = useCopy(NPM_INSTALL)
-
   return (
     <section className={clsx(className, "mt-16 md:mt-20 lg:mt-28")} {...props}>
       <h1 className="logo text-4xl font-bold md:text-5xl">
@@ -81,51 +51,7 @@ export function Introduction({ features, className, ...props }: Props) {
           </svg>
           <span>View on GitHub</span>
         </a>
-        <button
-          className="hover:bg-primary-500/20 dark:hover:bg-primary-400/30 focusable text-primary-500 bg-primary-500/10 dark:bg-primary-400/20 dark:text-primary-400 group flex w-full flex-none cursor-pointer items-center justify-center gap-2 rounded-md py-2 px-2.5 font-mono text-sm transition sm:w-auto"
-          onClick={handleClipboardClick}
-          type="button"
-        >
-          <svg
-            className="flex-none"
-            height="24"
-            role="presentation"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clipRule="evenodd"
-              d="M4.003 17.99A2 2 0 0 0 6 19.992l4.999.007a1 1 0 0 0 1.001-1V9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v10a1 1 0 0 0 1 1h.991a2 2 0 0 0 2-1.999l.008-11.982A2 2 0 0 0 18 4.018l-11.98-.015A2 2 0 0 0 4.018 6l-.015 11.99Z"
-              fill="currentColor"
-              fillRule="evenodd"
-            />
-          </svg>
-          <span className="truncate">{NPM_INSTALL}</span>
-          <svg
-            className="flex-none opacity-30 dark:opacity-50"
-            height="24"
-            role="presentation"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clipRule="evenodd" fill="currentColor" fillRule="evenodd">
-              <path d="M3 6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3 1 1 0 1 1-2 0 1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1 1 1 0 1 1 0 2 3 3 0 0 1-3-3V6Z" />
-              <path d="M9 12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3v-6Z" />
-            </g>
-            <motion.path
-              animate={clipboardCopied ? "visible" : "hidden"}
-              className="stroke-white dark:stroke-zinc-800"
-              d="M12 15.222 13.846 17 18 13"
-              fill="none"
-              initial="hidden"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              transition={clipboardTransition}
-              variants={clipboardVariants}
-            />
-          </svg>
-        </button>
+        <InstallButton className="sm:w-auto flex-none w-full" />
       </div>
       <div className="my-8 md:my-12 lg:my-16">
         <div className="bg-primary-500/10 dark:bg-primary-400/20 flex gap-2 rounded-lg p-5 pl-4 text-sm sm:gap-3">
