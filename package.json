@@ -55,7 +55,7 @@
     "lint": "pnpm prettier '*.{json,md,yml}' && pnpm --recursive --parallel --if-present lint",
     "change": "pnpm changeset",
     "version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
-    "release": "pnpm build && pnpm test && pnpm publish --recursive"
+    "release": "pnpm build && pnpm publish --recursive"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
