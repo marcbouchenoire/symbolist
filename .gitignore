@@ -3,6 +3,7 @@ node_modules
 coverage
 dist
 .next
+.turbo
 data.json
 *.tsbuildinfo
 *.log
