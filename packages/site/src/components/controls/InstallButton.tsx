@@ -1,9 +1,10 @@
 import { clsx } from "clsx"
 import type { Transition, Variants } from "framer-motion"
-import { motion, useCycle } from "framer-motion"
+import { motion, wrap } from "framer-motion"
 import type { ComponentProps } from "react"
-import { useCallback, useMemo, useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import { springier } from "../../transitions"
+import { ScrambledText } from "../miscellaneous/ScrambledText"
 
 const INSTALL_COMMANDS = ["npm i", "yarn add", "pnpm i"]
 const ANIMATION_DELAY = 3000
@@ -31,6 +32,22 @@ const variants: Variants = {
   }
 }
 
+function useInstallCommand() {
+  const index = useRef(0)
+  const [command, setCommand] = useState(INSTALL_COMMANDS[index.current])
+  const [previousCommand, setPreviousCommand] = useState<string>()
+
+  const cycleCommand = useCallback(() => {
+    setPreviousCommand(INSTALL_COMMANDS[index.current])
+
+    index.current = wrap(0, INSTALL_COMMANDS.length, index.current + 1)
+
+    setCommand(INSTALL_COMMANDS[index.current])
+  }, [])
+
+  return [command, previousCommand, cycleCommand] as const
+}
+
 /**
  * A `button` which copies install commands to the clipboard.
  *
@@ -42,14 +59,13 @@ export function InstallButton({
   ...props
 }: ComponentProps<"button">) {
   const timeout = useRef<number>(0)
-  const [command, cycleCommand] = useCycle(...INSTALL_COMMANDS)
+  const [command, previousCommand, cycleCommand] = useInstallCommand()
   const [isCopied, setCopied] = useState(false)
-  const content = useMemo(() => `${command} symbolist`, [command])
 
   const handleClick = useCallback(() => {
     window.clearTimeout(timeout.current)
 
-    navigator.clipboard.writeText(content).then(() => {
+    navigator.clipboard.writeText(`${command} symbolist`).then(() => {
       setCopied(true)
 
       timeout.current = window.setTimeout(() => {
@@ -58,7 +74,7 @@ export function InstallButton({
     })
 
     cycleCommand()
-  }, [content, cycleCommand])
+  }, [command, cycleCommand])
 
   return (
     <button
@@ -84,7 +100,10 @@ export function InstallButton({
           fillRule="evenodd"
         />
       </svg>
-      <span className="truncate">{content}</span>
+      <span>
+        <ScrambledText from={previousCommand} key={command} to={command} />{" "}
+        symbolist
+      </span>
       <svg
         className="flex-none opacity-30 dark:opacity-50"
         height="24"
@@ -102,7 +121,7 @@ export function InstallButton({
           d="M12 15.222 13.846 17 18 13"
           fill="none"
           initial="hidden"
-          key={content}
+          key={command}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
