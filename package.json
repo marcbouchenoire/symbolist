@@ -46,6 +46,7 @@
   "scripts": {
     "prettier": "prettier --write --loglevel silent --ignore-path .gitignore",
     "generate": "turbo generate",
+    "dev": "turbo dev",
     "build": "turbo build",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
