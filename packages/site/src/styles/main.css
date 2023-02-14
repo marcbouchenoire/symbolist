@@ -43,7 +43,7 @@
 
 @layer utilities {
   .focusable {
-    @apply focus:ring-primary-500/40 dark:focus:ring-primary-400/40 box-decoration-clone focus:!decoration-transparent focus:outline-none focus:ring;
+    @apply focus-visible:ring-primary-500/40 dark:focus-visible:ring-primary-400/40 box-decoration-clone focus-visible:!decoration-transparent focus-visible:outline-none focus-visible:ring;
   }
 
   .highlight {
@@ -63,7 +63,7 @@
   }
 
   .link {
-    @apply focusable rounded-sm underline decoration-zinc-600/20 decoration-2 underline-offset-2 transition selection:decoration-zinc-600/20 hover:decoration-zinc-600/40 focus:decoration-transparent dark:decoration-white/20 dark:selection:decoration-white/20 dark:hover:decoration-white/40;
+    @apply focusable rounded-sm underline decoration-zinc-600/20 decoration-2 underline-offset-2 transition selection:decoration-zinc-600/20 hover:decoration-zinc-600/40 focus-visible:decoration-transparent dark:decoration-white/20 dark:selection:decoration-white/20 dark:hover:decoration-white/40;
   }
 
   .link-primary {
@@ -248,7 +248,7 @@ pre[class*="language-"] {
     @apply scroll-mt-6;
 
     a[aria-hidden="true"] {
-      @apply relative hidden text-zinc-300 no-underline opacity-0 transition hover:!text-zinc-400 focus:outline-none dark:text-zinc-600 dark:hover:!text-zinc-500 md:block;
+      @apply relative hidden text-zinc-300 no-underline opacity-0 transition hover:!text-zinc-400 focus-visible:outline-none dark:text-zinc-600 dark:hover:!text-zinc-500 md:block;
 
       padding-right: 1em;
       margin-left: -1em;
