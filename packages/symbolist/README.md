@@ -19,20 +19,6 @@
 
 ## Installation
 
-#### Skypack
-
-```javascript
-import { symbols } from "https://cdn.skypack.dev/symbolist"
-```
-
-#### Yarn
-
-```bash
-yarn add symbolist
-```
-
-#### npm
-
 ```bash
 npm install symbolist
 ```
