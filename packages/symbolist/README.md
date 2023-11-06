@@ -74,3 +74,7 @@ Symbols are extracted with the `generate` command—using the [SF Symbols](https
 #### Types
 
 `generate` prepares types along its symbols which means `getSymbol` and `getSymbolName` will validate symbol names when using TypeScript.
+
+## Versioning
+
+This package follows SF Symbols' versioning for major and minor versions.
