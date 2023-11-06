@@ -24,7 +24,7 @@ export const ColorPicker = memo(
         <AnimatePresence>
           {open && (
             <Content asChild forceMount side="top" sideOffset={8}>
-              <div className="relative text-white dark:text-zinc-800">
+              <div className="relative text-white dark:text-zinc-800 z-50">
                 <motion.div
                   animate="visible"
                   className="color-picker shadow-popover rounded-lg bg-current p-2.5"
