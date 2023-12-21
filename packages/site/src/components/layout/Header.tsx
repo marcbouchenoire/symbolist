@@ -6,14 +6,19 @@ import type { ComponentProps } from "react"
 import portrait from "../../../public/portrait.jpg"
 import { useData } from "../../hooks/use-data"
 import { useSystemTheme } from "../../hooks/use-system-theme"
-import { springiest } from "../../transitions"
+
+const THEME_TRANSITION_DURATION = 0.6
 
 const themeTransition: Transition = {
-  default: springiest,
+  default: {
+    type: "spring",
+    duration: THEME_TRANSITION_DURATION,
+    bounce: 0.6
+  },
   opacity: {
     type: "spring",
-    duration: springiest.duration - springiest.duration / 2,
-    bounce: 0
+    bounce: 0,
+    duration: THEME_TRANSITION_DURATION / 2
   }
 }
 
@@ -27,7 +32,7 @@ const themeVariants: Variants = {
     opacity: 1,
     transition: {
       ...themeTransition,
-      delay: springiest.duration / 2
+      delay: THEME_TRANSITION_DURATION / 2
     }
   }
 }

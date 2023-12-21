@@ -1,11 +1,24 @@
 import { Arrow, Content, Root, Trigger } from "@radix-ui/react-popover"
+import type { Transition } from "framer-motion"
 import { AnimatePresence, motion } from "framer-motion"
 import type { ComponentProps } from "react"
 import { memo, useState } from "react"
 import { HexColorPicker } from "react-colorful"
-import { springier } from "../../transitions"
 
 export type ColorPickerProps = ComponentProps<typeof HexColorPicker>
+
+const transition: Transition = {
+  default: {
+    type: "spring",
+    stiffness: 400,
+    damping: 28
+  },
+  opacity: {
+    type: "spring",
+    stiffness: 360,
+    damping: 30
+  }
+}
 
 /**
  * A color picker within a popover.
@@ -30,7 +43,7 @@ export const ColorPicker = memo(
                   className="color-picker shadow-popover rounded-lg bg-current p-2.5"
                   exit="hidden"
                   initial="hidden"
-                  transition={springier}
+                  transition={transition}
                   variants={{
                     hidden: { scale: 0.2, opacity: 0 },
                     visible: { scale: 1, opacity: 1 }
@@ -46,7 +59,7 @@ export const ColorPicker = memo(
                     height="8"
                     initial="hidden"
                     role="presentation"
-                    transition={springier}
+                    transition={transition}
                     variants={{
                       hidden: { scale: 0, opacity: 0 },
                       visible: { scale: 1, opacity: 1 }

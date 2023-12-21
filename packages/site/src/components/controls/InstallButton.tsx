@@ -3,7 +3,6 @@ import type { Transition, Variants } from "framer-motion"
 import { motion, wrap } from "framer-motion"
 import type { ComponentProps } from "react"
 import { useCallback, useRef, useState } from "react"
-import { springier } from "../../transitions"
 import { ScrambledText } from "../miscellaneous/ScrambledText"
 
 const INSTALL_COMMANDS = ["npm i", "yarn add", "pnpm i"]
@@ -11,13 +10,15 @@ const ANIMATION_DELAY = 3000
 
 const transition: Transition = {
   default: {
-    ...springier,
+    type: "spring",
+    stiffness: 300,
+    damping: 20,
     delay: 0.1
   },
   opacity: {
     type: "spring",
-    duration: springier.duration,
-    bounce: 0
+    stiffness: 300,
+    damping: 30
   }
 }
 
