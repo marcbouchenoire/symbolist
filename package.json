@@ -47,8 +47,7 @@
     "build": "turbo build",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
-    "lint": "pnpm prettier '*.{json,md,yml}' && turbo lint",
-    "release": "turbo release"
+    "lint": "pnpm prettier '*.{json,md,yml}' && turbo lint"
   },
   "devDependencies": {
     "@marcbouchenoire/eslint-config": "^2.8.1",
