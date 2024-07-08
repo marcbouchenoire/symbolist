@@ -48,12 +48,9 @@
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
     "lint": "pnpm prettier '*.{json,md,yml}' && turbo lint",
-    "change": "pnpm changeset",
-    "version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
-    "release": "turbo build --filter=symbolist && pnpm changeset publish"
+    "release": "turbo release"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
     "@marcbouchenoire/eslint-config": "^2.8.1",
     "@marcbouchenoire/prettier-config": "^1.1.0",
     "@types/node": "^18.11.18",
@@ -61,6 +58,7 @@
     "husky": "4.3.8",
     "lerna": "^6.4.0",
     "nano-staged": "^0.8.0",
+    "np": "^7.6.3",
     "prettier": "^2.8.2",
     "tsatsiki": "^2.0.1",
     "tsm": "^2.3.0",
