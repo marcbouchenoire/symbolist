@@ -2,44 +2,6 @@
   "name": "symbolist",
   "private": true,
   "prettier": "@marcbouchenoire/prettier-config",
-  "nano-staged": {
-    "*.{json,md,yml}": [
-      "pnpm prettier"
-    ],
-    "packages/symbolist/**/*.mjs": [
-      "pnpm --filter symbolist eslint --fix",
-      "pnpm --filter symbolist prettier"
-    ],
-    "packages/symbolist/**/*.{ts,tsx}": [
-      "pnpm --filter symbolist eslint --fix",
-      "pnpm --filter symbolist tsatsiki --project tsconfig.json declarations.d.ts",
-      "pnpm --filter symbolist prettier"
-    ],
-    "packages/symbolist/**/*.{json,md}": [
-      "pnpm --filter symbolist prettier"
-    ],
-    "packages/site/**/*.{cjs,mjs}": [
-      "pnpm --filter site eslint --fix",
-      "pnpm --filter site prettier"
-    ],
-    "packages/site/**/*.{ts,tsx}": [
-      "pnpm --filter site eslint --fix",
-      "pnpm --filter site tsatsiki --project tsconfig.json next-env.d.ts declarations.d.ts",
-      "pnpm --filter site prettier"
-    ],
-    "packages/site/**/*.css": [
-      "pnpm --filter site stylelint --fix",
-      "pnpm --filter site prettier"
-    ],
-    "packages/site/**/*.{json,md}": [
-      "pnpm --filter site prettier"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "nano-staged"
-    }
-  },
   "scripts": {
     "prettier": "prettier --write --loglevel silent --ignore-path .gitignore",
     "generate": "turbo generate",
@@ -54,9 +16,7 @@
     "@marcbouchenoire/prettier-config": "^1.1.0",
     "@types/node": "^18.11.18",
     "eslint": "^8.31.0",
-    "husky": "4.3.8",
     "lerna": "^6.4.0",
-    "nano-staged": "^0.8.0",
     "np": "^10.0.6",
     "prettier": "^2.8.2",
     "tsatsiki": "^2.0.1",
